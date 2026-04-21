@@ -2,9 +2,9 @@
 
 <picture>
     <!-- User prefers dark mode: -->
-  <source srcset="https://raw.githubusercontent.com/vbti-development/onedl-mmdetection3d/main/docs/en/_static/images/onedl-mmdetection3d-banner-dark.png"  media="(prefers-color-scheme: dark)"/>
+  <source srcset="https://raw.githubusercontent.com/vbti-development/onedl-mmdetection3d/main/docs/en/_static/image/onedl-mmdetection3d-banner_dark.png"  media="(prefers-color-scheme: dark)"/>
 
-<img src="https://raw.githubusercontent.com/vbti-development/onedl-mmdetection3d/main/docs/en/_static/images/onedl-mmdetection3d-banner.png" alt="OneDL-MMDetection3D logo" height="200"/>
+<img src="https://raw.githubusercontent.com/vbti-development/onedl-mmdetection3d/main/docs/en/_static/image/onedl-mmdetection3d-banner.png" alt="OneDL-MMDetection3D logo" height="200"/>
   </picture>
 
 <div>&nbsp;</div>
