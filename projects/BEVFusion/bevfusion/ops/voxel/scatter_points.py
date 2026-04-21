@@ -10,7 +10,7 @@ class _dynamic_scatter(Function):
 
     @staticmethod
     def forward(ctx, feats, coors, reduce_type='max'):
-        """convert kitti points(N, >=3) to voxels.
+        """Convert kitti points(N, >=3) to voxels.
 
         Args:
             feats: [N, C] float tensor. points features to be reduced
@@ -59,8 +59,8 @@ class DynamicScatter(nn.Module):
 
     def __init__(self, voxel_size, point_cloud_range, average_points: bool):
         super(DynamicScatter, self).__init__()
-        """Scatters points into voxels, used in the voxel encoder with
-           dynamic voxelization
+        """Scatters points into voxels, used in the voxel encoder with dynamic
+        voxelization.
 
         **Note**: The CPU and GPU implementation get the same output, but
         have numerical difference after summation and division (e.g., 5e-7).

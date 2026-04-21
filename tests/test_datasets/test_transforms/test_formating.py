@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import unittest
-
 import torch
+import unittest
 from mmengine.testing import assert_allclose
 
 from mmdet3d.datasets.transforms.formating import Pack3DDetInputs

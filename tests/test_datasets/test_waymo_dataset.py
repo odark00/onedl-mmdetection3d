@@ -14,7 +14,7 @@ def _generate_waymo_dataset_config():
     data_root = 'tests/data/waymo/kitti_format'
     ann_file = 'waymo_infos_train.pkl'
     classes = ['Car', 'Pedestrian', 'Cyclist']
-    # wait for pipline refactor
+    # wait for pipeline refactor
 
     if 'Identity' not in TRANSFORMS:
 

@@ -1,16 +1,15 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os.path as osp
-import warnings
-from typing import Optional, Sequence
-
 import mmcv
 import numpy as np
+import os.path as osp
+import warnings
 from mmengine.fileio import get
 from mmengine.hooks import Hook
 from mmengine.logging import print_log
 from mmengine.runner import Runner
 from mmengine.utils import mkdir_or_exist
 from mmengine.visualization import Visualizer
+from typing import Optional, Sequence
 
 from mmdet3d.registry import HOOKS
 from mmdet3d.structures import Det3DDataSample

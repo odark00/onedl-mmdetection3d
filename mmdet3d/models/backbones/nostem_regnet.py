@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Tuple
-
 import torch.nn as nn
 from mmdet.models.backbones import RegNet
 from torch import Tensor
+from typing import Tuple
 
 from mmdet3d.registry import MODELS
 from mmdet3d.utils import OptMultiConfig

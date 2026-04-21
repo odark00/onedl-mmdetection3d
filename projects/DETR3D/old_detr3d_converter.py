@@ -1,6 +1,5 @@
-from argparse import ArgumentParser
-
 import torch
+from argparse import ArgumentParser
 
 parser = ArgumentParser()
 parser.add_argument('src', default='old.pth')

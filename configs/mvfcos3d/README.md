@@ -39,12 +39,12 @@ the path of `load_from` needs to be changed to yours accordingly.
 
 ### Waymo
 
-|                                Backbone                                | Load Interval | mAPL | mAP  | mAPH |                                                                                             Download                                                                                             |
-| :--------------------------------------------------------------------: | :-----------: | :--: | :--: | :--: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| [ResNet101+DCN](./multiview-fcos3d_r101-dcn_8xb2_waymoD5-3d-3class.py) |      5x       | 38.2 | 52.9 | 49.5 | [log](https://download.openmmlab.com/mmdetection3d/v1.1.0_models/mvfcos3d/multiview-fcos3d_r101-dcn_8xb2_waymoD5-3d-3class/multiview-fcos3d_r101-dcn_8xb2_waymoD5-3d-3class_20231127_122815.log) |
-|                              above @ Car                               |               | 56.5 | 73.3 | 72.3 |                                                                                                                                                                                                  |
-|                           above @ Pedestrian                           |               | 34.8 | 49.5 | 43.1 |                                                                                                                                                                                                  |
-|                            above @ Cyclist                             |               | 23.2 | 35.9 | 33.3 |                                                                                                                                                                                                  |
+|                                Backbone                                | Load Interval | mAPL | mAP  | mAPH |                                                                                          Download                                                                                           |
+| :--------------------------------------------------------------------: | :-----------: | :--: | :--: | :--: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [ResNet101+DCN](./multiview-fcos3d_r101-dcn_8xb2_waymoD5-3d-3class.py) |      5x       | 38.2 | 52.9 | 49.5 | [log](https://mmassets.onedl.ai/mmdetection3d/v1.1.0_models/mvfcos3d/multiview-fcos3d_r101-dcn_8xb2_waymoD5-3d-3class/multiview-fcos3d_r101-dcn_8xb2_waymoD5-3d-3class_20231127_122815.log) |
+|                              above @ Car                               |               | 56.5 | 73.3 | 72.3 |                                                                                                                                                                                             |
+|                           above @ Pedestrian                           |               | 34.8 | 49.5 | 43.1 |                                                                                                                                                                                             |
+|                            above @ Cyclist                             |               | 23.2 | 35.9 | 33.3 |                                                                                                                                                                                             |
 
 **Note**:
 

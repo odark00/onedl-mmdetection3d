@@ -1,6 +1,6 @@
-import unittest
-
+# Copyright (c) OpenMMLab. All rights reserved.
 import torch
+import unittest
 from mmengine import DefaultScope
 
 from mmdet3d.registry import MODELS
@@ -19,6 +19,7 @@ class TestImVoxelNet(unittest.TestCase):
         setup_seed(0)
         imvoxel_net_cfg = get_detector_cfg(
             'imvoxelnet/imvoxelnet_8xb4_kitti-3d-car.py')
+        imvoxel_net_cfg.n_voxels = [28, 32, 12]
         model = MODELS.build(imvoxel_net_cfg)
         num_gt_instance = 1
         packed_inputs = create_detector_inputs(
@@ -42,6 +43,8 @@ class TestImVoxelNet(unittest.TestCase):
             self.assertIn('labels_3d', results[0].pred_instances_3d)
 
             # save the memory
+            del results
+            torch.cuda.empty_cache()
             with torch.no_grad():
                 losses = model.forward(**data, mode='loss')
 
@@ -58,6 +61,7 @@ class TestImVoxelNet(unittest.TestCase):
         setup_seed(0)
         imvoxel_net_cfg = get_detector_cfg(
             'imvoxelnet/imvoxelnet_2xb4_sunrgbd-3d-10class.py')
+        imvoxel_net_cfg.n_voxels = [16, 16, 16]
         model = MODELS.build(imvoxel_net_cfg)
         num_gt_instance = 1
         packed_inputs = create_detector_inputs(
@@ -81,6 +85,8 @@ class TestImVoxelNet(unittest.TestCase):
             self.assertIn('labels_3d', results[0].pred_instances_3d)
 
             # save the memory
+            del results
+            torch.cuda.empty_cache()
             with torch.no_grad():
                 losses = model.forward(**data, mode='loss')
 

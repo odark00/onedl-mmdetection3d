@@ -1,7 +1,6 @@
-from typing import Union
-
 import torch
 from torch import Tensor
+from typing import Union
 
 from mmdet3d.registry import TASK_UTILS
 

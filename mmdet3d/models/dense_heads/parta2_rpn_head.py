@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Tuple
-
 import numpy as np
 import torch
 from mmengine import ConfigDict
 from mmengine.structures import InstanceData
 from torch import Tensor
+from typing import Dict, List, Tuple
 
 from mmdet3d.models.layers import nms_bev, nms_normal_bev
 from mmdet3d.registry import MODELS

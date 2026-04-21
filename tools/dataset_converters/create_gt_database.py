@@ -1,13 +1,12 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import pickle
-from os import path as osp
-
 import mmcv
 import mmengine
 import numpy as np
+import pickle
 from mmcv.ops import roi_align
 from mmdet.evaluation import bbox_overlaps
 from mmengine import print_log, track_iter_progress
+from os import path as osp
 from pycocotools import mask as maskUtils
 from pycocotools.coco import COCO
 

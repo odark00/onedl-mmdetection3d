@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List
-
 import torch
 from mmengine.device import get_device
 from torch import Tensor
 from torch.nn import functional as F
+from typing import Dict, List
 
 from mmdet3d.registry import MODELS
 from mmdet3d.structures import bbox_overlaps_nearest_3d

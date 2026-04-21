@@ -7,7 +7,6 @@
 
 import copy
 import logging
-
 import numpy as np
 import torch
 from mmcv.cnn import build_norm_layer
@@ -290,7 +289,7 @@ class CenterFormerBboxHead(nn.Module):
         return losses
 
     def predict(self, preds_dicts, batch_input_metas, **kwargs):
-        """decode, nms, then return the detection result.
+        """Decode, nms, then return the detection result.
 
         Additionally support double flip testing
         """

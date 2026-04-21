@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Sequence, Union
-
 from mmengine.model import BaseModule
 from torch import Tensor
 from torch import nn as nn
+from typing import Sequence, Union
 
 from mmdet3d.models.layers import DGCNNFAModule, DGCNNGFModule
 from mmdet3d.registry import MODELS

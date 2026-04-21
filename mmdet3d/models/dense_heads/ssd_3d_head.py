@@ -1,6 +1,4 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Optional, Tuple, Union
-
 import torch
 from mmcv.ops.nms import batched_nms
 from mmdet.models.utils import multi_apply
@@ -8,6 +6,7 @@ from mmengine import ConfigDict
 from mmengine.structures import InstanceData
 from torch import Tensor
 from torch.nn import functional as F
+from typing import List, Optional, Tuple, Union
 
 from mmdet3d.registry import MODELS
 from mmdet3d.structures import BaseInstance3DBoxes
@@ -29,7 +28,7 @@ class SSD3DHead(VoteHead):
         test_cfg (dict): Config for testing.
         vote_module_cfg (dict): Config of VoteModule for point-wise votes.
         vote_aggregation_cfg (dict): Config of vote aggregation layer.
-        pred_layer_cfg (dict): Config of classfication and regression
+        pred_layer_cfg (dict): Config of classification and regression
             prediction layers.
         conv_cfg (dict): Config of convolution in prediction layer.
         norm_cfg (dict): Config of BN in prediction layer.
@@ -468,7 +467,7 @@ class SSD3DHead(VoteHead):
 
         Returns:
             list[:obj:`InstanceData`]: List of processed predictions. Each
-            InstanceData cantains 3d Bounding boxes and corresponding
+            InstanceData contains 3d Bounding boxes and corresponding
             scores and labels.
         """
         # decode boxes

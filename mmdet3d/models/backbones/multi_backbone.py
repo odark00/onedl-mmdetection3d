@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-import warnings
-from typing import Dict, List, Optional, Sequence, Tuple, Union
-
 import torch
+import warnings
 from mmcv.cnn import ConvModule
 from mmengine.model import BaseModule
 from torch import Tensor, nn
+from typing import Dict, List, Optional, Sequence, Tuple, Union
 
 from mmdet3d.registry import MODELS
 from mmdet3d.utils import ConfigType, OptMultiConfig

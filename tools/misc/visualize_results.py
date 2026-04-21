@@ -1,6 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
-
 import mmengine
 from mmengine import Config
 

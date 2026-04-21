@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Sequence
-
 import torch
 from torch import Tensor, nn
+from typing import Dict, List, Sequence
 
 from mmdet3d.models.layers import PointFPModule, build_sa_module
 from mmdet3d.registry import MODELS

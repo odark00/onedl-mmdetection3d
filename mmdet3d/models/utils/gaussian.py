@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Tuple
-
 import numpy as np
 import torch
 from torch import Tensor
+from typing import List, Tuple
 
 
 def gaussian_2d(shape: Tuple[int, int], sigma: float = 1) -> np.ndarray:

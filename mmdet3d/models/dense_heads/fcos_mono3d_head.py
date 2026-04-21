@@ -1,6 +1,4 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Optional, Sequence, Tuple
-
 import numpy as np
 import torch
 from mmcv.cnn import Scale
@@ -9,6 +7,7 @@ from mmengine.model import normal_init
 from mmengine.structures import InstanceData
 from torch import Tensor
 from torch import nn as nn
+from typing import List, Optional, Sequence, Tuple
 
 from mmdet3d.models.layers import box3d_multiclass_nms
 from mmdet3d.registry import MODELS, TASK_UTILS

@@ -47,11 +47,8 @@ class TPVFormerDecoder(BaseModule):
         self.ce_input = ce_input
 
     def forward(self, tpv_list, points=None):
-        """
-        tpv_list[0]: bs, h*w, c
-        tpv_list[1]: bs, z*h, c
-        tpv_list[2]: bs, w*z, c
-        """
+        """tpv_list[0]: bs, h*w, c tpv_list[1]: bs, z*h, c tpv_list[2]: bs,
+        w*z, c."""
         tpv_hw, tpv_zh, tpv_wz = tpv_list[0], tpv_list[1], tpv_list[2]
         bs, _, c = tpv_hw.shape
         tpv_hw = tpv_hw.permute(0, 2, 1).reshape(bs, c, self.tpv_h, self.tpv_w)
@@ -141,11 +138,8 @@ class TPVFormerDecoder(BaseModule):
             return logits
 
     def predict(self, tpv_list, batch_data_samples):
-        """
-        tpv_list[0]: bs, h*w, c
-        tpv_list[1]: bs, z*h, c
-        tpv_list[2]: bs, w*z, c
-        """
+        """tpv_list[0]: bs, h*w, c tpv_list[1]: bs, z*h, c tpv_list[2]: bs,
+        w*z, c."""
         tpv_hw, tpv_zh, tpv_wz = tpv_list
         bs, _, c = tpv_hw.shape
         tpv_hw = tpv_hw.permute(0, 2, 1).reshape(bs, c, self.tpv_h, self.tpv_w)

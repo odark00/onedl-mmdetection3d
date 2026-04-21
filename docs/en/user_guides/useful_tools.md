@@ -135,7 +135,7 @@ comparisons, but double check it before you adopt it in technical reports or pap
 
 1. FLOPs are related to the input shape while parameters are not. The default
    input shape is (1, 40000, 4).
-2. Some operators are not counted into FLOPs like GN and custom operators. Refer to [`mmcv.cnn.get_model_complexity_info()`](https://github.com/open-mmlab/mmcv/blob/master/mmcv/cnn/utils/flops_counter.py) for details.
+2. Some operators are not counted into FLOPs like GN and custom operators. Refer to [`mmcv.cnn.get_model_complexity_info()`](https://github.com/vbti-development/onedl-mmcv/blob/master/mmcv/cnn/utils/flops_counter.py) for details.
 3. We currently only support FLOPs calculation of single-stage models with single-modality input (point cloud or image). We will support two-stage and multi-modality models in the future.
 
 &#8195;
@@ -202,7 +202,7 @@ python -u tools/dataset_converters/nuimage_converter.py --data-root ${DATA_ROOT}
 - `--nproc`: number of workers for data preparation, defaults to `4`. Larger number could reduce the preparation time as images are processed in parallel.
 - `--extra-tag`: extra tag of the annotations, defaults to `nuimages`. This can be used to separate different annotations processed in different time for study.
 
-More details could be referred to the [doc](https://mmdetection3d.readthedocs.io/en/latest/data_preparation.html) for dataset preparation and [README](https://github.com/open-mmlab/mmdetection3d/blob/main/configs/nuimages/README.md/) for nuImages dataset.
+More details could be referred to the [doc](https://mmdetection3d.readthedocs.io/en/latest/data_preparation.html) for dataset preparation and [README](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/configs/nuimages/README.md/) for nuImages dataset.
 
 &#8195;
 

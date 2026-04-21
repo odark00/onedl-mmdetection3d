@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Sequence
-
 from mmcv.cnn.bricks import ConvModule
 from torch import Tensor
+from typing import Sequence
 
 from mmdet3d.registry import MODELS
 from mmdet3d.utils.typing_utils import ConfigType

@@ -28,7 +28,7 @@ def test_smoke_bbox_coder():
     bboxes = bbox_coder.encode(locations, dimensions, orientations, img_metas)
     assert bboxes.tensor.shape == torch.Size([200, 7])
 
-    # specically designed to test orientation decode function's
+    # specially designed to test orientation decode function's
     # special cases.
     ori_vector = torch.tensor([[-0.9, -0.01], [-0.9, 0.01]])
     locations = torch.tensor([[15., 2., 1.], [15., 2., -1.]])

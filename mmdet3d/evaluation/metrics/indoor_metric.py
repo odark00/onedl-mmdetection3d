@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from collections import OrderedDict
-from typing import Dict, List, Optional, Sequence, Union
-
 import numpy as np
+from collections import OrderedDict
 from mmdet.evaluation import eval_map
 from mmengine.evaluator import BaseMetric
 from mmengine.logging import MMLogger
+from typing import Dict, List, Optional, Sequence, Union
 
 from mmdet3d.evaluation import indoor_eval
 from mmdet3d.registry import METRICS
@@ -92,7 +91,7 @@ class IndoorMetric(BaseMetric):
 
 @METRICS.register_module()
 class Indoor2DMetric(BaseMetric):
-    """indoor 2d predictions evaluation metric.
+    """Indoor 2d predictions evaluation metric.
 
     Args:
         iou_thr (float or List[float]): List of iou threshold when calculate

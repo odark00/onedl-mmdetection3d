@@ -1,7 +1,6 @@
 # modified from https://github.com/Haiyang-W/DSVT
-from math import ceil
-
 import torch
+from math import ceil
 from torch import nn
 
 from .utils import (PositionEmbeddingLearned, get_continous_inds,
@@ -387,8 +386,8 @@ class DSVTInputLayer(nn.Module):
             ndim = 3
 
         assert coors_in_win.size(1) == 3
-        z, y, x = coors_in_win[:, 0] - win_z / 2,\
-            coors_in_win[:, 1] - win_y / 2,\
+        z, y, x = coors_in_win[:, 0] - win_z / 2, \
+            coors_in_win[:, 1] - win_y / 2, \
             coors_in_win[:, 2] - win_x / 2
 
         if self.normalize_pos:

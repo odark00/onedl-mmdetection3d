@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from unittest import TestCase
-
 import torch
 from mmengine import Config
 from mmengine.structures import InstanceData
+from unittest import TestCase
 
 from mmdet3d import *  # noqa
 from mmdet3d.models.dense_heads import Anchor3DHead

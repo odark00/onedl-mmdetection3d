@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from unittest import TestCase
-
 import numpy as np
 import torch
+from unittest import TestCase
 
 from mmdet3d.models.dense_heads import MonoFlexHead
 

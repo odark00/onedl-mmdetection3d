@@ -17,7 +17,7 @@ class _Voxelization(Function):
                 max_points=35,
                 max_voxels=20000,
                 deterministic=True):
-        """convert kitti points(N, >=3) to voxels.
+        """Convert kitti points(N, >=3) to voxels.
 
         Args:
             points: [N, ndim] float tensor. points[:, :3] contain xyz points

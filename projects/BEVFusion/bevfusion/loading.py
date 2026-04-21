@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-from typing import Optional
-
 import mmcv
 import numpy as np
 from mmengine.fileio import get
+from typing import Optional
 
 from mmdet3d.datasets.transforms import LoadMultiViewImageFromFiles
 from mmdet3d.registry import TRANSFORMS

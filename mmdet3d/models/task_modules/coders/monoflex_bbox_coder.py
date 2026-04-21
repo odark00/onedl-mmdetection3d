@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Tuple
-
 import numpy as np
 import torch
 from mmdet.models.task_modules import BaseBBoxCoder
 from torch import Tensor
 from torch.nn import functional as F
+from typing import Dict, List, Tuple
 
 from mmdet3d.registry import TASK_UTILS
 from mmdet3d.structures.bbox_3d import BaseInstance3DBoxes
@@ -351,7 +350,7 @@ class MonoFlexCoder(BaseBBoxCoder):
                 shape: (N, 3)
             cam2imgs (torch.Tensor): Batch images' camera intrinsic matrix.
                 shape: kitti (N, 4, 4)  nuscenes (N, 3, 3)
-            downsample_ratio (int, opitonal): The stride of feature map.
+            downsample_ratio (int, optional): The stride of feature map.
                 Defaults: 4.
             group0_index(list[tuple[int]], optional): Keypoints group 0
                 of index to calculate the depth.
@@ -503,7 +502,7 @@ class MonoFlexCoder(BaseBBoxCoder):
 
     def combine_depths(self, depth: Tensor,
                        depth_uncertainty: Tensor) -> Tensor:
-        """Combine all the prediced depths with depth uncertainty.
+        """Combine all the predicted depths with depth uncertainty.
 
         Args:
             depth (torch.Tensor): Predicted depths of each object.

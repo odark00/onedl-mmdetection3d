@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import math
-from typing import Callable, Optional
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from typing import Callable, Optional
 
 
 class MLP(nn.Module):

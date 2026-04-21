@@ -1,14 +1,13 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-import os
-from os import path as osp
-from typing import Callable, List, Optional, Set, Union
-
 import numpy as np
+import os
 import torch
 from mmengine.dataset import BaseDataset
 from mmengine.logging import print_log
+from os import path as osp
 from terminaltables import AsciiTable
+from typing import Callable, List, Optional, Set, Union
 
 from mmdet3d.registry import DATASETS
 from mmdet3d.structures import get_box_type

@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import gc
 import io as sysio
-
 import numba
 import numpy as np
 
@@ -879,7 +878,7 @@ def kitti_eval(gt_annos,
 
 
 def kitti_eval_coco_style(gt_annos, dt_annos, current_classes):
-    """coco style evaluation of kitti.
+    """Coco style evaluation of kitti.
 
     Args:
         gt_annos (list[dict]): Contain gt information of each sample.

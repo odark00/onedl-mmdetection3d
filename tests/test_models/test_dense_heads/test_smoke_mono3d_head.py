@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from unittest import TestCase
-
 import numpy as np
 import torch
 from mmengine.structures import InstanceData
+from unittest import TestCase
 
 from mmdet3d.models.dense_heads import SMOKEMono3DHead
 from mmdet3d.structures import CameraInstance3DBoxes

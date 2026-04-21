@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import random
-from unittest import TestCase
-
 import numpy as np
 import pytest
+import random
 import torch
+from unittest import TestCase
 
 from mmdet3d.structures import PointData
 

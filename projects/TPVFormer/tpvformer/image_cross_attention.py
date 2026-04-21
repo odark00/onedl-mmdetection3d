@@ -1,8 +1,7 @@
 import math
-import warnings
-
 import torch
 import torch.nn as nn
+import warnings
 from mmcv.ops.multi_scale_deform_attn import (
     MultiScaleDeformableAttnFunction, multi_scale_deformable_attn_pytorch)
 from mmengine.model import BaseModule, constant_init, xavier_init

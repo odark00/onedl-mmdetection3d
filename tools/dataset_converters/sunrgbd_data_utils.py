@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from concurrent import futures as futures
-from os import path as osp
-
 import mmcv
 import mmengine
 import numpy as np
+from concurrent import futures as futures
+from os import path as osp
 from scipy import io as sio
 
 

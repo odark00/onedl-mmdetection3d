@@ -1,14 +1,13 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import tempfile
-from os import path as osp
-from typing import Dict, List, Optional, Sequence, Tuple, Union
-
 import mmengine
 import numpy as np
+import tempfile
 import torch
 from mmengine import load
 from mmengine.evaluator import BaseMetric
 from mmengine.logging import MMLogger, print_log
+from os import path as osp
+from typing import Dict, List, Optional, Sequence, Tuple, Union
 
 from mmdet3d.evaluation import kitti_eval
 from mmdet3d.registry import METRICS

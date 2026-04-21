@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Sequence, Union
-
 import mmengine
 import numpy as np
 import torch
 from mmcv import BaseTransform
 from mmengine.structures import InstanceData
 from numpy import dtype
+from typing import List, Sequence, Union
 
 from mmdet3d.registry import TRANSFORMS
 from mmdet3d.structures import BaseInstance3DBoxes, Det3DDataSample, PointData

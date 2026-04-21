@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import warnings
 from abc import ABCMeta
-from typing import Optional, Tuple
-
 from mmengine.model import BaseModule
 from torch import Tensor
+from typing import Optional, Tuple
 
 from mmdet3d.utils import OptMultiConfig
 

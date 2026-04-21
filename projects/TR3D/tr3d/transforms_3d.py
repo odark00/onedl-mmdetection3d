@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Tuple, Union
-
 import numpy as np
+from typing import Optional, Tuple, Union
 
 from mmdet3d.datasets import PointSample
 from mmdet3d.registry import TRANSFORMS

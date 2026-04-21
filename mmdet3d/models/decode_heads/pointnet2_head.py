@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Sequence, Tuple
-
 from mmcv.cnn.bricks import ConvModule
 from torch import Tensor
 from torch import nn as nn
+from typing import List, Sequence, Tuple
 
 from mmdet3d.models.layers import PointFPModule
 from mmdet3d.registry import MODELS

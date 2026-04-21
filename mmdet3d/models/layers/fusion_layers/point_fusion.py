@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Tuple, Union
-
 import torch
 from mmcv.cnn import ConvModule
 from mmengine.model import BaseModule
 from torch import Tensor
 from torch import nn as nn
 from torch.nn import functional as F
+from typing import List, Tuple, Union
 
 from mmdet3d.registry import MODELS
 from mmdet3d.structures.bbox_3d import (get_proj_mat_by_coord_type,

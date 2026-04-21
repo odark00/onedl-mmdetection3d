@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from enum import IntEnum, unique
-from typing import Optional, Sequence, Union
-
 import numpy as np
 import torch
+from enum import IntEnum, unique
 from torch import Tensor
+from typing import Optional, Sequence, Union
 
 from .base_box3d import BaseInstance3DBoxes
 from .cam_box3d import CameraInstance3DBoxes

@@ -13,10 +13,9 @@ except ImportError:
         'Please run "pip install waymo-open-dataset-tf-2-1-0==1.2.0" '
         'to install the official devkit first.')
 
-from typing import List
-
 import mmengine
 from mmengine import print_log
+from typing import List
 
 
 class Prediction2Waymo(object):
@@ -72,7 +71,7 @@ class Prediction2Waymo(object):
 
     def parse_objects_from_origin(self, result: dict, contextname: str,
                                   timestamp: str) -> Objects:
-        """Parse obejcts from the original prediction results.
+        """Parse objects from the original prediction results.
 
         Args:
             result (dict): The original prediction results.

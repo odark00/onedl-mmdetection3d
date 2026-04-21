@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from unittest import TestCase
-
 import pytest
 import torch
+from unittest import TestCase
 
 from mmdet3d import *  # noqa
 from mmdet3d.models.dense_heads import FCAF3DHead

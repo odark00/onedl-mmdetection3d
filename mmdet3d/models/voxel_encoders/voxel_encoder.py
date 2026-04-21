@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Sequence, Tuple
-
 import torch
 from mmcv.cnn import build_norm_layer
 from mmcv.ops import DynamicScatter
 from torch import Tensor, nn
+from typing import Optional, Sequence, Tuple
 
 from mmdet3d.registry import MODELS
 from .utils import VFELayer, get_paddings_indicator
@@ -52,7 +51,7 @@ class DynamicSimpleVFE(nn.Module):
     But the number of points in a voxel is dynamic and varies.
 
     Args:
-        voxel_size (tupe[float]): Size of a single voxel
+        voxel_size (tuple[float]): Size of a single voxel
         point_cloud_range (tuple[float]): Range of the point cloud and voxels
     """
 

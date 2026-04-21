@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Optional, Tuple, Union
-
 import torch
 from mmengine.structures import InstanceData
+from typing import Dict, List, Optional, Tuple, Union
 
 from mmdet3d.structures import Det3DDataSample
 

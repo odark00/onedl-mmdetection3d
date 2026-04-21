@@ -64,6 +64,7 @@ class HungarianAssigner3D(BaseAssigner):
                gt_bboxes_ignore=None,
                eps=1e-7):
         """Computes one-to-one matching based on the weighted costs.
+
         This method assign each query prediction to a ground truth or
         background. The `assigned_gt_inds` with -1 means don't care,
         0 means negative sample, and positive number is the index (1-based)

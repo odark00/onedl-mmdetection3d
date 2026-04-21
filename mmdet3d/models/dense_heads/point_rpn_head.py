@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Optional, Tuple
-
 import torch
 from mmdet.models.utils import multi_apply
 from mmengine.model import BaseModule
 from mmengine.structures import InstanceData
 from torch import Tensor
 from torch import nn as nn
+from typing import Dict, List, Optional, Tuple
 
 from mmdet3d.models.layers import nms_bev, nms_normal_bev
 from mmdet3d.registry import MODELS, TASK_UTILS

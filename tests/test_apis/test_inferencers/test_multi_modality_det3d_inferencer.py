@@ -1,13 +1,12 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os.path as osp
-import tempfile
-from unittest import TestCase
-
 import mmcv
 import mmengine
 import numpy as np
+import os.path as osp
+import tempfile
 import torch
 from mmengine.utils import is_list_of
+from unittest import TestCase
 
 from mmdet3d.apis import MultiModalityDet3DInferencer
 from mmdet3d.structures import Det3DDataSample
@@ -26,7 +25,7 @@ class TestMultiModalityDet3DInferencer(TestCase):
         MultiModalityDet3DInferencer(
             'configs/mvxnet/mvxnet_fpn_dv_second_secfpn_8xb2-80e_kitti-3d-3class.py',  # noqa
             weights=  # noqa
-            'https://download.openmmlab.com/mmdetection3d/v1.0.0_models/mvxnet/dv_mvx-fpn_second_secfpn_adamw_2x8_80e_kitti-3d-3class/dv_mvx-fpn_second_secfpn_adamw_2x8_80e_kitti-3d-3class_20210831_060805-83442923.pth'  # noqa
+            'https://mmassets.onedl.ai/mmdetection3d/v1.0.0_models/mvxnet/dv_mvx-fpn_second_secfpn_adamw_2x8_80e_kitti-3d-3class/dv_mvx-fpn_second_secfpn_adamw_2x8_80e_kitti-3d-3class_20210831_060805-83442923.pth'  # noqa
         )
 
     def assert_predictions_equal(self, preds1, preds2):
@@ -91,7 +90,7 @@ class TestMultiModalityDet3DInferencer(TestCase):
         inputs = dict(
             points='demo/data/kitti/000008.bin',
             img='demo/data/kitti/000008.png',
-            infos='demo/data/kitti/000008.pkl'),
+            infos='demo/data/kitti/000008.pkl')
         # img_out_dir
         with tempfile.TemporaryDirectory() as tmp_dir:
             self.inferencer(inputs, out_dir=tmp_dir)

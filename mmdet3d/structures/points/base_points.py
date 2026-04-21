@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import warnings
-from abc import abstractmethod
-from typing import Iterator, Optional, Sequence, Union
-
 import numpy as np
 import torch
+import warnings
+from abc import abstractmethod
 from torch import Tensor
+from typing import Iterator, Optional, Sequence, Union
 
 from mmdet3d.structures.bbox_3d.utils import rotation_3d_in_axis
 

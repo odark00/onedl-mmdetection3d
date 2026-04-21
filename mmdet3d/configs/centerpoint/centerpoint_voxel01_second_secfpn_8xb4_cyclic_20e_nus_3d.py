@@ -1,11 +1,13 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+
 from mmengine import read_base
 
 with read_base():
-    from .._base_.datasets.nus_3d import *
-    from .._base_.models.centerpoint_voxel01_second_secfpn_nus import *
-    from .._base_.schedules.cyclic_20e import *
-    from .._base_.default_runtime import *
+
+    from .._base_.datasets.nus_3d import *  # noqa: F403
+    from .._base_.models.centerpoint_voxel01_second_secfpn_nus import *  # noqa: F403, E501
+    from .._base_.schedules.cyclic_20e import *  # noqa: F403
+    from .._base_.default_runtime import *  # noqa: F403
 
 from mmengine.dataset.sampler import DefaultSampler
 
@@ -31,9 +33,9 @@ class_names = [
     'car', 'truck', 'construction_vehicle', 'bus', 'trailer', 'barrier',
     'motorcycle', 'bicycle', 'pedestrian', 'traffic_cone'
 ]
-data_prefix.update(
+data_prefix.update(  # noqa: F405
     dict(pts='samples/LIDAR_TOP', img='', sweeps='sweeps/LIDAR_TOP'))
-model.update(
+model.update(  # noqa: F405
     dict(
         data_preprocessor=dict(
             voxel_layer=dict(point_cloud_range=point_cloud_range)),
@@ -147,7 +149,7 @@ test_pipeline = [
     dict(type=Pack3DDetInputs, keys=['points'])
 ]
 
-train_dataloader.merge(
+train_dataloader.merge(  # noqa: F405
     dict(
         _delete_=True,
         batch_size=4,
@@ -163,19 +165,19 @@ train_dataloader.merge(
                 pipeline=train_pipeline,
                 metainfo=dict(classes=class_names),
                 test_mode=False,
-                data_prefix=data_prefix,
+                data_prefix=data_prefix,  # noqa: F405
                 use_valid_flag=True,
                 # we use box_type_3d='LiDAR' in kitti and nuscenes dataset
                 # and box_type_3d='Depth' in sunrgbd and scannet dataset.
                 box_type_3d='LiDAR',
                 backend_args=backend_args))))
-test_dataloader.update(
+test_dataloader.update(  # noqa: F405
     dict(
         dataset=dict(
             pipeline=test_pipeline, metainfo=dict(classes=class_names))))
-val_dataloader.update(
+val_dataloader.update(  # noqa: F405
     dict(
         dataset=dict(
             pipeline=test_pipeline, metainfo=dict(classes=class_names))))
 
-train_cfg.update(dict(val_interval=20))
+train_cfg.update(dict(val_interval=20))  # noqa: F405

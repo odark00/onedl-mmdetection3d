@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from unittest import TestCase
-
 import torch
+from unittest import TestCase
 
 from mmdet3d.models.decode_heads import DGCNNHead
 from mmdet3d.structures import Det3DDataSample, PointData

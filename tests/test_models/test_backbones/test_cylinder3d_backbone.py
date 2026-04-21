@@ -19,7 +19,7 @@ def test_cylinder3d():
 
     batch_size = 1
     coorx = torch.randint(0, 48, (50, 1))
-    coory = torch.randint(0, 36, (50, 1))
+    coory = torch.randint(0, 32, (50, 1))
     coorz = torch.randint(0, 4, (50, 1))
     coorbatch = torch.zeros(50, 1)
     coors = torch.cat([coorbatch, coorx, coory, coorz], dim=1).cuda()

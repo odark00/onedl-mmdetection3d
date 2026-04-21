@@ -234,7 +234,7 @@ int hard_voxelize_gpu(const at::Tensor& points, at::Tensor& voxels,
                       const std::vector<float> coors_range,
                       const int max_points, const int max_voxels,
                       const int NDim = 3) {
-  // current version tooks about 0.04s for one frame on cpu
+  // current version took about 0.04s for one frame on cpu
   // check device
   CHECK_INPUT(points);
 
@@ -486,7 +486,7 @@ void dynamic_voxelize_gpu(const at::Tensor& points, at::Tensor& coors,
                           const std::vector<float> voxel_size,
                           const std::vector<float> coors_range,
                           const int NDim = 3) {
-  // current version tooks about 0.04s for one frame on cpu
+  // current version took about 0.04s for one frame on cpu
   // check device
   CHECK_INPUT(points);
 

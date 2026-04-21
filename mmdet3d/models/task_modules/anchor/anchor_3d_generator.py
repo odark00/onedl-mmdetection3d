@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Tuple, Union
-
 import mmengine
 import torch
 from torch import Tensor
+from typing import List, Tuple, Union
 
 from mmdet3d.registry import TASK_UTILS
 

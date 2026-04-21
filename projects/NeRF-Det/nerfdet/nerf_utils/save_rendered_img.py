@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os
-
 import cv2
 import numpy as np
+import os
 import torch
 from skimage.metrics import structural_similarity
 

@@ -1,7 +1,5 @@
 # modify from https://github.com/mit-han-lab/bevfusion
 import copy
-from typing import List, Tuple
-
 import numpy as np
 import torch
 import torch.nn.functional as F
@@ -12,6 +10,7 @@ from mmdet.models.task_modules import (AssignResult, PseudoSampler,
 from mmdet.models.utils import multi_apply
 from mmengine.structures import InstanceData
 from torch import nn
+from typing import List, Tuple
 
 from mmdet3d.models import circle_nms, draw_heatmap_gaussian, gaussian_radius
 from mmdet3d.models.dense_heads.centerpoint_head import SeparateHead
@@ -151,7 +150,7 @@ class TransFusionHead(nn.Module):
         self.init_weights()
         self._init_assigner_sampler()
 
-        # Position Embedding for Cross-Attention, which is re-used during training # noqa: E501
+        # Position Embedding for Cross-Attention, which is reused during training # noqa: E501
         x_size = self.test_cfg['grid_size'][0] // self.test_cfg[
             'out_size_factor']
         y_size = self.test_cfg['grid_size'][1] // self.test_cfg[
@@ -204,6 +203,7 @@ class TransFusionHead(nn.Module):
 
     def forward_single(self, inputs, metas):
         """Forward function for CenterPoint.
+
         Args:
             inputs (torch.Tensor): Input feature map with the shape of
                 [B, 512, 128(H), 128(W)]. (consistent with L748)
@@ -236,15 +236,27 @@ class TransFusionHead(nn.Module):
                   padding:(-padding)] = local_max_inner
         # for Pedestrian & Traffic_cone in nuScenes
         if self.test_cfg['dataset'] == 'nuScenes':
-            local_max[:, 8, ] = F.max_pool2d(
+            local_max[
+                :,
+                8,
+            ] = F.max_pool2d(
                 heatmap[:, 8], kernel_size=1, stride=1, padding=0)
-            local_max[:, 9, ] = F.max_pool2d(
+            local_max[
+                :,
+                9,
+            ] = F.max_pool2d(
                 heatmap[:, 9], kernel_size=1, stride=1, padding=0)
         elif self.test_cfg[
                 'dataset'] == 'Waymo':  # for Pedestrian & Cyclist in Waymo
-            local_max[:, 1, ] = F.max_pool2d(
+            local_max[
+                :,
+                1,
+            ] = F.max_pool2d(
                 heatmap[:, 1], kernel_size=1, stride=1, padding=0)
-            local_max[:, 2, ] = F.max_pool2d(
+            local_max[
+                :,
+                2,
+            ] = F.max_pool2d(
                 heatmap[:, 2], kernel_size=1, stride=1, padding=0)
         heatmap = heatmap * (heatmap == local_max)
         heatmap = heatmap.view(batch_size, heatmap.shape[1], -1)
@@ -610,9 +622,11 @@ class TransFusionHead(nn.Module):
             bboxes_tensor_layer = bboxes_tensor[self.num_proposals *
                                                 idx_layer:self.num_proposals *
                                                 (idx_layer + 1), :]
-            score_layer = score[..., self.num_proposals *
-                                idx_layer:self.num_proposals *
-                                (idx_layer + 1), ]
+            score_layer = score[
+                ...,
+                self.num_proposals * idx_layer:self.num_proposals *
+                (idx_layer + 1),
+            ]
 
             if self.train_cfg.assigner.type == 'HungarianAssigner3D':
                 assign_result = self.bbox_assigner.assign(
@@ -799,16 +813,21 @@ class TransFusionHead(nn.Module):
             else:
                 prefix = f'layer_{idx_layer}'
 
-            layer_labels = labels[..., idx_layer *
-                                  self.num_proposals:(idx_layer + 1) *
-                                  self.num_proposals, ].reshape(-1)
+            layer_labels = labels[
+                ...,
+                idx_layer * self.num_proposals:(idx_layer + 1) *
+                self.num_proposals,
+            ].reshape(-1)
             layer_label_weights = label_weights[
-                ..., idx_layer * self.num_proposals:(idx_layer + 1) *
-                self.num_proposals, ].reshape(-1)
-            layer_score = preds_dict['heatmap'][..., idx_layer *
-                                                self.num_proposals:(idx_layer +
-                                                                    1) *
-                                                self.num_proposals, ]
+                ...,
+                idx_layer * self.num_proposals:(idx_layer + 1) *
+                self.num_proposals,
+            ].reshape(-1)
+            layer_score = preds_dict['heatmap'][
+                ...,
+                idx_layer * self.num_proposals:(idx_layer + 1) *
+                self.num_proposals,
+            ]
             layer_cls_score = layer_score.permute(0, 2, 1).reshape(
                 -1, self.num_classes)
             layer_loss_cls = self.loss_cls(
@@ -818,28 +837,35 @@ class TransFusionHead(nn.Module):
                 avg_factor=max(num_pos, 1),
             )
 
-            layer_center = preds_dict['center'][..., idx_layer *
-                                                self.num_proposals:(idx_layer +
-                                                                    1) *
-                                                self.num_proposals, ]
-            layer_height = preds_dict['height'][..., idx_layer *
-                                                self.num_proposals:(idx_layer +
-                                                                    1) *
-                                                self.num_proposals, ]
-            layer_rot = preds_dict['rot'][..., idx_layer *
-                                          self.num_proposals:(idx_layer + 1) *
-                                          self.num_proposals, ]
-            layer_dim = preds_dict['dim'][..., idx_layer *
-                                          self.num_proposals:(idx_layer + 1) *
-                                          self.num_proposals, ]
+            layer_center = preds_dict['center'][
+                ...,
+                idx_layer * self.num_proposals:(idx_layer + 1) *
+                self.num_proposals,
+            ]
+            layer_height = preds_dict['height'][
+                ...,
+                idx_layer * self.num_proposals:(idx_layer + 1) *
+                self.num_proposals,
+            ]
+            layer_rot = preds_dict['rot'][
+                ...,
+                idx_layer * self.num_proposals:(idx_layer + 1) *
+                self.num_proposals,
+            ]
+            layer_dim = preds_dict['dim'][
+                ...,
+                idx_layer * self.num_proposals:(idx_layer + 1) *
+                self.num_proposals,
+            ]
             preds = torch.cat(
                 [layer_center, layer_height, layer_dim, layer_rot],
                 dim=1).permute(0, 2, 1)  # [BS, num_proposals, code_size]
             if 'vel' in preds_dict.keys():
-                layer_vel = preds_dict['vel'][..., idx_layer *
-                                              self.num_proposals:(idx_layer +
-                                                                  1) *
-                                              self.num_proposals, ]
+                layer_vel = preds_dict['vel'][
+                    ...,
+                    idx_layer * self.num_proposals:(idx_layer + 1) *
+                    self.num_proposals,
+                ]
                 preds = torch.cat([
                     layer_center, layer_height, layer_dim, layer_rot, layer_vel
                 ],
@@ -847,16 +873,20 @@ class TransFusionHead(nn.Module):
                                       0, 2,
                                       1)  # [BS, num_proposals, code_size]
             code_weights = self.train_cfg.get('code_weights', None)
-            layer_bbox_weights = bbox_weights[:, idx_layer *
-                                              self.num_proposals:(idx_layer +
-                                                                  1) *
-                                              self.num_proposals, :, ]
+            layer_bbox_weights = bbox_weights[
+                :,
+                idx_layer * self.num_proposals:(idx_layer + 1) *
+                self.num_proposals,
+                :,
+            ]
             layer_reg_weights = layer_bbox_weights * layer_bbox_weights.new_tensor(  # noqa: E501
                 code_weights)
-            layer_bbox_targets = bbox_targets[:, idx_layer *
-                                              self.num_proposals:(idx_layer +
-                                                                  1) *
-                                              self.num_proposals, :, ]
+            layer_bbox_targets = bbox_targets[
+                :,
+                idx_layer * self.num_proposals:(idx_layer + 1) *
+                self.num_proposals,
+                :,
+            ]
             layer_loss_bbox = self.loss_bbox(
                 preds,
                 layer_bbox_targets,

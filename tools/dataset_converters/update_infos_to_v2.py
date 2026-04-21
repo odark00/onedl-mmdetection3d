@@ -10,13 +10,12 @@ Example:
 
 import argparse
 import copy
-import time
-from os import path as osp
-from pathlib import Path
-
 import mmengine
 import numpy as np
+import time
 from nuscenes.nuscenes import NuScenes
+from os import path as osp
+from pathlib import Path
 
 from mmdet3d.datasets.convert_utils import (convert_annos,
                                             get_kitti_style_2d_boxes,

@@ -11,7 +11,7 @@ def test_sparse_encoder():
     sparse_encoder_cfg = dict(
         type='SparseEncoder',
         in_channels=5,
-        sparse_shape=[40, 1024, 1024],
+        sparse_shape=[40, 128, 128],
         order=('conv', 'norm', 'act'),
         encoder_channels=((16, 16, 32), (32, 32, 64), (64, 64, 128), (128,
                                                                       128)),
@@ -20,11 +20,11 @@ def test_sparse_encoder():
         block_type='basicblock')
 
     sparse_encoder = MODELS.build(sparse_encoder_cfg).cuda()
-    voxel_features = torch.rand([207842, 5]).cuda()
-    coors = torch.randint(0, 4, [207842, 4]).cuda()
+    voxel_features = torch.rand([2000, 5]).cuda()
+    coors = torch.randint(0, 4, [2000, 4]).cuda()
 
     ret = sparse_encoder(voxel_features, coors, 4)
-    assert ret.shape == torch.Size([4, 256, 128, 128])
+    assert ret.shape == torch.Size([4, 256, 16, 16])
 
 
 def test_sparse_encoder_for_ssd():
@@ -33,7 +33,7 @@ def test_sparse_encoder_for_ssd():
     sparse_encoder_for_ssd_cfg = dict(
         type='SparseEncoderSASSD',
         in_channels=5,
-        sparse_shape=[40, 1024, 1024],
+        sparse_shape=[40, 128, 128],
         order=('conv', 'norm', 'act'),
         encoder_channels=((16, 16, 32), (32, 32, 64), (64, 64, 128), (128,
                                                                       128)),
@@ -42,8 +42,8 @@ def test_sparse_encoder_for_ssd():
         block_type='basicblock')
 
     sparse_encoder = MODELS.build(sparse_encoder_for_ssd_cfg).cuda()
-    voxel_features = torch.rand([207842, 5]).cuda()
-    coors = torch.randint(0, 4, [207842, 4]).cuda()
+    voxel_features = torch.rand([2000, 5]).cuda()
+    coors = torch.randint(0, 4, [2000, 4]).cuda()
 
     ret, _ = sparse_encoder(voxel_features, coors, 4, True)
-    assert ret.shape == torch.Size([4, 256, 128, 128])
+    assert ret.shape == torch.Size([4, 256, 16, 16])

@@ -22,13 +22,12 @@ def test_SparseBasicBlock():
          [23.482342, 6.5036807, 0.5806964, 0.35]],
         dtype=torch.float32).cuda()  # n, point_features
     coordinates = torch.tensor(
-        [[0, 12, 819, 131], [0, 16, 750, 136], [1, 16, 705, 232],
-         [1, 35, 930, 469]],
+        [[0, 12, 81, 31], [0, 16, 75, 36], [1, 16, 70, 32], [1, 35, 93, 46]],
         dtype=torch.int32).cuda()  # n, 4(batch, ind_x, ind_y, ind_z)
 
     # test
     input_sp_tensor = SparseConvTensor(voxel_features, coordinates,
-                                       [41, 1600, 1408], 2)
+                                       [41, 200, 176], 2)
     self = SparseBasicBlock(
         4,
         4,
@@ -60,13 +59,12 @@ def test_make_sparse_convmodule():
          [23.482342, 6.5036807, 0.5806964, 0.35]],
         dtype=torch.float32).cuda()  # n, point_features
     coordinates = torch.tensor(
-        [[0, 12, 819, 131], [0, 16, 750, 136], [1, 16, 705, 232],
-         [1, 35, 930, 469]],
+        [[0, 12, 81, 31], [0, 16, 75, 36], [1, 16, 70, 32], [1, 35, 93, 46]],
         dtype=torch.int32).cuda()  # n, 4(batch, ind_x, ind_y, ind_z)
 
     # test
     input_sp_tensor = SparseConvTensor(voxel_features, coordinates,
-                                       [41, 1600, 1408], 2)
+                                       [41, 200, 176], 2)
 
     sparse_block0 = make_sparse_convmodule(
         4,

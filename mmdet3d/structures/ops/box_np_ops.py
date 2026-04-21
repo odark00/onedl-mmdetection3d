@@ -132,7 +132,9 @@ def depth_to_points(depth, trunc_pixel):
     Returns:
         np.ndarray: Points in camera coordinates.
     """
-    num_pts = np.sum(depth[trunc_pixel:, ] > 0.1)
+    num_pts = np.sum(depth[
+        trunc_pixel:,
+    ] > 0.1)
     points = np.zeros((num_pts, 3), dtype=depth.dtype)
     x = np.array([0, 0, 1], dtype=depth.dtype)
     k = 0
@@ -330,7 +332,7 @@ def box3d_to_bbox(box3d, P2):
 
 
 def corner_to_surfaces_3d(corners):
-    """convert 3d box corners from corner function above to surfaces that
+    """Convert 3d box corners from corner function above to surfaces that
     normal vectors all direct to internal.
 
     Args:
@@ -462,7 +464,7 @@ def center_to_minmax_2d(centers, dims, origin=0.5):
 
 
 def rbbox2d_to_near_bbox(rbboxes):
-    """convert rotated bbox to nearest 'standing' or 'lying' bbox.
+    """Convert rotated bbox to nearest 'standing' or 'lying' bbox.
 
     Args:
         rbboxes (np.ndarray): Rotated bboxes with shape of
@@ -538,7 +540,7 @@ def projection_matrix_to_CRT_kitti(proj):
         proj (p.array, shape=[4, 4]): Intrinsics of camera.
 
     Returns:
-        tuple[np.ndarray]: Splited matrix of C, R and T.
+        tuple[np.ndarray]: Split matrix of C, R and T.
     """
 
     CR = proj[0:3, 0:3]

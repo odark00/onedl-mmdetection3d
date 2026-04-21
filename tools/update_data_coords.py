@@ -1,9 +1,9 @@
+# Copyright (c) OpenMMLab. All rights reserved.
 import argparse
-import time
-from os import path as osp
-
 import mmengine
 import numpy as np
+import time
+from os import path as osp
 
 from mmdet3d.structures import limit_period
 

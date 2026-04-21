@@ -1,6 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
-
 import torch
 from mmengine.runner import save_checkpoint
 from torch import nn as nn

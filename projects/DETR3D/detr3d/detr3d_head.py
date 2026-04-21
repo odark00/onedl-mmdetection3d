@@ -1,6 +1,4 @@
 import copy
-from typing import Dict, List, Tuple
-
 import torch
 import torch.nn as nn
 from mmcv.cnn import Linear
@@ -11,6 +9,7 @@ from mmdet.utils import InstanceList, OptInstanceList, reduce_mean
 from mmengine.model import bias_init_with_prob
 from mmengine.structures import InstanceData
 from torch import Tensor
+from typing import Dict, List, Tuple
 
 from mmdet3d.registry import MODELS, TASK_UTILS
 from .util import normalize_bbox

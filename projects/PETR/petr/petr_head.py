@@ -8,7 +8,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 # ------------------------------------------------------------------------
 import math
-
 import numpy as np
 import torch
 import torch.nn as nn
@@ -395,7 +394,7 @@ class PETRHead(AnchorFreeHead):
 
     def _load_from_state_dict(self, state_dict, prefix, local_metadata, strict,
                               missing_keys, unexpected_keys, error_msgs):
-        """load checkpoints."""
+        """Load checkpoints."""
         # NOTE here use `AnchorFreeHead` instead of `TransformerHead`,
         # since `AnchorFreeHead._load_from_state_dict` should not be
         # called here. Invoking the default `Module._load_from_state_dict`
@@ -721,6 +720,7 @@ class PETRHead(AnchorFreeHead):
                      preds_dicts,
                      gt_bboxes_ignore=None):
         """"Loss function.
+
         Args:
             gt_bboxes_list (list[Tensor]): Ground truth bboxes for each image
                 with shape (num_gts, 4) in [tl_x, tl_y, br_x, br_y] format.

@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
-from os import path as osp
-
 from mmengine import print_log
+from os import path as osp
 
 from tools.dataset_converters import indoor_converter as indoor
 from tools.dataset_converters import kitti_converter as kitti

@@ -10,7 +10,7 @@ To begin with, we need to download the raw data from ScanNet's [official website
 
 Due to different ways of organizing the raw data in different datasets, we typically need to collect the useful data information with a .pkl or .json file.
 
-So after getting all the raw data ready, we can follow the instructions presented in [ScanNet README doc](https://github.com/open-mmlab/mmdetection3d/blob/master/data/scannet/README.md/) to generate data infos.
+So after getting all the raw data ready, we can follow the instructions presented in [ScanNet README doc](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/data/scannet/README.md/) to generate data infos.
 
 Afterwards, the related folder structure should be as follows:
 
@@ -81,7 +81,7 @@ In addition, you can also evaluate a specific model checkpoint after training is
 
 If you would like to only conduct inference or test the model performance on the online benchmark,
 you should change `ann_file='scannet_infos_val.pkl'` to `ann_file='scannet_infos_test.pkl'` in the
-ScanNet dataset's [config](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/configs/_base_/datasets/scannet-seg.py#L129). Remember to
+ScanNet dataset's [config](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/configs/_base_/datasets/scannet-seg.py#L129). Remember to
 specify the `submission_prefix` in the `test_evaluator`,
 e.g., adding `test_evaluator = dict(type='SegMetric', submission_prefix=work_dirs/pointnet2_ssg/test_submission`) or just add `--cfg-options test_evaluator.submission_prefix=work_dirs/pointnet2_ssg/test_submission` in the end of command.
 After generating the results, you can basically compress the folder and upload to the [ScanNet evaluation server](http://kaldir.vc.in.tum.de/scannet_benchmark/semantic_label_3d).

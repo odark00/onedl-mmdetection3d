@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import unittest
-
 import pytest
 import torch
+import unittest
 from mmengine import DefaultScope
 
 from mmdet3d.registry import MODELS

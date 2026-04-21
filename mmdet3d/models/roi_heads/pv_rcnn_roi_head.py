@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Optional
-
 import torch
 from mmdet.models.task_modules import AssignResult
 from mmdet.models.task_modules.samplers import SamplingResult
 from torch.nn import functional as F
+from typing import List, Optional
 
 from mmdet3d.models.roi_heads.base_3droi_head import Base3DRoIHead
 from mmdet3d.registry import MODELS

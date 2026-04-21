@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Tuple
-
 import torch
 from torch import Tensor
+from typing import List, Tuple
 
 from mmdet3d.structures import CameraInstance3DBoxes, points_cam2img
 

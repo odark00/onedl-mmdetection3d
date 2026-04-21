@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from unittest import TestCase
-
 import numpy as np
 import pytest
 from mmengine import DefaultScope
+from unittest import TestCase
 
 from mmdet3d.datasets.transforms import *  # noqa
 from mmdet3d.registry import TRANSFORMS

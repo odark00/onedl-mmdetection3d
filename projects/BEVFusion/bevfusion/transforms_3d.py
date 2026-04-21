@@ -1,10 +1,9 @@
 # modify from https://github.com/mit-han-lab/bevfusion
-from typing import Any, Dict
-
 import numpy as np
 import torch
 from mmcv.transforms import BaseTransform
 from PIL import Image
+from typing import Any, Dict
 
 from mmdet3d.datasets import GlobalRotScaleTrans
 from mmdet3d.registry import TRANSFORMS

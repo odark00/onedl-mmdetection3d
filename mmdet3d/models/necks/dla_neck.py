@@ -1,6 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import math
-
 import numpy as np
 from mmcv.cnn import ConvModule, build_conv_layer
 from mmengine.model import BaseModule

@@ -2,10 +2,10 @@
 from mmengine import read_base
 
 with read_base():
-    from .._base_.datasets.kitti_mono3d import *
-    from .._base_.models.pgd import *
-    from .._base_.schedules.mmdet_schedule_1x import *
-    from .._base_.default_runtime import *
+    from .._base_.datasets.kitti_mono3d import *  # noqa: F403
+    from .._base_.models.pgd import *  # noqa: F403
+    from .._base_.schedules.mmdet_schedule_1x import *  # noqa: F403
+    from .._base_.default_runtime import *  # noqa: F403
 
 from mmcv.transforms.processing import Resize
 from mmengine.optim.scheduler.lr_scheduler import LinearLR, MultiStepLR
@@ -21,7 +21,7 @@ from mmdet3d.models.losses.uncertain_smooth_l1_loss import \
 from mmdet3d.models.task_modules.coders.pgd_bbox_coder import PGDBBoxCoder
 
 # model settings
-model.update(
+model.update(  # noqa: F405
     dict(
         data_preprocessor=dict(
             type=Det3DDataPreprocessor,
@@ -123,13 +123,14 @@ test_pipeline = [
     dict(type=Pack3DDetInputs, keys=['img'])
 ]
 
-train_dataloader.update(
+train_dataloader.update(  # noqa: F405
     dict(batch_size=3, num_workers=3, dataset=dict(pipeline=train_pipeline)))
-test_dataloader.update(dict(dataset=dict(pipeline=test_pipeline)))
-val_dataloader.update(dict(dataset=dict(pipeline=test_pipeline)))
+test_dataloader.update(  # noqa: F405
+    dict(dataset=dict(pipeline=test_pipeline)))
+val_dataloader.update(dict(dataset=dict(pipeline=test_pipeline)))  # noqa: F405
 
 # optimizer
-optim_wrapper.update(
+optim_wrapper.update(  # noqa: F405
     dict(
         optimizer=dict(lr=0.001),
         paramwise_cfg=dict(bias_lr_mult=2., bias_decay_mult=0.),
@@ -148,5 +149,5 @@ param_scheduler = [
         gamma=0.1)
 ]
 
-train_cfg.update(dict(max_epochs=48, val_interval=2))
-auto_scale_lr.update(dict(base_batch_size=12))
+train_cfg.update(dict(max_epochs=48, val_interval=2))  # noqa: F405
+auto_scale_lr.update(dict(base_batch_size=12))  # noqa: F405

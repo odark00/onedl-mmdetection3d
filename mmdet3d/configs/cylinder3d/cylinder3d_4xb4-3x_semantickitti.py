@@ -2,9 +2,9 @@
 from mmengine import read_base
 
 with read_base():
-    from .._base_.datasets.semantickitti import *
-    from .._base_.models.cylinder3d import *
-    from .._base_.default_runtime import *
+    from .._base_.datasets.semantickitti import *  # noqa: F403
+    from .._base_.models.cylinder3d import *  # noqa: F403
+    from .._base_.default_runtime import *  # noqa: F403
 
 from mmengine.optim.optimizer.optimizer_wrapper import OptimWrapper
 from mmengine.optim.scheduler.lr_scheduler import LinearLR, MultiStepLR
@@ -32,7 +32,7 @@ param_scheduler = [
         gamma=0.1)
 ]
 
-train_dataloader.update(dict(batch_size=4, ))
+train_dataloader.update(dict(batch_size=4, ))  # noqa: F405
 
 # Default setting for scaling LR automatically
 #   - `enable` means enable scaling LR automatically
@@ -40,4 +40,5 @@ train_dataloader.update(dict(batch_size=4, ))
 #   - `base_batch_size` = (8 GPUs) x (4 samples per GPU).
 # auto_scale_lr = dict(enable=False, base_batch_size=32)
 
-default_hooks.update(dict(checkpoint=dict(type=CheckpointHook, interval=5)))
+default_hooks.update(  # noqa: F405
+    dict(checkpoint=dict(type=CheckpointHook, interval=5)))  # noqa: F405

@@ -1,6 +1,6 @@
-import unittest
-
+# Copyright (c) OpenMMLab. All rights reserved.
 import torch
+import unittest
 from mmengine import DefaultScope
 
 from mmdet3d.registry import MODELS
@@ -34,6 +34,8 @@ class Test3DSSD(unittest.TestCase):
             self.assertIn('scores_3d', results[0].pred_instances_3d)
             self.assertIn('labels_3d', results[0].pred_instances_3d)
 
+            del results
+            torch.cuda.empty_cache()
             losses = model.forward(**data, mode='loss')
 
             self.assertGreater(losses['centerness_loss'], 0)

@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, Optional
-
 import torch
 from mmdet.models.task_modules import AssignResult
 from torch import Tensor
 from torch.nn import functional as F
+from typing import Dict, Optional
 
 from mmdet3d.registry import MODELS, TASK_UTILS
 from mmdet3d.structures import bbox3d2roi

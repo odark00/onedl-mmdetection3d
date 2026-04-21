@@ -1,9 +1,8 @@
+# Copyright (c) OpenMMLab. All rights reserved.
+import torch
 import unittest
 from io import StringIO
 from unittest.mock import patch
-
-import numpy as np
-import torch
 
 from mmdet3d.evaluation.metrics import IndoorMetric
 from mmdet3d.structures import DepthInstance3DBoxes
@@ -35,7 +34,7 @@ class TestIndoorMetric(unittest.TestCase):
                     [0.4655, -3.1941, 0.3769, 2.1132, 0.3536, 1.9803, 0.0000]
                 ])),
             'gt_labels_3d':
-            np.array([2, 2, 2, 3, 4, 17, 4, 7, 2, 8, 17, 11])
+            torch.tensor([2, 2, 2, 3, 4, 17, 4, 7, 2, 8, 17, 11])
         }
 
         pred_instances_3d = dict()

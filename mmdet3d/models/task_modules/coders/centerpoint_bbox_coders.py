@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Optional, Tuple
-
 import torch
 from mmdet.models.task_modules import BaseBBoxCoder
 from torch import Tensor
+from typing import Dict, List, Optional, Tuple
 
 from mmdet3d.registry import TASK_UTILS
 
@@ -206,10 +205,10 @@ class CenterPointBBoxCoder(BaseBBoxCoder):
         if self.post_center_range is not None:
             self.post_center_range = torch.tensor(
                 self.post_center_range, device=heat.device)
-            mask = (final_box_preds[..., :3] >=
-                    self.post_center_range[:3]).all(2)
-            mask &= (final_box_preds[..., :3] <=
-                     self.post_center_range[3:]).all(2)
+            mask = (final_box_preds[..., :3]
+                    >= self.post_center_range[:3]).all(2)
+            mask &= (final_box_preds[..., :3]
+                     <= self.post_center_range[3:]).all(2)
 
             predictions_dicts = []
             for i in range(batch):

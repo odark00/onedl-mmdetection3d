@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import numpy as np
 import warnings
 from os import path as osp
 from typing import Callable, List, Optional, Union
-
-import numpy as np
 
 from mmdet3d.datasets import Det3DDataset
 from mmdet3d.registry import DATASETS
@@ -12,7 +11,7 @@ from mmdet3d.structures import DepthInstance3DBoxes
 
 @DATASETS.register_module()
 class MultiViewScanNetDataset(Det3DDataset):
-    r"""Multi-View ScanNet Dataset for NeRF-detection Task
+    r"""Multi-View ScanNet Dataset for NeRF-detection Task.
 
     This class serves as the API for experiments on the ScanNet Dataset.
 

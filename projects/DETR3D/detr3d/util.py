@@ -1,7 +1,6 @@
-from typing import List
-
 import torch
 from torch import Tensor
+from typing import List
 
 
 def normalize_bbox(bboxes: Tensor, pc_range: List) -> Tensor:

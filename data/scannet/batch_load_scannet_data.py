@@ -11,11 +11,10 @@ Usage example: python ./batch_load_scannet_data.py
 """
 import argparse
 import datetime
-import os
-from os import path as osp
-
 import numpy as np
+import os
 from load_scannet_data import export
+from os import path as osp
 
 DONOTCARE_CLASS_IDS = np.array([])
 OBJ_CLASS_IDS = np.array(

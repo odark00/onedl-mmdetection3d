@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Tuple
-
 import numba
 import numpy as np
 import torch
 from mmcv.ops import nms, nms_rotated
 from torch import Tensor
+from typing import Optional, Tuple
 
 
 def box3d_multiclass_nms(

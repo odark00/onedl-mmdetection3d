@@ -1,18 +1,17 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import warnings
-from copy import deepcopy
-from os import path as osp
-from pathlib import Path
-from typing import Optional, Sequence, Union
-
 import mmengine
 import numpy as np
 import torch
 import torch.nn as nn
+import warnings
+from copy import deepcopy
 from mmengine.config import Config
 from mmengine.dataset import Compose, pseudo_collate
 from mmengine.registry import init_default_scope
 from mmengine.runner import load_checkpoint
+from os import path as osp
+from pathlib import Path
+from typing import Optional, Sequence, Union
 
 from mmdet3d.registry import DATASETS, MODELS
 from mmdet3d.structures import Box3DMode, Det3DDataSample, get_box_type
@@ -344,7 +343,7 @@ def inference_mono_3d_detector(model: nn.Module,
 
         # replace the img_path in data_info with img
         data_info['images'][cam_type]['img_path'] = img
-        # avoid data_info['images'] has multiple keys anout camera views.
+        # avoid data_info['images'] has multiple keys about camera views.
         mono_img_info = {f'{cam_type}': data_info['images'][cam_type]}
         data_ = dict(
             images=mono_img_info,

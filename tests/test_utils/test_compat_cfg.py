@@ -1,3 +1,4 @@
+# Copyright (c) OpenMMLab. All rights reserved.
 import pytest
 from mmengine import ConfigDict
 
@@ -7,7 +8,7 @@ from mmdet3d.utils.compat_cfg import (compat_imgs_per_gpu, compat_loader_args,
 
 def test_compat_runner_args():
     cfg = ConfigDict(dict(total_epochs=12))
-    with pytest.warns(None) as record:
+    with pytest.warns(UserWarning) as record:
         cfg = compat_runner_args(cfg)
     assert len(record) == 1
     assert 'runner' in record.list[0].message.args[0]

@@ -18,7 +18,7 @@
 #### Improvements
 
 - Support [PGD](https://arxiv.org/abs/2107.14160)) (front-of-view / multi-view) on Waymo dataset (#2835)
-- Release new [Waymo-mini](https://download.openmmlab.com/mmdetection3d/data/waymo_mmdet3d_after_1x4/waymo_mini.tar.gz) for verify some methods or debug quickly (#2835)
+- Release new [Waymo-mini](https://mmassets.onedl.ai/mmdetection3d/data/waymo_mmdet3d_after_1x4/waymo_mini.tar.gz) for verify some methods or debug quickly (#2835)
 
 #### Bug Fixes
 
@@ -304,7 +304,7 @@ A total of 12 developers contributed to this release.
 
 #### Bug Fixes
 
-- Fix missing registration of models in [setup_env.py](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/mmdet3d/utils/setup_env.py) (#1808)
+- Fix missing registration of models in [setup_env.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/mmdet3d/utils/setup_env.py) (#1808)
 - Fix the data base sampler bugs when using the ground plane data (#1812)
 - Add output directory existing check during visualization (#1828)
 - Fix bugs of nuScenes dataset for monocular 3D detection (#1837)
@@ -322,14 +322,14 @@ A total of 10 developers contributed to this release.
 
 We are excited to announce the release of MMDetection3D 1.1.0rc0.
 MMDet3D 1.1.0rc0 is the first version of MMDetection3D 1.1, a part of the OpenMMLab 2.0 projects.
-Built upon the new [training engine](https://github.com/open-mmlab/mmengine) and [MMDet 3.x](https://github.com/open-mmlab/mmdetection/tree/3.x),
+Built upon the new [training engine](https://github.com/vbti-development/onedl-mmengine) and [MMDet 3.x](https://github.com/vbti-development/onedl-mmdetection/tree/3.x),
 MMDet3D 1.1 unifies the interfaces of dataset, models, evaluation, and visualization with faster training and testing speed.
 It also provides a standard data protocol for different datasets, modalities, and tasks for 3D perception.
 We will support more strong baselines in the future release, with our latest exploration on camera-only 3D detection from videos.
 
 ### Highlights
 
-1. **New engines**. MMDet3D 1.1 is based on [MMEngine](https://github.com/open-mmlab/mmengine) and [MMDet 3.x](https://github.com/open-mmlab/mmdetection/tree/3.x), which provides a universal and powerful runner that allows more flexible customizations and significantly simplifies the entry points of high-level interfaces.
+1. **New engines**. MMDet3D 1.1 is based on [MMEngine](https://github.com/vbti-development/onedl-mmengine) and [MMDet 3.x](https://github.com/vbti-development/onedl-mmdetection/tree/3.x), which provides a universal and powerful runner that allows more flexible customizations and significantly simplifies the entry points of high-level interfaces.
 
 2. **Unified interfaces**. As a part of the OpenMMLab 2.0 projects, MMDet3D 1.1 unifies and refactors the interfaces and internal logics of train, testing, datasets, models, evaluation, and visualization. All the OpenMMLab 2.0 projects share the same design in those interfaces and logics to allow the emergence of multi-task/modality algorithms.
 
@@ -355,14 +355,14 @@ Users can also refer to the [compatibility documentation](./compatibility.md) an
 
 #### Training and testing
 
-- MMDet3D 1.1 uses Runner in [MMEngine](https://github.com/open-mmlab/mmengine) rather than that in MMCV. The new Runner implements and unifies the building logic of dataset, model, evaluation, and visualizer. Therefore, MMDet3D 1.1 no longer relies on the building logics of those modules in `mmdet3d.train.apis` and `tools/train.py`. Those code have been migrated into [MMEngine](https://github.com/open-mmlab/mmengine/blob/main/mmengine/runner/runner.py). Please refer to the [migration guide of Runner in MMEngine](https://mmengine.readthedocs.io/en/latest/migration/runner.html) for more details.
+- MMDet3D 1.1 uses Runner in [MMEngine](https://github.com/vbti-development/onedl-mmengine) rather than that in MMCV. The new Runner implements and unifies the building logic of dataset, model, evaluation, and visualizer. Therefore, MMDet3D 1.1 no longer relies on the building logics of those modules in `mmdet3d.train.apis` and `tools/train.py`. Those code have been migrated into [MMEngine](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/runner/runner.py). Please refer to the [migration guide of Runner in MMEngine](https://mmengine.readthedocs.io/en/latest/migration/runner.html) for more details.
 - The Runner in MMEngine also supports testing and validation. The testing scripts are also simplified, which has similar logic as that in training scripts to build the runner.
 - The execution points of hooks in the new Runner have been enriched to allow more flexible customization. Please refer to the [migration guide of Hook in MMEngine](https://mmengine.readthedocs.io/en/latest/migration/hook.html) for more details.
 - Learning rate and momentum scheduling has been migrated from Hook to [Parameter Scheduler in MMEngine](https://mmengine.readthedocs.io/en/latest/tutorials/param_scheduler.html). Please refer to the [migration guide of Parameter Scheduler in MMEngine](https://mmengine.readthedocs.io/en/latest/migration/param_scheduler.html) for more details.
 
 #### Configs
 
-- The [Runner in MMEngine](https://github.com/open-mmlab/mmengine/blob/main/mmengine/runner/runner.py) uses a different config structure to ease the understanding of the components in runner. Users can read the [config example of MMDet3D 1.1](../user_guides/config.md) or refer to the [migration guide in MMEngine](https://mmengine.readthedocs.io/en/latest/migration/runner.html) for migration details.
+- The [Runner in MMEngine](https://github.com/vbti-development/onedl-mmengine/blob/main/mmengine/runner/runner.py) uses a different config structure to ease the understanding of the components in runner. Users can read the [config example of MMDet3D 1.1](../user_guides/config.md) or refer to the [migration guide in MMEngine](https://mmengine.readthedocs.io/en/latest/migration/runner.html) for migration details.
 - The file names of configs and models are also refactored to follow the new rules unified across OpenMMLab 2.0 projects. The names of checkpoints are not updated for now as there is no BC-breaking of model weights between MMDet3D 1.1 and 1.0.x. We will progressively replace all the model weights by those trained in MMDet3D 1.1. Please refer to the [user guides of config](../user_guides/config.md) for more details.
 
 #### Dataset

@@ -1,6 +1,4 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Optional, Tuple, Union
-
 import numpy as np
 import torch
 from mmcv.ops import furthest_point_sample
@@ -10,6 +8,7 @@ from mmengine.model import BaseModule
 from mmengine.structures import InstanceData
 from torch import Tensor
 from torch.nn import functional as F
+from typing import Dict, List, Optional, Tuple, Union
 
 from mmdet3d.models.layers import VoteModule, aligned_3d_nms, build_sa_module
 from mmdet3d.models.losses import chamfer_distance
@@ -134,7 +133,7 @@ class VoteHead(BaseModule):
             feat_dict (dict): Feature dict from backbone.
 
         Returns:
-            tuple[Tensor]: Arrage as following three tensor.
+            tuple[Tensor]: Arrange as following three tensor.
 
                 - Coordinates of input points.
                 - Features of input points.
@@ -688,14 +687,14 @@ class VoteHead(BaseModule):
         euclidean_distance1 = torch.sqrt(distance1.squeeze(0) + 1e-6)
 
         objectness_targets = points.new_zeros((proposal_num), dtype=torch.long)
-        objectness_targets[
-            euclidean_distance1 < self.train_cfg['pos_distance_thr']] = 1
+        objectness_targets[euclidean_distance1 <
+                           self.train_cfg['pos_distance_thr']] = 1
 
         objectness_masks = points.new_zeros((proposal_num))
-        objectness_masks[
-            euclidean_distance1 < self.train_cfg['pos_distance_thr']] = 1.0
-        objectness_masks[
-            euclidean_distance1 > self.train_cfg['neg_distance_thr']] = 1.0
+        objectness_masks[euclidean_distance1 <
+                         self.train_cfg['pos_distance_thr']] = 1.0
+        objectness_masks[euclidean_distance1 >
+                         self.train_cfg['neg_distance_thr']] = 1.0
 
         dir_class_targets = dir_class_targets[assignment]
         dir_res_targets = dir_res_targets[assignment]
@@ -739,7 +738,7 @@ class VoteHead(BaseModule):
 
         Returns:
             list[:obj:`InstanceData`] or Tensor: Return list of processed
-            predictions when `use_nms` is True. Each InstanceData cantains
+            predictions when `use_nms` is True. Each InstanceData contains
             3d Bounding boxes and corresponding scores and labels.
             Return raw bboxes when `use_nms` is False.
         """

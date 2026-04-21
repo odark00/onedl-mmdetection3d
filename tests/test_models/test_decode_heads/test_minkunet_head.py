@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from unittest import TestCase
-
 import pytest
 import torch
 import torch.nn.functional as F
+from unittest import TestCase
 
 from mmdet3d.models.decode_heads import MinkUNetHead
 from mmdet3d.structures import Det3DDataSample, PointData

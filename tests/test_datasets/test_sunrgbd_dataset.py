@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import unittest
-
 import numpy as np
 import torch
+import unittest
 from mmengine.testing import assert_allclose
 
 from mmdet3d.datasets import SUNRGBDDataset

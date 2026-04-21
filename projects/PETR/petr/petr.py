@@ -252,7 +252,7 @@ class PETR(MVXTwoStageDetector):
 
     # may need speed-up
     def add_lidar2img(self, img, batch_input_metas):
-        """add 'lidar2img' transformation matrix into batch_input_metas.
+        """Add 'lidar2img' transformation matrix into batch_input_metas.
 
         Args:
             batch_input_metas (list[dict]): Meta information of multiple inputs

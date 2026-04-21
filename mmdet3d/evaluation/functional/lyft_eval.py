@@ -1,15 +1,16 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from os import path as osp
-
 import mmengine
 import numpy as np
-from lyft_dataset_sdk.eval.detection.mAP_evaluation import (Box3D, get_ap,
-                                                            get_class_names,
-                                                            get_ious,
-                                                            group_by_key,
-                                                            wrap_in_box)
 from mmengine.logging import print_log
+from os import path as osp
 from terminaltables import AsciiTable
+
+try:
+    from lyft_dataset_sdk.eval.detection.mAP_evaluation import (
+        Box3D, get_ap, get_class_names, get_ious, group_by_key, wrap_in_box)
+    HAS_LYFT_SDK = True
+except ImportError:
+    HAS_LYFT_SDK = False
 
 
 def load_lyft_gts(lyft, data_root, eval_split, logger=None):
@@ -103,6 +104,12 @@ def lyft_eval(lyft, data_root, res_path, eval_set, output_dir, logger=None):
     Returns:
         dict[str, float]: The evaluation results.
     """
+    if not HAS_LYFT_SDK:
+        raise ImportError(
+            'lyft_dataset_sdk is required to run Lyft evaluation but is not '
+            'installed or is incompatible with the current environment. '
+            'Please install a compatible version: '
+            'pip install lyft_dataset_sdk')
     # evaluate by lyft metrics
     gts = load_lyft_gts(lyft, data_root, eval_set, logger)
     predictions = load_lyft_predictions(res_path)

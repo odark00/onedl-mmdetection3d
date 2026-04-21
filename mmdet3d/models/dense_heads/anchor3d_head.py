@@ -1,14 +1,13 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import warnings
-from typing import List, Tuple
-
 import numpy as np
 import torch
+import warnings
 from mmdet.models.utils import multi_apply
 from mmdet.utils.memory import cast_tensor_type
 from mmengine.runner import amp
 from torch import Tensor
 from torch import nn as nn
+from typing import List, Tuple
 
 from mmdet3d.models.task_modules import PseudoSampler
 from mmdet3d.models.test_time_augs import merge_aug_bboxes_3d

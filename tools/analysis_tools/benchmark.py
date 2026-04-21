@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
 import time
-
 import torch
 from mmengine import Config
 from mmengine.device import get_device

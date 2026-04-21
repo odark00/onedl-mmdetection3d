@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional
-
 import torch
 from mmcv.cnn import build_norm_layer
 from torch import Tensor, nn
 from torch.nn import functional as F
+from typing import Optional
 
 
 def get_paddings_indicator(actual_num: Tensor,

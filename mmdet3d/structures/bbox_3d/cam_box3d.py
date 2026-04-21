@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Sequence, Tuple, Union
-
 import numpy as np
 import torch
 from torch import Tensor
+from typing import Optional, Sequence, Tuple, Union
 
 from mmdet3d.structures.points import BasePoints
 from .base_box3d import BaseInstance3DBoxes

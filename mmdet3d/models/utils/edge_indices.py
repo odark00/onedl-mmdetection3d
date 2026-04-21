@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List
-
 import numpy as np
 import torch
 from torch import Tensor
+from typing import List
 
 
 def get_edge_indices(img_metas: List[dict],
@@ -12,11 +11,10 @@ def get_edge_indices(img_metas: List[dict],
                      pad_mode: str = 'default',
                      dtype: type = np.float32,
                      device: str = 'cpu') -> List[Tensor]:
-    """Function to filter the objects label outside the image.
-    The edge_indices are generated using numpy on cpu rather
-    than on CUDA due to the latency issue. When batch size = 8,
-    this function with numpy array is ~8 times faster than that
-    with CUDA tensor (0.09s and 0.72s in 100 runs).
+    """Function to filter the objects label outside the image. The edge_indices
+    are generated using numpy on cpu rather than on CUDA due to the latency
+    issue. When batch size = 8, this function with numpy array is ~8 times
+    faster than that with CUDA tensor (0.09s and 0.72s in 100 runs).
 
     Args:
         img_metas (List[dict]): Meta information of each image, e.g.,

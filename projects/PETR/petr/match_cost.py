@@ -209,6 +209,7 @@ class BBox3DL1Cost(object):
 @TASK_UTILS.register_module()
 class FocalLossCost:
     """FocalLossCost.
+
      Args:
          weight (int | float, optional): loss_weight
          alpha (int | float, optional): focal_loss alpha
@@ -263,7 +264,7 @@ class FocalLossCost:
     def _mask_focal_loss_cost(self, cls_pred, gt_labels):
         """
         Args:
-            cls_pred (Tensor): Predicted classfication logits
+            cls_pred (Tensor): Predicted classification logits
                 in shape (num_query, d1, ..., dn), dtype=torch.float32.
             gt_labels (Tensor): Ground truth in shape (num_gt, d1, ..., dn),
                 dtype=torch.long. Labels should be binary.
@@ -287,7 +288,7 @@ class FocalLossCost:
     def __call__(self, cls_pred, gt_labels):
         """
         Args:
-            cls_pred (Tensor): Predicted classfication logits.
+            cls_pred (Tensor): Predicted classification logits.
             gt_labels (Tensor)): Labels.
         Returns:
             Tensor: Focal cost matrix with weight in shape\
@@ -302,6 +303,7 @@ class FocalLossCost:
 @TASK_UTILS.register_module()
 class IoUCost:
     """IoUCost.
+
      Args:
          iou_mode (str, optional): iou mode such as 'iou' | 'giou'
          weight (int | float, optional): loss weight

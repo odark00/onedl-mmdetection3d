@@ -5,8 +5,6 @@ Please refer to `Cylinder3D github page
 <https://github.com/xinge008/Cylinder3D>`_ for details
 """
 
-from typing import List, Optional
-
 import numpy as np
 import torch
 from mmcv.cnn import build_activation_layer, build_norm_layer
@@ -14,6 +12,7 @@ from mmcv.ops import (SparseConv3d, SparseConvTensor, SparseInverseConv3d,
                       SubMConv3d)
 from mmengine.model import BaseModule
 from torch import Tensor
+from typing import List, Optional
 
 from mmdet3d.registry import MODELS
 from mmdet3d.utils import ConfigType

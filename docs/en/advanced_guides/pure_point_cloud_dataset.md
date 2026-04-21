@@ -97,7 +97,7 @@ With this design, we provide an alternative choice for customizing datasets.
 ```
 
 On top of this you can write a new Dataset class inherited from `Custom3DDataset`, and overwrite related methods,
-like [KittiDataset](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/datasets/kitti_dataset.py) and [ScanNetDataset](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/datasets/scannet_dataset.py).
+like [KittiDataset](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/datasets/kitti_dataset.py) and [ScanNetDataset](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/datasets/scannet_dataset.py).
 
 ### An example of customized dataset
 
@@ -253,7 +253,7 @@ dataset_A_train = dict(
     )
 ```
 
-You may refer to [source code](https://github.com/open-mmlab/mmdetection/blob/master/mmdet/datasets/dataset_wrappers.py) for details.
+You may refer to [source code](https://github.com/vbti-development/onedl-mmdetection/blob/master/mmdet/datasets/dataset_wrappers.py) for details.
 
 ### Concatenate dataset
 
@@ -433,7 +433,7 @@ By setting point cloud range, the `PointsRangeFilter` is used to filter point cl
 
 Here you can refer to the setting of the existing datasets. theoretically, `voxel_size` is linked to the setting of `point_cloud_range`. Setting a smaller `voxel_size` will increase the voxel num and the corresponding memory consumption. In addition, the following issues need to be noted:
 
-if the `point_cloud_range` and `voxel_size` are set to be `[0, -40, -3, 70.4, 40, 1]` and `[0.05, 0.05, 0.1]` respectively, then the shape of intermediate feature map should be `[(1-(-3))/0.1+1, (40-(-40))/0.05, (70.4-0)/0.05]=[41, 1600, 1408]`. More details refers to this [issue](https://github.com/open-mmlab/mmdetection3d/issues/382).
+if the `point_cloud_range` and `voxel_size` are set to be `[0, -40, -3, 70.4, 40, 1]` and `[0.05, 0.05, 0.1]` respectively, then the shape of intermediate feature map should be `[(1-(-3))/0.1+1, (40-(-40))/0.05, (70.4-0)/0.05]=[41, 1600, 1408]`. More details refers to this [issue](https://github.com/VBTI-development/onedl-mmdetection3d/issues/382).
 
 ### Adjust Anchor Range and Size in Config
 
@@ -450,7 +450,7 @@ anchor_generator=dict(
     reshape_out=False),
 ```
 
-Regarding the setting of `anchor_range`, it is generally adjusted according to dataset. Note that `z` value needs to be adjusted accordingly to the position of the point cloud, please refer to this [issue](https://github.com/open-mmlab/mmdetection3d/issues/986).
+Regarding the setting of `anchor_range`, it is generally adjusted according to dataset. Note that `z` value needs to be adjusted accordingly to the position of the point cloud, please refer to this [issue](https://github.com/VBTI-development/onedl-mmdetection3d/issues/986).
 
 Regarding the setting of `anchor_size`, it is usually necessary to count the average length, width and height of the entire training dataset as `anchor_size` to obtain the best results.
 

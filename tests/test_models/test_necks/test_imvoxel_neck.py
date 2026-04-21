@@ -1,3 +1,4 @@
+# Copyright (c) OpenMMLab. All rights reserved.
 import pytest
 import torch
 
@@ -11,6 +12,6 @@ def test_imvoxel_neck():
     neck_cfg = dict(
         type='OutdoorImVoxelNeck', in_channels=64, out_channels=256)
     neck = MODELS.build(neck_cfg).cuda()
-    inputs = torch.rand([1, 64, 216, 248, 12], device='cuda')
+    inputs = torch.rand([1, 64, 27, 31, 12], device='cuda')
     outputs = neck(inputs)
-    assert outputs[0].shape == (1, 256, 248, 216)
+    assert outputs[0].shape == (1, 256, 31, 27)

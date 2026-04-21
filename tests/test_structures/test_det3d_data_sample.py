@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from unittest import TestCase
-
 import numpy as np
 import pytest
 import torch
 from mmengine.structures import InstanceData
+from unittest import TestCase
 
 from mmdet3d.structures import Det3DDataSample, PointData
 

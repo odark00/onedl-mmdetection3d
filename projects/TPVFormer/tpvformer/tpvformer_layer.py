@@ -1,7 +1,6 @@
 import copy
-import warnings
-
 import torch
+import warnings
 from mmcv.cnn import build_norm_layer
 from mmcv.cnn.bricks.transformer import (build_attention,
                                          build_feedforward_network)
@@ -143,8 +142,7 @@ class TPVFormerLayer(BaseModule):
                 spatial_shapes=None,
                 level_start_index=None,
                 **kwargs):
-        """
-        **kwargs contains some specific arguments of attentions.
+        """**kwargs contains some specific arguments of attentions.
 
         Args:
             query (Tensor): The input query with shape

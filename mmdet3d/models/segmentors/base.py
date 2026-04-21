@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 from abc import ABCMeta, abstractmethod
-from typing import Dict, List, Union
-
 from mmengine.model import BaseModel
 from torch import Tensor
+from typing import Dict, List, Union
 
 from mmdet3d.structures import PointData
 from mmdet3d.structures.det3d_data_sample import (ForwardResults,

@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional
-
 import torch
 from mmcv.ops.diff_iou_rotated import box2corners, oriented_box_intersection_2d
 from mmdet.models.losses.utils import weighted_loss
 from torch import Tensor
 from torch import nn as nn
+from typing import Optional
 
 from mmdet3d.models import rotated_iou_3d_loss
 from mmdet3d.registry import MODELS

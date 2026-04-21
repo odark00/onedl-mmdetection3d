@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import cv2
 import multiprocessing as mp
 import os
 import platform
 import sys
-
-import cv2
 from mmengine import Config, DefaultScope
 
 from mmdet3d.utils import register_all_modules, setup_multi_processes

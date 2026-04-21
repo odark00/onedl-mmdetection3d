@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os.path as osp
-import tempfile
-from unittest import TestCase
-
 import mmengine
 import numpy as np
+import os.path as osp
+import tempfile
 import torch
 from mmengine.utils import is_list_of
+from unittest import TestCase
 
 from mmdet3d.apis import LidarDet3DInferencer
 from mmdet3d.structures import Det3DDataSample
@@ -25,7 +24,7 @@ class TestLidarDet3DInferencer(TestCase):
         LidarDet3DInferencer(
             'configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py',  # noqa
             weights=  # noqa
-            'https://download.openmmlab.com/mmdetection3d/v1.0.0_models/pointpillars/hv_pointpillars_secfpn_6x8_160e_kitti-3d-3class/hv_pointpillars_secfpn_6x8_160e_kitti-3d-3class_20220301_150306-37dc2420.pth'  # noqa
+            'https://mmassets.onedl.ai/mmdetection3d/v1.0.0_models/pointpillars/hv_pointpillars_secfpn_6x8_160e_kitti-3d-3class/hv_pointpillars_secfpn_6x8_160e_kitti-3d-3class_20220301_150306-37dc2420.pth'  # noqa
         )
 
     def assert_predictions_equal(self, preds1, preds2):

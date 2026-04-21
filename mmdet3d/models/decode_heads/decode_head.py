@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from abc import ABCMeta, abstractmethod
-from typing import Dict, List
-
 import torch
+from abc import ABCMeta, abstractmethod
 from mmengine.model import BaseModule, normal_init
 from torch import Tensor
 from torch import nn as nn
+from typing import Dict, List
 
 from mmdet3d.registry import MODELS
 from mmdet3d.structures.det3d_data_sample import SampleList

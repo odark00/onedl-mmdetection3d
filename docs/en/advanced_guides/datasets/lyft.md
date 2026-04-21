@@ -41,7 +41,7 @@ Note that we follow the original folder names for clear organization. Please ren
 ## Dataset Preparation
 
 The way to organize Lyft dataset is similar to nuScenes. We also generate the `.pkl` files which share almost the same structure.
-Next, we will mainly focus on the difference between these two datasets. For a more detailed explanation of the info structure, please refer to [nuScenes tutorial](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/docs/en/advanced_guides/datasets/nuscenes_det.md).
+Next, we will mainly focus on the difference between these two datasets. For a more detailed explanation of the info structure, please refer to [nuScenes tutorial](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/docs/en/advanced_guides/datasets/nuscenes_det.md).
 
 To prepare info files for Lyft, run the following commands:
 
@@ -120,7 +120,7 @@ Next, we will elaborate on the difference compared to nuScenes in terms of the d
 
 Here we only explain the data recorded in the training info files. The same applies to the validation set and test set (without instances).
 
-Please refer to [lyft_converter.py](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/tools/dataset_converters/lyft_converter.py) for more details about the structure of `lyft_infos_xxx.pkl`.
+Please refer to [lyft_converter.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/tools/dataset_converters/lyft_converter.py) for more details about the structure of `lyft_infos_xxx.pkl`.
 
 ## Training pipeline
 

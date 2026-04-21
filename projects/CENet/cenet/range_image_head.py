@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Tuple
-
 import torch
 from torch import Tensor, nn
+from typing import List, Tuple
 
 from mmdet3d.models import Base3DDecodeHead
 from mmdet3d.registry import MODELS

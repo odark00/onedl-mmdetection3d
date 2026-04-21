@@ -26,7 +26,7 @@ Models:
         Dataset: KITTI
         Metrics:
           mAP: 68.33
-    Weights: https://download.openmmlab.com/mmdetection3d/v1.0.0_models/parta2/hv_PartA2_secfpn_2x8_cyclic_80e_kitti-3d-3class/hv_PartA2_secfpn_2x8_cyclic_80e_kitti-3d-3class_20210831_022017-454a5344.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v1.0.0_models/parta2/hv_PartA2_secfpn_2x8_cyclic_80e_kitti-3d-3class/hv_PartA2_secfpn_2x8_cyclic_80e_kitti-3d-3class_20210831_022017-454a5344.pth
 
   - Name: parta2_hv_secfpn_8xb2-cyclic-80e_kitti-3d-car
     In Collection: Part-A^2
@@ -38,4 +38,4 @@ Models:
         Dataset: KITTI
         Metrics:
           mAP: 79.08
-    Weights: https://download.openmmlab.com/mmdetection3d/v1.0.0_models/parta2/hv_PartA2_secfpn_2x8_cyclic_80e_kitti-3d-car/hv_PartA2_secfpn_2x8_cyclic_80e_kitti-3d-car_20210831_022017-cb7ff621.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v1.0.0_models/parta2/hv_PartA2_secfpn_2x8_cyclic_80e_kitti-3d-car/hv_PartA2_secfpn_2x8_cyclic_80e_kitti-3d-car_20210831_022017-cb7ff621.pth

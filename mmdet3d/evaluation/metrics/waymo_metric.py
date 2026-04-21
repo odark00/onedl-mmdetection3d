@@ -1,14 +1,13 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import tempfile
-from os import path as osp
-from typing import Dict, List, Optional, Sequence, Tuple, Union
-
 import numpy as np
+import tempfile
 import torch
 from mmengine import Config
 from mmengine.device import get_device
 from mmengine.evaluator import BaseMetric
 from mmengine.logging import MMLogger, print_log
+from os import path as osp
+from typing import Dict, List, Optional, Sequence, Tuple, Union
 
 from mmdet3d.models.layers import box3d_multiclass_nms
 from mmdet3d.registry import METRICS

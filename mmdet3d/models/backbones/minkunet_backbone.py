@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import torch
 import warnings
 from functools import partial
-from typing import List
-
-import torch
 from mmengine.model import BaseModule
 from mmengine.registry import MODELS
 from torch import Tensor, nn
+from typing import List
 
 from mmdet3d.models.layers.minkowski_engine_block import (
     IS_MINKOWSKI_ENGINE_AVAILABLE, MinkowskiBasicBlock, MinkowskiBottleneck,

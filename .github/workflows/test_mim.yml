@@ -3,11 +3,19 @@ name: test-mim
 on:
   push:
     paths:
+      - '.github/workflows/test_mim.yml'
+      - 'pyproject.toml'
+      - 'setup.py'
       - 'model-index.yml'
       - 'configs/**'
+    branches:
+      - main
 
   pull_request:
     paths:
+      - '.github/workflows/test_mim.yml'
+      - 'pyproject.toml'
+      - 'setup.py'
       - 'model-index.yml'
       - 'configs/**'
 
@@ -16,29 +24,31 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build_cpu:
+  test_mim_cpu:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        python-version: [3.7]
-        torch: [1.8.1]
-        include:
-          - torch: 1.8.1
-            torch_version: torch1.8
-            torchvision: 0.9.1
+        python-version: ['3.12']
+        torch: ['2.10.0']
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v6
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: Upgrade pip
-        run: pip install pip --upgrade && pip install wheel
+          python-version: ${{matrix.python-version}}
+          activate-environment: true
       - name: Install PyTorch
-        run: pip install torch==${{matrix.torch}}+cpu torchvision==${{matrix.torchvision}}+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
-      - name: Install openmim
-        run: pip install openmim
+        run: |
+          uv pip install --torch-backend=cpu torch==${{ matrix.torch }} torchvision
+          uv pip install importlib-metadata
+      - name: Install mim
+        run: uv pip install "onedl-mim>=0.4.0rc2"
       - name: Build and install
-        run: rm -rf .eggs && mim install -e .
+        run: mim install .
       - name: test commands of mim
-        run: mim search mmdet3d
+        env:
+          PAGER: cat
+          LESS: ""
+          MORE: ""
+          MANPAGER: cat
+        run: mim search onedl-mmdetection3d

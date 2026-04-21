@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-import unittest
-
 import numpy as np
 import torch
+import unittest
 from mmengine.testing import assert_allclose
 
 from mmdet3d.datasets import (GlobalAlignment, RandomFlip3D,
@@ -50,8 +49,8 @@ class TestGlobalRotScaleTrans(unittest.TestCase):
         self.assertEqual(scale_data_info['pcd_rotation_angle'], 0)
         # assert  scale_factor range
         assert (0.94 < (after_scale_points / before_scale_points)).all()
-        assert (1.06 >
-                (after_scale_gt_bbox_3d / before_scale_gt_bbox_3d)).all()
+        assert (1.06
+                > (after_scale_gt_bbox_3d / before_scale_gt_bbox_3d)).all()
 
 
 class TestRandomFlip3D(unittest.TestCase):

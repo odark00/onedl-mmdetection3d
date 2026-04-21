@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Optional, Tuple
-
 import torch
 from torch import Tensor, nn
+from typing import Dict, List, Optional, Tuple
 
 from mmdet3d.models.layers.spconv import IS_SPCONV2_AVAILABLE
 
@@ -193,7 +192,7 @@ class SparseUNet(BaseModule):
     @staticmethod
     def reduce_channel(x: SparseConvTensor,
                        out_channels: int) -> SparseConvTensor:
-        """reduce channel for element-wise addition.
+        """Reduce channel for element-wise addition.
 
         Args:
             x (:obj:`SparseConvTensor`): Sparse tensor, ``x.features``
@@ -205,14 +204,14 @@ class SparseUNet(BaseModule):
         """
         features = x.features
         n, in_channels = features.shape
-        assert (in_channels % out_channels
-                == 0) and (in_channels >= out_channels)
+        assert (in_channels % out_channels == 0) and (in_channels
+                                                      >= out_channels)
         x = replace_feature(x, features.view(n, out_channels, -1).sum(dim=2))
         return x
 
     def make_encoder_layers(self, make_block: nn.Module, norm_cfg: dict,
                             in_channels: int) -> int:
-        """make encoder layers using sparse convs.
+        """Make encoder layers using sparse convs.
 
         Args:
             make_block (method): A bounded function to build blocks.
@@ -259,7 +258,7 @@ class SparseUNet(BaseModule):
 
     def make_decoder_layers(self, make_block: nn.Module, norm_cfg: dict,
                             in_channels: int) -> int:
-        """make decoder layers using sparse convs.
+        """Make decoder layers using sparse convs.
 
         Args:
             make_block (method): A bounded function to build blocks.

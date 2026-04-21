@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Union
-
 from mmdet.models import BaseDetector
 from mmengine.structures import InstanceData
+from typing import List, Union
 
 from mmdet3d.registry import MODELS
 from mmdet3d.structures.det3d_data_sample import (ForwardResults,
@@ -134,8 +133,8 @@ class Base3DDetector(BaseDetector):
         """
 
         assert (data_instances_2d is not None) or \
-               (data_instances_3d is not None),\
-               'please pass at least one type of data_samples'
+            (data_instances_3d is not None), \
+            'please pass at least one type of data_samples'
 
         if data_instances_2d is None:
             data_instances_2d = [

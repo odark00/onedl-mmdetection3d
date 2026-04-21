@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List
-
 from mmengine.dataset import BaseDataset
 from mmengine.hooks import Hook
 from mmengine.model import is_model_wrapper
 from mmengine.runner import Runner
+from typing import List
 
 from mmdet3d.registry import HOOKS
 

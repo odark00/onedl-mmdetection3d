@@ -14,7 +14,7 @@ def _generate_kitti_dataset_config():
     data_root = 'tests/data/kitti'
     ann_file = 'kitti_infos_train.pkl'
     classes = ['Pedestrian', 'Cyclist', 'Car']
-    # wait for pipline refactor
+    # wait for pipeline refactor
 
     if 'Identity' not in TRANSFORMS:
 

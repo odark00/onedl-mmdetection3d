@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import mmengine
 import warnings
 from copy import deepcopy
-from typing import Dict, List, Optional, Tuple, Union
-
-import mmengine
 from mmcv import BaseTransform
 from mmengine.dataset import Compose
+from typing import Dict, List, Optional, Tuple, Union
 
 from mmdet3d.registry import TRANSFORMS
 

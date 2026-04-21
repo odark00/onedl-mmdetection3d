@@ -1,11 +1,16 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
+import numpy as np
 import warnings
 from typing import List, Optional, Tuple, Union
 
-import numpy as np
-from nuscenes import NuScenes
-from nuscenes.utils.geometry_utils import view_points
+try:
+    from nuscenes import NuScenes
+    from nuscenes.utils.geometry_utils import view_points
+    HAS_NUSCENES = True
+except ImportError:
+    HAS_NUSCENES = False
+    NuScenes = None  # placeholder for type hints
 from pyquaternion import Quaternion
 from shapely.geometry import MultiPoint, box
 from shapely.geometry.polygon import Polygon
@@ -70,7 +75,11 @@ def get_nuscenes_2d_boxes(nusc: NuScenes, sample_data_token: str,
         List[dict]: List of 2d annotation record that belongs to the input
         `sample_data_token`.
     """
-
+    if not HAS_NUSCENES:
+        raise ImportError(
+            'nuscenes-devkit is required to use get_nuscenes_2d_boxes but is '
+            'not installed or is incompatible with the current environment. '
+            'Please install it separately: pip install nuscenes-devkit')
     # Get the sample data and the sample corresponding to that sample data.
     sd_rec = nusc.get('sample_data', sample_data_token)
 

@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Tuple, Union
-
 import torch
 from torch import Tensor
 from torch import nn as nn
 from torch.nn.functional import l1_loss, mse_loss, smooth_l1_loss
+from typing import Optional, Tuple, Union
 
 from mmdet3d.registry import MODELS
 

@@ -1,6 +1,5 @@
-from typing import Optional, Union
-
 from torch import nn
+from typing import Optional, Union
 
 from mmdet3d.models import Base3DSegmentor
 from mmdet3d.registry import MODELS

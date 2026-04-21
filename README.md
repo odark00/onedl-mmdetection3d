@@ -1,71 +1,51 @@
 <div align="center">
-  <img src="resources/mmdet3d-logo.png" width="600"/>
-  <div>&nbsp;</div>
+
+<picture>
+    <!-- User prefers dark mode: -->
+  <source srcset="https://raw.githubusercontent.com/vbti-development/onedl-mmdetection3d/main/docs/en/_static/images/onedl-mmdetection3d-banner-dark.png"  media="(prefers-color-scheme: dark)"/>
+
+<img src="https://raw.githubusercontent.com/vbti-development/onedl-mmdetection3d/main/docs/en/_static/images/onedl-mmdetection3d-banner.png" alt="OneDL-MMDetection3D logo" height="200"/>
+  </picture>
+
+<div>&nbsp;</div>
   <div align="center">
-    <b><font size="5">OpenMMLab website</font></b>
-    <sup>
-      <a href="https://openmmlab.com">
-        <i><font size="4">HOT</font></i>
-      </a>
-    </sup>
+    <a href="https://vbti.nl">
+      <b><font size="5">VBTI Website</font></b>
+    </a>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <b><font size="5">OpenMMLab platform</font></b>
-    <sup>
-      <a href="https://platform.openmmlab.com">
-        <i><font size="4">TRY IT OUT</font></i>
-      </a>
-    </sup>
+    <a href="https://onedl.ai">
+      <b><font size="5">OneDL platform</font></b>
+    </a>
   </div>
-  <div>&nbsp;</div>
+<div>&nbsp;</div>
 
-[![PyPI](https://img.shields.io/pypi/v/mmdet3d)](https://pypi.org/project/mmdet3d)
-[![docs](https://img.shields.io/badge/docs-latest-blue)](https://mmdetection3d.readthedocs.io/en/latest/)
-[![badge](https://github.com/open-mmlab/mmdetection3d/workflows/build/badge.svg)](https://github.com/open-mmlab/mmdetection3d/actions)
-[![codecov](https://codecov.io/gh/open-mmlab/mmdetection3d/branch/main/graph/badge.svg)](https://codecov.io/gh/open-mmlab/mmdetection3d)
-[![license](https://img.shields.io/github/license/open-mmlab/mmdetection3d.svg)](https://github.com/open-mmlab/mmdetection3d/blob/main/LICENSE)
-[![open issues](https://isitmaintained.com/badge/open/open-mmlab/mmdetection3d.svg)](https://github.com/open-mmlab/mmdetection3d/issues)
-[![issue resolution](https://isitmaintained.com/badge/resolution/open-mmlab/mmdetection3d.svg)](https://github.com/open-mmlab/mmdetection3d/issues)
+[VBTI Website](https://vbti.nl/)
+[OneDL platform](https://onedl.ai/)
 
-[📘Documentation](https://mmdetection3d.readthedocs.io/en/latest/) |
-[🛠️Installation](https://mmdetection3d.readthedocs.io/en/latest/get_started.html) |
-[👀Model Zoo](https://mmdetection3d.readthedocs.io/en/latest/model_zoo.html) |
-[🆕Update News](https://mmdetection3d.readthedocs.io/en/latest/notes/changelog.html) |
-[🚀Ongoing Projects](https://github.com/open-mmlab/mmdetection3d/projects) |
-[🤔Reporting Issues](https://github.com/open-mmlab/mmdetection3d/issues/new/choose)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/onedl-mmdetection3d)](https://pypi.org/project/onedl-mmdetection3d/)
+[![PyPI](https://img.shields.io/pypi/v/onedl-mmdetection3d)](https://pypi.org/project/onedl-mmdetection3d)
+[![docs](https://img.shields.io/badge/docs-latest-blue)](https://onedl-mmdetection3d.readthedocs.io/en/latest/)
+[![Build Status](https://github.com/VBTI-development/onedl-mmdetection3d/actions/workflows/merge_stage_test.yml/badge.svg)](https://github.com/VBTI-development/onedl-mmdetection3d/actions)
+[![license](https://img.shields.io/github/license/VBTI-development/onedl-mmdetection3d.svg)](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/LICENSE)
+[![open issues](https://isitmaintained.com/badge/open/VBTI-development/onedl-mmdetection3d.svg)](https://github.com/VBTI-development/onedl-mmdetection3d/issues)
+[![issue resolution](https://isitmaintained.com/badge/resolution/VBTI-development/onedl-mmdetection3d.svg)](https://github.com/VBTI-development/onedl-mmdetection3d/issues)
 
-</div>
+[📘Documentation](https://onedl-mmdetection3d.readthedocs.io/en/latest/) |
+[🛠️Installation](https://onedl-mmdetection3d.readthedocs.io/en/latest/get_started.html) |
+[👀Model Zoo](https://onedl-mmdetection3d.readthedocs.io/en/latest/model_zoo.html) |
+[🆕Update News](https://onedl-mmdetection3d.readthedocs.io/en/latest/notes/changelog.html) |
+[🚀Ongoing Projects](https://github.com/VBTI-development/onedl-mmdetection3d/projects) |
+[🤔Reporting Issues](https://github.com/VBTI-development/onedl-mmdetection3d/issues/new/choose)
 
-<div align="center">
+[Discord](https://discord.gg/8DvcVRs5Pm)
 
-English | [简体中文](README_zh-CN.md)
-
-</div>
-
-<div align="center">
-  <a href="https://openmmlab.medium.com/" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/219255827-67c1a27f-f8c5-46a9-811d-5e57448c61d1.png" width="3%" alt="" /></a>
-  <img src="https://user-images.githubusercontent.com/25839884/218346358-56cc8e2f-a2b8-487f-9088-32480cceabcf.png" width="3%" alt="" />
-  <a href="https://discord.com/channels/1037617289144569886/1046608014234370059" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/218347213-c080267f-cbb6-443e-8532-8e1ed9a58ea9.png" width="3%" alt="" /></a>
-  <img src="https://user-images.githubusercontent.com/25839884/218346358-56cc8e2f-a2b8-487f-9088-32480cceabcf.png" width="3%" alt="" />
-  <a href="https://twitter.com/OpenMMLab" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/218346637-d30c8a0f-3eba-4699-8131-512fb06d46db.png" width="3%" alt="" /></a>
-  <img src="https://user-images.githubusercontent.com/25839884/218346358-56cc8e2f-a2b8-487f-9088-32480cceabcf.png" width="3%" alt="" />
-  <a href="https://www.youtube.com/openmmlab" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/218346691-ceb2116a-465a-40af-8424-9f30d2348ca9.png" width="3%" alt="" /></a>
-  <img src="https://user-images.githubusercontent.com/25839884/218346358-56cc8e2f-a2b8-487f-9088-32480cceabcf.png" width="3%" alt="" />
-  <a href="https://space.bilibili.com/1293512903" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/219026751-d7d14cce-a7c9-4e82-9942-8375fca65b99.png" width="3%" alt="" /></a>
-  <img src="https://user-images.githubusercontent.com/25839884/218346358-56cc8e2f-a2b8-487f-9088-32480cceabcf.png" width="3%" alt="" />
-  <a href="https://www.zhihu.com/people/openmmlab" style="text-decoration:none;">
-    <img src="https://user-images.githubusercontent.com/25839884/219026120-ba71e48b-6e94-4bd4-b4e9-b7d175b5e362.png" width="3%" alt="" /></a>
 </div>
 
 ## Introduction
 
-MMDetection3D is an open source object detection toolbox based on PyTorch, towards the next-generation platform for general 3D detection. It is a part of the [OpenMMLab](https://openmmlab.com/) project.
+MMDetection3D is an open source object detection toolbox based on PyTorch, towards the next-generation platform for general 3D detection. This is the OneDL fork maintained by the [VBTI](https://vbti.nl/) development team, reviving MMLabs code to work with newer PyTorch versions and fixing bugs.
 
-The main branch works with **PyTorch 1.8+**.
+The main branch works with **PyTorch 2.0+**.
 
 ![demo image](resources/mmdet3d_outdoor_demo.gif)
 
@@ -98,7 +78,7 @@ The main branch works with **PyTorch 1.8+**.
 
 </details>
 
-Like [MMDetection](https://github.com/open-mmlab/mmdetection) and [MMCV](https://github.com/open-mmlab/mmcv), MMDetection3D can also be used as a library to support different projects on top of it.
+Like [OneDL-MMDetection](https://github.com/vbti-development/onedl-mmdetection) and [OneDL-MMCV](https://github.com/vbti-development/onedl-mmcv), MMDetection3D can also be used as a library to support different projects on top of it.
 
 ## What's New
 
@@ -106,7 +86,13 @@ Like [MMDetection](https://github.com/open-mmlab/mmdetection) and [MMCV](https:/
 
 In version 1.4, MMDetecion3D refactors the Waymo dataset and accelerates the preprocessing, training/testing setup, and evaluation of Waymo dataset. We also extends the support for camera-based, such as Monocular and BEV, 3D object detection models on Waymo. A detailed description of the Waymo data information is provided [here](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/waymo.html).
 
-Besides, in version 1.4, MMDetection3D provides [Waymo-mini](https://download.openmmlab.com/mmdetection3d/data/waymo_mmdet3d_after_1x4/waymo_mini.tar.gz) to help community users get started with Waymo and use it for quick iterative development.
+Besides, in version 1.4, MMDetection3D provides [Waymo-mini](https://mmassets.onedl.ai/mmdetection3d/data/waymo_mmdet3d_after_1x4/waymo_mini.tar.gz) to help community users get started with Waymo and use it for quick iterative development.
+
+**v1.5.0** was released in 17/4/2026:
+
+- Update to join OneDL ecosystem.
+- Support python 3.12 and torch 2.10.
+- Removed lyft-dataset-sdk and nuscene-devkit dependencies (for now) because of incompatibilities.
 
 **v1.4.0** was released in 8/1/2024：
 
@@ -133,47 +119,47 @@ Besides, in version 1.4, MMDetection3D provides [Waymo-mini](https://download.op
 
 ## Installation
 
-Please refer to [Installation](https://mmdetection3d.readthedocs.io/en/latest/get_started.html) for installation instructions.
+Please refer to [Installation](https://onedl-mmdetection3d.readthedocs.io/en/latest/get_started.html) for installation instructions.
 
 ## Getting Started
 
-For detailed user guides and advanced guides, please refer to our [documentation](https://mmdetection3d.readthedocs.io/en/latest/):
+For detailed user guides and advanced guides, please refer to our [documentation](https://onedl-mmdetection3d.readthedocs.io/en/latest/):
 
 <details>
 <summary>User Guides</summary>
 
-- [Train & Test](https://mmdetection3d.readthedocs.io/en/latest/user_guides/index.html#train-test)
-  - [Learn about Configs](https://mmdetection3d.readthedocs.io/en/latest/user_guides/config.html)
-  - [Coordinate System](https://mmdetection3d.readthedocs.io/en/latest/user_guides/coord_sys_tutorial.html)
-  - [Dataset Preparation](https://mmdetection3d.readthedocs.io/en/latest/user_guides/dataset_prepare.html)
-  - [Customize Data Pipelines](https://mmdetection3d.readthedocs.io/en/latest/user_guides/data_pipeline.html)
-  - [Test and Train on Standard Datasets](https://mmdetection3d.readthedocs.io/en/latest/user_guides/train_test.html)
-  - [Inference](https://mmdetection3d.readthedocs.io/en/latest/user_guides/inference.html)
-  - [Train with Customized Datasets](https://mmdetection3d.readthedocs.io/en/latest/user_guides/new_data_model.html)
-- [Useful Tools](https://mmdetection3d.readthedocs.io/en/latest/user_guides/index.html#useful-tools)
+- [Train & Test](https://onedl-mmdetection3d.readthedocs.io/en/latest/user_guides/index.html#train-test)
+  - [Learn about Configs](https://onedl-mmdetection3d.readthedocs.io/en/latest/user_guides/config.html)
+  - [Coordinate System](https://onedl-mmdetection3d.readthedocs.io/en/latest/user_guides/coord_sys_tutorial.html)
+  - [Dataset Preparation](https://onedl-mmdetection3d.readthedocs.io/en/latest/user_guides/dataset_prepare.html)
+  - [Customize Data Pipelines](https://onedl-mmdetection3d.readthedocs.io/en/latest/user_guides/data_pipeline.html)
+  - [Test and Train on Standard Datasets](https://onedl-mmdetection3d.readthedocs.io/en/latest/user_guides/train_test.html)
+  - [Inference](https://onedl-mmdetection3d.readthedocs.io/en/latest/user_guides/inference.html)
+  - [Train with Customized Datasets](https://onedl-mmdetection3d.readthedocs.io/en/latest/user_guides/new_data_model.html)
+- [Useful Tools](https://onedl-mmdetection3d.readthedocs.io/en/latest/user_guides/index.html#useful-tools)
 
 </details>
 
 <details>
 <summary>Advanced Guides</summary>
 
-- [Datasets](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/index.html#datasets)
-  - [KITTI Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/kitti.html)
-  - [NuScenes Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/nuscenes.html)
-  - [Lyft Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/lyft.html)
-  - [Waymo Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/waymo.html)
-  - [SUN RGB-D Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/sunrgbd.html)
-  - [ScanNet Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/scannet.html)
-  - [S3DIS Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/s3dis.html)
-  - [SemanticKITTI Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/semantickitti.html)
-- [Supported Tasks](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/index.html#supported-tasks)
-  - [LiDAR-Based 3D Detection](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/lidar_det3d.html)
-  - [Vision-Based 3D Detection](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/vision_det3d.html)
-  - [LiDAR-Based 3D Semantic Segmentation](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/lidar_sem_seg3d.html)
-- [Customization](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/index.html#customization)
-  - [Customize Datasets](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/customize_dataset.html)
-  - [Customize Models](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/customize_models.html)
-  - [Customize Runtime Settings](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/customize_runtime.html)
+- [Datasets](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/index.html#datasets)
+  - [KITTI Dataset](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/kitti.html)
+  - [NuScenes Dataset](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/nuscenes.html)
+  - [Lyft Dataset](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/lyft.html)
+  - [Waymo Dataset](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/waymo.html)
+  - [SUN RGB-D Dataset](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/sunrgbd.html)
+  - [ScanNet Dataset](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/scannet.html)
+  - [S3DIS Dataset](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/s3dis.html)
+  - [SemanticKITTI Dataset](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/semantickitti.html)
+- [Supported Tasks](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/index.html#supported-tasks)
+  - [LiDAR-Based 3D Detection](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/lidar_det3d.html)
+  - [Vision-Based 3D Detection](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/vision_det3d.html)
+  - [LiDAR-Based 3D Semantic Segmentation](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/lidar_sem_seg3d.html)
+- [Customization](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/index.html#customization)
+  - [Customize Datasets](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/customize_dataset.html)
+  - [Customize Models](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/customize_models.html)
+  - [Customize Runtime Settings](https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/customize_runtime.html)
 
 </details>
 
@@ -361,11 +347,13 @@ Please refer to [FAQ](docs/en/notes/faq.md) for frequently asked questions.
 
 ## Contributing
 
-We appreciate all contributions to improve MMDetection3D. Please refer to [CONTRIBUTING.md](docs/en/notes/contribution_guides.md) for the contributing guideline.
+We appreciate all contributions to improve MMDetection3D. Please refer to [CONTRIBUTING.md](.github/CONTRIBUTING.md) for the contributing guideline.
 
 ## Acknowledgement
 
 MMDetection3D is an open source project that is contributed by researchers and engineers from various colleges and companies. We appreciate all the contributors as well as users who give valuable feedbacks. We wish that the toolbox and benchmark could serve the growing research community by providing a flexible toolkit to reimplement existing methods and develop their own new 3D detectors.
+
+The VBTI development team is reviving MMLabs code, making it work with newer PyTorch versions and fixing bugs. We are only a small team, so your help is appreciated.
 
 ## Citation
 
@@ -373,10 +361,10 @@ If you find this project useful in your research, please consider cite:
 
 ```latex
 @misc{mmdet3d2020,
-    title={{MMDetection3D: OpenMMLab} next-generation platform for general {3D} object detection},
-    author={MMDetection3D Contributors},
-    howpublished = {\url{https://github.com/open-mmlab/mmdetection3d}},
-    year={2020}
+    title={{OneDL-MMDetection3D: OneDL Lab} next-generation platform for general {3D} object detection},
+    author={OneDL-MMDetection3D Contributors},
+    howpublished = {\url{https://github.com/vbti-development/onedl-mmdetection3d}},
+    year={2026}
 }
 ```
 
@@ -384,27 +372,14 @@ If you find this project useful in your research, please consider cite:
 
 This project is released under the [Apache 2.0 license](LICENSE).
 
-## Projects in OpenMMLab
+## Projects in VBTI-development
 
-- [MMEngine](https://github.com/open-mmlab/mmengine): OpenMMLab foundational library for training deep learning models.
-- [MMCV](https://github.com/open-mmlab/mmcv): OpenMMLab foundational library for computer vision.
-- [MMEval](https://github.com/open-mmlab/mmeval): A unified evaluation library for multiple machine learning libraries.
-- [MIM](https://github.com/open-mmlab/mim): MIM installs OpenMMLab packages.
-- [MMPreTrain](https://github.com/open-mmlab/mmpretrain): OpenMMLab pre-training toolbox and benchmark.
-- [MMDetection](https://github.com/open-mmlab/mmdetection): OpenMMLab detection toolbox and benchmark.
-- [MMDetection3D](https://github.com/open-mmlab/mmdetection3d): OpenMMLab's next-generation platform for general 3D object detection.
-- [MMRotate](https://github.com/open-mmlab/mmrotate): OpenMMLab rotated object detection toolbox and benchmark.
-- [MMYOLO](https://github.com/open-mmlab/mmyolo): OpenMMLab YOLO series toolbox and benchmark.
-- [MMSegmentation](https://github.com/open-mmlab/mmsegmentation): OpenMMLab semantic segmentation toolbox and benchmark.
-- [MMOCR](https://github.com/open-mmlab/mmocr): OpenMMLab text detection, recognition, and understanding toolbox.
-- [MMPose](https://github.com/open-mmlab/mmpose): OpenMMLab pose estimation toolbox and benchmark.
-- [MMHuman3D](https://github.com/open-mmlab/mmhuman3d): OpenMMLab 3D human parametric model toolbox and benchmark.
-- [MMSelfSup](https://github.com/open-mmlab/mmselfsup): OpenMMLab self-supervised learning toolbox and benchmark.
-- [MMRazor](https://github.com/open-mmlab/mmrazor): OpenMMLab model compression toolbox and benchmark.
-- [MMFewShot](https://github.com/open-mmlab/mmfewshot): OpenMMLab fewshot learning toolbox and benchmark.
-- [MMAction2](https://github.com/open-mmlab/mmaction2): OpenMMLab's next-generation action understanding toolbox and benchmark.
-- [MMTracking](https://github.com/open-mmlab/mmtracking): OpenMMLab video perception toolbox and benchmark.
-- [MMFlow](https://github.com/open-mmlab/mmflow): OpenMMLab optical flow toolbox and benchmark.
-- [MMagic](https://github.com/open-mmlab/mmagic): Open**MM**Lab **A**dvanced, **G**enerative and **I**ntelligent **C**reation toolbox.
-- [MMGeneration](https://github.com/open-mmlab/mmgeneration): OpenMMLab image and video generative models toolbox.
-- [MMDeploy](https://github.com/open-mmlab/mmdeploy): OpenMMLab model deployment framework.
+- [OneDL-MMEngine](https://github.com/vbti-development/onedl-mmengine): Foundational library for training deep learning models.
+- [OneDL-MMCV](https://github.com/vbti-development/onedl-mmcv): Foundational library for computer vision.
+- [OneDL-MMPreTrain](https://github.com/vbti-development/onedl-mmpretrain): Pre-training toolbox and benchmark.
+- [OneDL-MMDetection](https://github.com/vbti-development/onedl-mmdetection): Detection toolbox and benchmark.
+- [OneDL-MMDetection3D](https://github.com/vbti-development/onedl-mmdetection3d): 3D Object Detection toolbox and benchmark.
+- [OneDL-MMRotate](https://github.com/vbti-development/onedl-mmrotate): Rotated object detection toolbox and benchmark.
+- [OneDL-MMSegmentation](https://github.com/vbti-development/onedl-mmsegmentation): Semantic segmentation toolbox and benchmark.
+- [OneDL-MMDeploy](https://github.com/vbti-development/onedl-mmdeploy): Model deployment framework.
+- [OneDL-MIM](https://github.com/vbti-development/onedl-mim): MIM installs VBTI packages.

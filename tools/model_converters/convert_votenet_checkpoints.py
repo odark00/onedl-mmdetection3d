@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
 import tempfile
-
 import torch
 from mmengine import Config
 from mmengine.runner import load_state_dict

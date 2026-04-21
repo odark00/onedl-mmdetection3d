@@ -1,16 +1,15 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os
-from collections import OrderedDict
-from os import path as osp
-from typing import List, Tuple, Union
-
 import mmcv
 import mmengine
 import numpy as np
+import os
+from collections import OrderedDict
 from nuscenes.nuscenes import NuScenes
 from nuscenes.utils.geometry_utils import view_points
+from os import path as osp
 from pyquaternion import Quaternion
 from shapely.geometry import MultiPoint, box
+from typing import List, Tuple, Union
 
 from mmdet3d.datasets.convert_utils import NuScenesNameMapping
 from mmdet3d.structures import points_cam2img
@@ -287,7 +286,7 @@ def obtain_sensor2top(nusc,
                       e2g_t,
                       e2g_r_mat,
                       sensor_type='lidar'):
-    """Obtain the info with RT matric from general sensor to Top LiDAR.
+    """Obtain the info with RT matrix from general sensor to Top LiDAR.
 
     Args:
         nusc (class): Dataset class in the nuScenes dataset.

@@ -26,7 +26,7 @@ Models:
         Dataset: KITTI
         Metrics:
           mAP: 78.83
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.1.0_models/dynamic_voxelization/dv_second_secfpn_6x8_80e_kitti-3d-car/dv_second_secfpn_6x8_80e_kitti-3d-car_20200620_235228-ac2c1c0c.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.1.0_models/dynamic_voxelization/dv_second_secfpn_6x8_80e_kitti-3d-car/dv_second_secfpn_6x8_80e_kitti-3d-car_20200620_235228-ac2c1c0c.pth
 
   - Name: dv_second_secfpn_2x8_cosine_80e_kitti-3d-3class
     In Collection: Dynamic Voxelization
@@ -38,7 +38,7 @@ Models:
         Dataset: KITTI
         Metrics:
           mAP: 65.27
-    Weights: https://download.openmmlab.com/mmdetection3d/v1.0.0_models/dynamic_voxelization/dv_second_secfpn_2x8_cosine_80e_kitti-3d-3class/dv_second_secfpn_2x8_cosine_80e_kitti-3d-3class_20210831_054106-e742d163.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v1.0.0_models/dynamic_voxelization/dv_second_secfpn_2x8_cosine_80e_kitti-3d-3class/dv_second_secfpn_2x8_cosine_80e_kitti-3d-3class_20210831_054106-e742d163.pth
 
   - Name: dv_pointpillars_secfpn_6x8_160e_kitti-3d-car
     In Collection: Dynamic Voxelization
@@ -50,4 +50,4 @@ Models:
         Dataset: KITTI
         Metrics:
           mAP: 77.76
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.1.0_models/dynamic_voxelization/dv_pointpillars_secfpn_6x8_160e_kitti-3d-car/dv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20200620_230844-ee7b75c9.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.1.0_models/dynamic_voxelization/dv_pointpillars_secfpn_6x8_160e_kitti-3d-car/dv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20200620_230844-ee7b75c9.pth

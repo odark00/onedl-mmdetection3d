@@ -1,14 +1,13 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from abc import ABCMeta, abstractmethod
-from typing import List, Optional, Tuple
-
 import numpy as np
 import torch
+from abc import ABCMeta, abstractmethod
 from mmdet.models.utils import select_single_mlvl
 from mmengine.config import ConfigDict
 from mmengine.model import BaseModule, constant_init
 from mmengine.structures import InstanceData
 from torch import Tensor
+from typing import List, Optional, Tuple
 
 from mmdet3d.models.layers import box3d_multiclass_nms
 from mmdet3d.structures import limit_period, xywhr2xyxyr

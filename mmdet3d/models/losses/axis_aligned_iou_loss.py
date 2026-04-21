@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional
-
 import torch
 from mmdet.models.losses.utils import weighted_loss
 from torch import Tensor
 from torch import nn as nn
+from typing import Optional
 
 from mmdet3d.registry import MODELS
 from mmdet3d.structures import AxisAlignedBboxOverlaps3D
@@ -74,8 +73,9 @@ class AxisAlignedIoULoss(nn.Module):
         assert reduction_override in (None, 'none', 'mean', 'sum')
         reduction = (
             reduction_override if reduction_override else self.reduction)
-        if (weight is not None) and (not torch.any(weight > 0)) and (
-                reduction != 'none'):
+        if (weight
+                is not None) and (not torch.any(weight > 0)) and (reduction
+                                                                  != 'none'):
             return (pred * weight).sum()
         return axis_aligned_iou_loss(
             pred,

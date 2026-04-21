@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Tuple, Union
-
 import numba
 import numpy as np
+from typing import List, Tuple, Union
 
 from mmdet3d.registry import MODELS
 
@@ -46,7 +45,7 @@ class VoxelGenerator(object):
 
     @property
     def voxel_size(self) -> List[float]:
-        """list[float]: Size of a single voxel."""
+        """List[float]: Size of a single voxel."""
         return self._voxel_size
 
     @property
@@ -56,7 +55,7 @@ class VoxelGenerator(object):
 
     @property
     def point_cloud_range(self) -> List[float]:
-        """list[float]: Range of point cloud."""
+        """List[float]: Range of point cloud."""
         return self._point_cloud_range
 
     @property
@@ -85,7 +84,7 @@ def points_to_voxel(points: np.ndarray,
                     max_points: int = 35,
                     reverse_index: bool = True,
                     max_voxels: int = 20000) -> Tuple[np.ndarray]:
-    """convert kitti points(N, >=3) to voxels.
+    """Convert kitti points(N, >=3) to voxels.
 
     Args:
         points (np.ndarray): [N, ndim]. points[:, :3] contain xyz points and
@@ -152,7 +151,7 @@ def _points_to_voxel_reverse_kernel(points: np.ndarray,
                                     coors: np.ndarray,
                                     max_points: int = 35,
                                     max_voxels: int = 20000):
-    """convert kitti points(N, >=3) to voxels.
+    """Convert kitti points(N, >=3) to voxels.
 
     Args:
         points (np.ndarray): [N, ndim]. points[:, :3] contain xyz points and
@@ -227,7 +226,7 @@ def _points_to_voxel_kernel(points: np.ndarray,
                             coors: np.ndarray,
                             max_points: int = 35,
                             max_voxels: int = 200000):
-    """convert kitti points(N, >=3) to voxels.
+    """Convert kitti points(N, >=3) to voxels.
 
     Args:
         points (np.ndarray): [N, ndim]. points[:, :3] contain xyz points and

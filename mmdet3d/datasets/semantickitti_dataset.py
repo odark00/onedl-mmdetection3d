@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Callable, List, Optional, Union
-
 import numpy as np
+from typing import Callable, List, Optional, Union
 
 from mmdet3d.registry import DATASETS
 from .seg3d_dataset import Seg3DDataset

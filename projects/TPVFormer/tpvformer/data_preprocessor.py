@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Tuple
-
 import numpy as np
 import torch
 import torch.nn as nn
 from PIL import Image
 from torch import Tensor
 from torch.nn import functional as F
+from typing import List, Tuple
 
 from mmdet3d.models import Det3DDataPreprocessor
 from mmdet3d.models.data_preprocessors.voxelize import dynamic_scatter_3d

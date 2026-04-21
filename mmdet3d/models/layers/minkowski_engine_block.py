@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Tuple, Union
-
 from mmcv.cnn import build_activation_layer, build_conv_layer, build_norm_layer
 from mmengine.model import BaseModule
 from mmengine.registry import MODELS
 from torch import nn
+from typing import Optional, Tuple, Union
 
 from mmdet3d.utils import ConfigType, OptConfigType, OptMultiConfig
 

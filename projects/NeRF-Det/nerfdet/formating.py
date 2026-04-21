@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Sequence, Union
-
 import mmengine
 import numpy as np
 import torch
 from mmcv import BaseTransform
 from mmengine.structures import InstanceData
 from numpy import dtype
+from typing import List, Sequence, Union
 
 from mmdet3d.registry import TRANSFORMS
 from mmdet3d.structures import BaseInstance3DBoxes, PointData
@@ -223,8 +222,8 @@ class PackNeRFDetInputs(BaseTransform):
                     gt_images = to_tensor(np.ascontiguousarray(gt_images))
                 results['gt_images'] = gt_images
 
-            if isinstance(results['gt_depths'],
-                          list) and len(results['gt_depths']) != 0:
+            if isinstance(results['gt_depths'], list) and len(
+                    results['gt_depths']) != 0:
                 gt_depths = np.stack(results['gt_depths'], axis=0)
                 if gt_depths.flags.c_contiguous:
                     gt_depths = to_tensor(gt_depths).contiguous()

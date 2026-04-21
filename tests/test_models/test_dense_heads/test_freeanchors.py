@@ -1,6 +1,6 @@
-import unittest
-
+# Copyright (c) OpenMMLab. All rights reserved.
 import torch
+import unittest
 from mmengine import DefaultScope
 
 from mmdet3d.registry import MODELS
@@ -74,6 +74,8 @@ class TestFreeAnchor(unittest.TestCase):
             # self.assertIn('scores_3d', aug_results[1].pred_instances_3d)
             # self.assertIn('labels_3d', aug_results[1].pred_instances_3d)
 
+            del results
+            torch.cuda.empty_cache()
             losses = model.forward(**data, mode='loss')
 
             self.assertGreaterEqual(losses['positive_bag_loss'], 0)

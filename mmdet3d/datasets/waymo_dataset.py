@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os.path as osp
-from typing import Callable, List, Union
-
 import numpy as np
+import os.path as osp
 from mmengine import print_log
 from mmengine.fileio import load
+from typing import Callable, List, Union
 
 from mmdet3d.registry import DATASETS
 from mmdet3d.structures import CameraInstance3DBoxes, LiDARInstance3DBoxes
@@ -236,7 +235,7 @@ class WaymoDataset(KittiDataset):
         return data_list
 
     def parse_data_info(self, info: dict) -> Union[dict, List[dict]]:
-        """if task is lidar or multiview det, use super() method elif task is
+        """If task is lidar or multiview det, use super() method elif task is
         mono3d, split the info from frame-wise to img-wise."""
 
         if self.cam_sync_instances:

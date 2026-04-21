@@ -8,9 +8,9 @@ body:
     attributes:
       value: |
         ## Note
-        For general usage questions or idea discussions, please post it to our [**Forum**](https://github.com/open-mmlab/mmdetection3d/discussions).
-        If this issue is about installing MMCV, please file an issue at [MMCV](https://github.com/open-mmlab/mmcv/issues/new/choose).
-        If it's anything about model deployment, please raise it to [MMDeploy](https://github.com/open-mmlab/mmdeploy).
+        For general usage questions or idea discussions, please post it to our [**Forum**](https://github.com/VBTI-development/onedl-mmdetection3d/discussions).
+        If this issue is about installing MMCV, please file an issue at [MMCV](https://github.com/VBTI-development/onedl-mmcv/issues/new/choose).
+        If it's anything about model deployment, please raise it to [MMDeploy](https://github.com/VBTI-development/onedl-mmdeploy).
 
         Please fill in as **much** of the following form as you're able to. **The clearer the description, the shorter it will take to solve it.**
 
@@ -19,11 +19,11 @@ body:
       label: Prerequisite
       description: Please check the following items before creating a new issue.
       options:
-      - label: I have searched [Issues](https://github.com/open-mmlab/mmdetection3d/issues) and [Discussions](https://github.com/open-mmlab/mmdetection3d/discussions) but cannot get the expected help.
+      - label: I have searched [Issues](https://github.com/VBTI-development/onedl-mmdetection3d/issues) and [Discussions](https://github.com/VBTI-development/onedl-mmdetection3d/discussions) but cannot get the expected help.
         required: true
-      - label: I have read the [FAQ documentation](https://mmdetection3d.readthedocs.io/en/latest/notes/faq.html) but cannot get the expected help.
+      - label: I have read the [FAQ documentation](https://onedl-mmdetection3d.readthedocs.io/en/latest/notes/faq.html) but cannot get the expected help.
         required: true
-      - label: The bug has not been fixed in the [latest version (dev-1.x)](https://github.com/open-mmlab/mmdetection3d/tree/dev-1.x) or [latest version (dev-1.0)](https://github.com/open-mmlab/mmdetection3d/tree/dev-1.0).
+      - label: The bug has not been fixed in the [latest version (dev-1.x)](https://github.com/VBTI-development/onedl-mmdetection3d/tree/dev-1.x) or [latest version (dev-1.0)](https://github.com/VBTI-development/onedl-mmdetection3d/tree/dev-1.0).
         required: true
 
   - type: dropdown
@@ -43,8 +43,7 @@ body:
       label: Branch
       description: The problem arises when I'm working on
       options:
-        - main branch https://github.com/open-mmlab/mmdetection3d
-        - 1.x branch https://github.com/open-mmlab/mmdetection3d/tree/dev-1.x
+        - main branch https://github.com/VBTI-development/onedl-mmdetection3d
     validations:
       required: true
 
@@ -115,5 +114,5 @@ body:
         ## Acknowledgement
         Thanks for taking the time to fill out this report.
 
-        If you have already identified the reason, we strongly appreciate you creating a new PR to fix it [**Here**](https://github.com/open-mmlab/mmdetection3d/pulls)!
-        Please refer to [**Contribution Guide**](https://mmdetection3d.readthedocs.io/en/latest/notes/contribution_guides.html) for contributing.
+        If you have already identified the reason, we strongly appreciate you creating a new PR to fix it [**Here**](https://github.com/VBTI-development/onedl-mmdetection3d/pulls)!
+        Please refer to [**Contribution Guide**](https://onedl-mmdetection3d.readthedocs.io/en/latest/notes/contribution_guides.html) for contributing.

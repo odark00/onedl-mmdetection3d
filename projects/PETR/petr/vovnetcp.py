@@ -7,13 +7,12 @@
 # Copyright (c) Youngwan Lee (ETRI) All Rights Reserved.
 # Copyright 2021 Toyota Research Institute.  All rights reserved.
 # ------------------------------------------------------------------------
-import warnings
-from collections import OrderedDict
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.utils.checkpoint as cp
+import warnings
+from collections import OrderedDict
 from mmengine.model import BaseModule
 from torch.nn.modules.batchnorm import _BatchNorm
 

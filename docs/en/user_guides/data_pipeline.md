@@ -8,7 +8,7 @@ the arguments of models' forward method.
 Since the data in object detection may not be the same size (point number, gt bbox size, etc.),
 we introduce a new `DataContainer` type in MMCV to help collect and distribute
 data of different size.
-See [here](https://github.com/open-mmlab/mmcv/blob/master/mmcv/parallel/data_container.py) for more details.
+See [here](https://github.com/vbti-development/onedl-mmcv/blob/master/mmcv/parallel/data_container.py) for more details.
 
 The data preparation pipeline and the dataset is decomposed. Usually a dataset
 defines how to process the annotations and a data pipeline defines all the steps to prepare a data dict.

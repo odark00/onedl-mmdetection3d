@@ -1,7 +1,7 @@
+# Copyright (c) OpenMMLab. All rights reserved.
+import mmengine
 from os import path as osp
 from pathlib import Path
-
-import mmengine
 
 total_num = {
     0: 4541,

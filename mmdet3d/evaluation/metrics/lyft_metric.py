@@ -1,18 +1,24 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os
-import tempfile
-from os import path as osp
-from typing import Dict, List, Optional, Sequence, Tuple, Union
-
 import mmengine
 import numpy as np
+import os
 import pandas as pd
-from lyft_dataset_sdk.lyftdataset import LyftDataset as Lyft
-from lyft_dataset_sdk.utils.data_classes import Box as LyftBox
+import tempfile
 from mmengine import load
 from mmengine.evaluator import BaseMetric
 from mmengine.logging import MMLogger
+from os import path as osp
 from pyquaternion import Quaternion
+from typing import Dict, List, Optional, Sequence, Tuple, Union
+
+try:
+    from lyft_dataset_sdk.lyftdataset import LyftDataset as Lyft
+    from lyft_dataset_sdk.utils.data_classes import Box as LyftBox
+    HAS_LYFT_SDK = True
+except ImportError:
+    HAS_LYFT_SDK = False
+    Lyft = None  # placeholder so module-level code doesn't NameError
+    LyftBox = None  # placeholder for type annotations
 
 from mmdet3d.evaluation import lyft_eval
 from mmdet3d.registry import METRICS
@@ -65,6 +71,12 @@ class LyftMetric(BaseMetric):
                  collect_device: str = 'cpu',
                  backend_args: Optional[dict] = None) -> None:
         self.default_prefix = 'Lyft metric'
+        if not HAS_LYFT_SDK:
+            raise ImportError(
+                'lyft_dataset_sdk is required to use LyftMetric but is not '
+                'installed or is incompatible with the current environment. '
+                'Please install a compatible version: '
+                'pip install lyft_dataset_sdk')
         super(LyftMetric, self).__init__(
             collect_device=collect_device, prefix=prefix)
         self.ann_file = ann_file

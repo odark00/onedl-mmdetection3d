@@ -69,10 +69,10 @@ class NMSFreeCoder(BaseBBoxCoder):
         if self.post_center_range is not None:
             self.post_center_range = torch.tensor(
                 self.post_center_range, device=scores.device)
-            mask = (final_box_preds[..., :3] >=
-                    self.post_center_range[:3]).all(1)
-            mask &= (final_box_preds[..., :3] <=
-                     self.post_center_range[3:]).all(1)
+            mask = (final_box_preds[..., :3]
+                    >= self.post_center_range[:3]).all(1)
+            mask &= (final_box_preds[..., :3]
+                     <= self.post_center_range[3:]).all(1)
 
             if self.score_threshold:
                 mask &= thresh_mask

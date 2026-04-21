@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from logging import warning
-from typing import Tuple, Union
-
 import numpy as np
 import torch
+from logging import warning
 from torch import Tensor
+from typing import Tuple, Union
 
 from mmdet3d.utils import array_converter
 

@@ -27,7 +27,7 @@ Models:
         Metrics:
           AP@0.25: 66.17
           AP@0.5: 48.47
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.1.0_models/groupfree3d/groupfree3d_8x4_scannet-3d-18class-L6-O256/groupfree3d_8x4_scannet-3d-18class-L6-O256_20210702_145347-3499eb55.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.1.0_models/groupfree3d/groupfree3d_8x4_scannet-3d-18class-L6-O256/groupfree3d_8x4_scannet-3d-18class-L6-O256_20210702_145347-3499eb55.pth
 
   - Name: groupfree3d_head-L12-O256_4xb8_scannet-seg.py
     In Collection: Group-Free-3D
@@ -41,7 +41,7 @@ Models:
         Metrics:
           AP@0.25: 66.57
           AP@0.5: 48.21
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.1.0_models/groupfree3d/groupfree3d_8x4_scannet-3d-18class-L12-O256/groupfree3d_8x4_scannet-3d-18class-L12-O256_20210702_150907-1c5551ad.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.1.0_models/groupfree3d/groupfree3d_8x4_scannet-3d-18class-L12-O256/groupfree3d_8x4_scannet-3d-18class-L12-O256_20210702_150907-1c5551ad.pth
 
   - Name: groupfree3d_w2x-head-L12-O256_4xb8_scannet-seg.py
     In Collection: Group-Free-3D
@@ -55,7 +55,7 @@ Models:
         Metrics:
           AP@0.25: 68.20
           AP@0.5: 51.02
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.1.0_models/groupfree3d/groupfree3d_8x4_scannet-3d-18class-w2x-L12-O256/groupfree3d_8x4_scannet-3d-18class-w2x-L12-O256_20210702_200301-944f0ac0.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.1.0_models/groupfree3d/groupfree3d_8x4_scannet-3d-18class-w2x-L12-O256/groupfree3d_8x4_scannet-3d-18class-w2x-L12-O256_20210702_200301-944f0ac0.pth
 
   - Name: groupfree3d_w2x-head-L12-O512_4xb8_scannet-seg.py
     In Collection: Group-Free-3D
@@ -69,4 +69,4 @@ Models:
         Metrics:
           AP@0.25: 68.22
           AP@0.5: 52.61
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.1.0_models/groupfree3d/groupfree3d_8x4_scannet-3d-18class-w2x-L12-O512/groupfree3d_8x4_scannet-3d-18class-w2x-L12-O512_20210702_220204-187b71c7.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.1.0_models/groupfree3d/groupfree3d_8x4_scannet-3d-18class-w2x-L12-O512/groupfree3d_8x4_scannet-3d-18class-w2x-L12-O512_20210702_220204-187b71c7.pth

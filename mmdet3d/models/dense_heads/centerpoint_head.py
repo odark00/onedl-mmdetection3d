@@ -1,13 +1,12 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-from typing import Dict, List, Optional, Tuple, Union
-
 import torch
 from mmcv.cnn import ConvModule, build_conv_layer
 from mmdet.models.utils import multi_apply
 from mmengine.model import BaseModule
 from mmengine.structures import InstanceData
 from torch import Tensor, nn
+from typing import Dict, List, Optional, Tuple, Union
 
 from mmdet3d.models.utils import (clip_sigmoid, draw_heatmap_gaussian,
                                   gaussian_radius)
@@ -559,8 +558,8 @@ class CenterHead(BaseModule):
                     new_idx = k
                     x, y = center_int[0], center_int[1]
 
-                    assert (y * feature_map_size[0] + x <
-                            feature_map_size[0] * feature_map_size[1])
+                    assert (y * feature_map_size[0] + x
+                            < feature_map_size[0] * feature_map_size[1])
 
                     ind[new_idx] = y * feature_map_size[0] + x
                     mask[new_idx] = 1
@@ -671,7 +670,7 @@ class CenterHead(BaseModule):
             pts_feats (dict): Point features..
             batch_data_samples (List[:obj:`Det3DDataSample`]): The Data
                 Samples. It usually includes meta information of data.
-            rescale (bool): Whether rescale the resutls to
+            rescale (bool): Whether to rescale the results to
                 the original scale.
 
         Returns:
@@ -896,10 +895,10 @@ class CenterHead(BaseModule):
                 final_scores = scores
                 final_labels = label_preds
                 if post_center_range is not None:
-                    mask = (final_box_preds[:, :3] >=
-                            post_center_range[:3]).all(1)
-                    mask &= (final_box_preds[:, :3] <=
-                             post_center_range[3:]).all(1)
+                    mask = (final_box_preds[:, :3]
+                            >= post_center_range[:3]).all(1)
+                    mask &= (final_box_preds[:, :3]
+                             <= post_center_range[3:]).all(1)
                     predictions_dict = dict(
                         bboxes=final_box_preds[mask],
                         scores=final_scores[mask],

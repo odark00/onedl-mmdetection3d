@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Tuple
-
 from mmcv.cnn import ConvModule
 from mmengine.model import BaseModule
 from torch import Tensor
 from torch import nn as nn
+from typing import Tuple
 
 from mmdet3d.utils import ConfigType, OptMultiConfig
 

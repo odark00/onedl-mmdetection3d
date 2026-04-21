@@ -27,7 +27,7 @@ For now, CPU testing is only supported for SMOKE.
 
 Optional arguments:
 
-- `--show`: If specified, detection results will be plotted in the silient mode. It is only applicable to single GPU testing and used for debugging and visualization. This should be used with `--show-dir`.
+- `--show`: If specified, detection results will be plotted in the silent mode. It is only applicable to single GPU testing and used for debugging and visualization. This should be used with `--show-dir`.
 - `--show-dir`: If specified, detection results will be plotted on the `***_points.obj` and `***_pred.obj` files in the specified directory. It is only applicable to single GPU testing and used for debugging and visualization. You do NOT need a GUI available in your environment for using this option.
 
 All evaluation related arguments are set in the `test_evaluator` in corresponding dataset configuration. such as
@@ -193,7 +193,7 @@ Here is an example of using 16 GPUs to train Mask R-CNN on the dev partition.
 GPUS=16 ./tools/slurm_train.sh dev pp_kitti_3class configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py /nfs/xxxx/pp_kitti_3class
 ```
 
-You can check [slurm_train.sh](https://github.com/open-mmlab/mmdetection/blob/master/tools/slurm_train.sh) for full arguments and environment variables.
+You can check [slurm_train.sh](https://github.com/vbti-development/onedl-mmdetection/blob/master/tools/slurm_train.sh) for full arguments and environment variables.
 
 If you launch with multiple machines simply connected with ethernet, you can simply run following commands:
 

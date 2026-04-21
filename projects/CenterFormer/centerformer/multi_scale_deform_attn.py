@@ -1,14 +1,13 @@
 # modify from https://github.com/TuSimple/centerformer/blob/master/det3d/models/ops/modules/ms_deform_attn.py # noqa
 
 import math
-from typing import Optional
-
 import torch
 import torch.nn.functional as F
 from mmcv.utils import ext_loader
 from torch import Tensor, nn
 from torch.autograd.function import Function, once_differentiable
 from torch.nn.init import constant_, xavier_uniform_
+from typing import Optional
 
 ext_module = ext_loader.load_ext(
     '_ext', ['ms_deform_attn_backward', 'ms_deform_attn_forward'])
@@ -65,7 +64,7 @@ class MultiScaleDeformableAttnFunction(Function):
         Returns:
             tuple[Tensor]: Gradient of input tensors in forward.
         """
-        value, value_spatial_shapes, value_level_start_index,\
+        value, value_spatial_shapes, value_level_start_index, \
             sampling_locations, attention_weights = ctx.saved_tensors
         grad_value = torch.zeros_like(value)
         grad_sampling_loc = torch.zeros_like(sampling_locations)

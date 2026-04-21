@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Sequence, Tuple
-
 import torch
 from mmcv.cnn import (ConvModule, build_activation_layer, build_conv_layer,
                       build_norm_layer)
 from mmengine.model import BaseModule
 from torch import Tensor, nn
 from torch.nn import functional as F
+from typing import Optional, Sequence, Tuple
 
 from mmdet3d.registry import MODELS
 from mmdet3d.utils import ConfigType, OptConfigType, OptMultiConfig
@@ -52,8 +51,8 @@ class BasicBlock(BaseModule):
 
     @property
     def norm2(self) -> nn.Module:
-        """nn.Module: normalization layer after the second convolution layer.
-        """
+        """nn.Module: normalization layer after the second convolution
+        layer."""
         return getattr(self, self.norm2_name)
 
     def forward(self, x: Tensor) -> Tensor:

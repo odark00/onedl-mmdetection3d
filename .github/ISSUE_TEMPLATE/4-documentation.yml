@@ -8,7 +8,7 @@ body:
     attributes:
       value: |
         ## Note
-        For general usage questions or idea discussions, please post it to our [**Forum**](https://github.com/open-mmlab/mmdetection3d/discussions).
+        For general usage questions or idea discussions, please post it to our [**Forum**](https://github.com/VBTI-development/onedl-mmdetection3d/discussions).
 
         Please fill in as **much** of the following form as you're able to. **The clearer the description, the shorter it will take to solve it.**
 
@@ -18,8 +18,7 @@ body:
       label: Branch
       description: This issue is related to the
       options:
-        - main branch  https://mmdetection3d.readthedocs.io/en/latest/
-        - dev-1.x branch https://mmdetection3d.readthedocs.io/en/dev-1.x/
+        - main branch  https://onedl-mmdetection3d.readthedocs.io/en/latest/
     validations:
       required: true
 
@@ -43,5 +42,5 @@ body:
         ## Acknowledgement
         Thanks for taking the time to fill out this report.
 
-        If you have already identified the reason, we strongly appreciate you creating a new PR to fix it [**here**](https://github.com/open-mmlab/mmdetection3d/pulls)!
-        Please refer to [**Contribution Guide**](https://mmdetection3d.readthedocs.io/en/latest/notes/contribution_guides.html) for contributing.
+        If you have already identified the reason, we strongly appreciate you creating a new PR to fix it [**here**](https://github.com/VBTI-development/onedl-mmdetection3d/pulls)!
+        Please refer to [**Contribution Guide**](https://onedl-mmdetection3d.readthedocs.io/en/latest/notes/contribution_guides.html) for contributing.

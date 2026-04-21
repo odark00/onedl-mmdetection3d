@@ -4,19 +4,23 @@
 
 In this section, we demonstrate how to prepare an environment with PyTorch.
 
-MMDetection3D works on Linux, Windows (experimental support) and macOS. It requires Python 3.7+, CUDA 10.0+, and PyTorch 1.8+.
+MMDetection3D works on Linux, Windows (experimental support) and macOS. It requires Python 3.10+, CUDA 11.8+, and PyTorch 2.0+.
 
 ```{note}
 If you are experienced with PyTorch and have already installed it, just skip this part and jump to the [next section](#installation). Otherwise, you can follow these steps for the preparation.
 ```
 
-**Step 0.** Download and install Miniconda from the [official website](https://docs.conda.io/en/latest/miniconda.html).
-
-**Step 1.** Create a conda environment and activate it.
+**Step 0.** Install [uv](https://docs.astral.sh/uv/) — a fast Python package manager.
 
 ```shell
-conda create --name openmmlab python=3.8 -y
-conda activate openmmlab
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**Step 1.** Create a virtual environment and activate it.
+
+```shell
+uv venv --python 3.12
+source .venv/bin/activate
 ```
 
 **Step 2.** Install PyTorch following [official instructions](https://pytorch.org/get-started/locally/), e.g.
@@ -24,13 +28,13 @@ conda activate openmmlab
 On GPU platforms:
 
 ```shell
-conda install pytorch torchvision -c pytorch
+uv pip install torch torchvision --torch-backend=auto
 ```
 
 On CPU platforms:
 
 ```shell
-conda install pytorch torchvision cpuonly -c pytorch
+uv pip install --torch-backend=cpu torch torchvision
 ```
 
 ## Installation
@@ -39,35 +43,29 @@ We recommend that users follow our best practices to install MMDetection3D. Howe
 
 ### Best Practices
 
-**Step 0.** Install [MMEngine](https://github.com/open-mmlab/mmengine), [MMCV](https://github.com/open-mmlab/mmcv) and [MMDetection](https://github.com/open-mmlab/mmdetection) using [MIM](https://github.com/open-mmlab/mim).
+**Step 0.** Install [OneDL-MMEngine](https://github.com/vbti-development/onedl-mmengine), [OneDL-MMCV](https://github.com/vbti-development/onedl-mmcv) and [OneDL-MMDetection](https://github.com/vbti-development/onedl-mmdetection) using [OneDL-MIM](https://github.com/vbti-development/onedl-mim).
 
 ```shell
-pip install -U openmim
-mim install mmengine
-mim install 'mmcv>=2.0.0rc4'
-mim install 'mmdet>=3.0.0'
+uv pip install onedl-mim
+mim install onedl-mmengine
+mim install onedl-mmcv --only-binary=onedl-mmcv
+mim install 'onedl-mmdetection>=v3.4.0-rc1'
 ```
-
-**Note**: In MMCV-v2.x, `mmcv-full` is renamed to `mmcv`, if you want to install `mmcv` without CUDA ops, you can use `mim install "mmcv-lite>=2.0.0rc4"` to install the lite version.
 
 **Step 1.** Install MMDetection3D.
 
 Case a: If you develop and run mmdet3d directly, install it from source:
 
 ```shell
-git clone https://github.com/open-mmlab/mmdetection3d.git -b dev-1.x
-# "-b dev-1.x" means checkout to the `dev-1.x` branch.
-cd mmdetection3d
-pip install -v -e .
-# "-v" means verbose, or more output
-# "-e" means installing a project in edtiable mode,
-# thus any local modifications made to the code will take effect without reinstallation.
+git clone https://github.com/vbti-development/onedl-mmdetection3d.git
+cd onedl-mmdetection3d
+uv pip install -e .
 ```
 
 Case b: If you use mmdet3d as a dependency or third-party package, install it with MIM:
 
 ```shell
-mim install "mmdet3d>=1.1.0"
+mim install "onedl-mmdetection3d>=1.1.0"
 ```
 
 Note:
@@ -75,7 +73,7 @@ Note:
 1. If you would like to use `opencv-python-headless` instead of `opencv-python`,
    you can install it before installing MMCV.
 
-2. Some dependencies are optional. Simply running `pip install -v -e .` will only install the minimum runtime requirements. To use optional dependencies like `albumentations` and `imagecorruptions` either install them manually with `pip install -r requirements/optional.txt` or specify desired extras when calling `pip` (e.g. `pip install -v -e .[optional]`). Valid keys for the extras field are: `all`, `tests`, `build`, and `optional`.
+2. Some dependencies are optional. Simply running `uv pip install -e .` will only install the minimum runtime requirements. To use optional dependencies specify desired extras when calling `uv pip` (e.g. `uv pip install -e .[optional]`). Valid keys for the extras field are: `optional`, `mminstall`, and `torch`.
 
    We have supported `spconv 2.0`. If the user has installed `spconv 2.0`, the code will use `spconv 2.0` first, which will take up less GPU memory than using the default `mmcv spconv`. Users can use the following commands to install `spconv 2.0`:
 
@@ -124,7 +122,7 @@ To verify whether MMDetection3D is installed correctly, we provide some sample c
 **Step 1.** We need to download config and checkpoint files.
 
 ```shell
-mim download mmdet3d --config pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car --dest .
+mim download onedl-mmdetection3d --config pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car --dest .
 ```
 
 The downloading will take several seconds or more, depending on your network environment. When it is done, you will find two files `pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py` and `hv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20220331_134606-d42d15ed.pth` in your current folder.
@@ -215,45 +213,45 @@ Please make sure the GPU driver satisfies the minimum version requirements. See 
 Installing CUDA runtime libraries is enough if you follow our best practices, because no CUDA code will be compiled locally. However if you hope to compile MMCV from source or develop other CUDA operators, you need to install the complete CUDA toolkit from NVIDIA's [website](https://developer.nvidia.com/cuda-downloads), and its version should match the CUDA version of PyTorch. i.e., the specified version of cudatoolkit in `conda install` command.
 ```
 
-#### Install MMEngine without MIM
+#### Install OneDL-MMEngine without MIM
 
-To install MMEngine with pip instead of MIM, please follow [MMEngine installation guides](https://mmengine.readthedocs.io/en/latest/get_started/installation.html).
-
-For example, you can install MMEngine by the following command:
+To install OneDL-MMEngine with pip instead of MIM, you can use:
 
 ```shell
-pip install mmengine
+uv pip install onedl-mmengine
 ```
 
-#### Install MMCV without MIM
+#### Install OneDL-MMCV without MIM
 
-MMCV contains C++ and CUDA extensions, thus depending on PyTorch in a complex way. MIM solves such dependencies automatically and makes the installation easier. However, it is not a must.
-
-To install MMCV with pip instead of MIM, please follow [MMCV installation guides](https://mmcv.readthedocs.io/en/2.x/get_started/installation.html). This requires manually specifying a find-url based on PyTorch version and its CUDA version.
-
-For example, the following command install MMCV built for PyTorch 1.12.x and CUDA 11.6:
+OneDL-MMCV provides pre-built wheels. We strongly recommend using MIM which handles CUDA/PyTorch version matching automatically:
 
 ```shell
-pip install "mmcv>=2.0.0rc4" -f https://download.openmmlab.com/mmcv/dist/cu116/torch1.12.0/index.html
+mim install onedl-mmcv --only-binary=onedl-mmcv
+```
+
+Alternatively, wheels are available from our mmwheels index. For example, for PyTorch 2.10 and CUDA 12.4:
+
+```shell
+uv pip install onedl-mmcv -f https://vbti-development.github.io/mmwheels/
 ```
 
 #### Install on Google Colab
 
 [Google Colab](https://colab.research.google.com/) usually has PyTorch installed, thus we only need to install MMEngine, MMCV, MMDetection, and MMDetection3D with the following commands.
 
-**Step 1.** Install [MMEngine](https://github.com/open-mmlab/mmengine), [MMCV](https://github.com/open-mmlab/mmcv) and [MMDetection](https://github.com/open-mmlab/mmdetection) using [MIM](https://github.com/open-mmlab/mim).
+**Step 1.** Install [OneDL-MMEngine](https://github.com/vbti-development/onedl-mmengine), [OneDL-MMCV](https://github.com/vbti-development/onedl-mmcv) and [OneDL-MMDetection](https://github.com/vbti-development/onedl-mmdetection) using [OneDL-MIM](https://github.com/vbti-development/onedl-mim).
 
 ```shell
-!pip3 install openmim
-!mim install mmengine
-!mim install "mmcv>=2.0.0rc4,<2.1.0"
-!mim install "mmdet>=3.0.0,<3.1.0"
+!pip3 install onedl-mim
+!mim install onedl-mmengine
+!mim install onedl-mmcv --only-binary=onedl-mmcv
+!mim install "onedl-mmdetection>=v3.4.0-rc1"
 ```
 
 **Step 2.** Install MMDetection3D from source.
 
 ```shell
-!git clone https://github.com/open-mmlab/mmdetection3d.git -b dev-1.x
+!git clone https://github.com/VBTI-development/onedl-mmdetection3d.git -b dev-1.x
 %cd mmdetection3d
 !pip install -e .
 ```
@@ -272,7 +270,7 @@ Within Jupyter, the exclamation mark `!` is used to call external executables an
 
 #### Using MMDetection3D with Docker
 
-We provide a [Dockerfile](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/docker/Dockerfile) to build an image. Ensure that your [docker version](https://docs.docker.com/engine/install/) >= 19.03.
+We provide a [Dockerfile](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/docker/Dockerfile) to build an image. Ensure that your [docker version](https://docs.docker.com/engine/install/) >= 19.03.
 
 ```shell
 # build an image with PyTorch 1.9, CUDA 11.1
@@ -289,7 +287,7 @@ docker run --gpus all --shm-size=8g -it -v {DATA_DIR}:/mmdetection3d/data mmdete
 ### Troubleshooting
 
 If you have some issues during the installation, please first view the [FAQ](notes/faq.md) page.
-You may [open an issue](https://github.com/open-mmlab/mmdetection3d/issues/new/choose) on GitHub if no solution is found.
+You may [open an issue](https://github.com/VBTI-development/onedl-mmdetection3d/issues/new/choose) on GitHub if no solution is found.
 
 ### Use Multiple Versions of MMDetection3D in Development
 

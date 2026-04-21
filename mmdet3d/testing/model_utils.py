@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-import random
-from os.path import dirname, exists, join
-
 import numpy as np
+import random
 import torch
 from mmengine.structures import InstanceData
+from os.path import dirname, exists, join
 
 from mmdet3d.structures import (CameraInstance3DBoxes, DepthInstance3DBoxes,
                                 Det3DDataSample, LiDARInstance3DBoxes,

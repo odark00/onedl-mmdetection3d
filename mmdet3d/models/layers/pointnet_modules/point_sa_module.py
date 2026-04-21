@@ -1,6 +1,4 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Optional, Tuple, Union
-
 import torch
 from mmcv.cnn import ConvModule
 from mmcv.ops import GroupAll
@@ -9,6 +7,7 @@ from mmcv.ops import QueryAndGroup, gather_points
 from torch import Tensor
 from torch import nn as nn
 from torch.nn import functional as F
+from typing import List, Optional, Tuple, Union
 
 from mmdet3d.models.layers import PAConv
 from mmdet3d.utils import ConfigType

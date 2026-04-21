@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List
-
 import torch
+from typing import List
 
 from mmdet3d.structures import bbox3d2result, bbox3d_mapping_back, xywhr2xyxyr
 from mmdet3d.utils import ConfigType

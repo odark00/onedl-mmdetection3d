@@ -1,7 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-from typing import List, Optional, Union
-
 import mmcv
 import mmengine
 import numpy as np
@@ -9,6 +7,7 @@ from mmcv.transforms import LoadImageFromFile
 from mmcv.transforms.base import BaseTransform
 from mmdet.datasets.transforms import LoadAnnotations
 from mmengine.fileio import get
+from typing import List, Optional, Union
 
 from mmdet3d.registry import TRANSFORMS
 from mmdet3d.structures.bbox_3d import get_box_type
@@ -274,10 +273,11 @@ class LoadImageFromFileMono3D(LoadImageFromFile):
 
 @TRANSFORMS.register_module()
 class LoadImageFromNDArray(LoadImageFromFile):
-    """Load an image from ``results['img']``.
-    Similar with :obj:`LoadImageFromFile`, but the image has been loaded as
+    """Load an image from ``results['img']``. Similar with
+    :obj:`LoadImageFromFile`, but the image has been loaded as
     :obj:`np.ndarray` in ``results['img']``. Can be used when loading image
     from webcam.
+
     Required Keys:
     - img
     Modified Keys:
@@ -577,9 +577,9 @@ class LoadPointsFromFile(BaseTransform):
             or use_dim=[0, 1, 2, 3] to use the intensity dimension.
         shift_height (bool): Whether to use shifted height. Defaults to False.
         use_color (bool): Whether to use color features. Defaults to False.
-        norm_intensity (bool): Whether to normlize the intensity. Defaults to
+        norm_intensity (bool): Whether to normalize the intensity. Defaults to
             False.
-        norm_elongation (bool): Whether to normlize the elongation. This is
+        norm_elongation (bool): Whether to normalize the elongation. This is
             usually used in Waymo dataset.Defaults to False.
         backend_args (dict, optional): Arguments to instantiate the
             corresponding backend. Defaults to None.
@@ -1020,7 +1020,7 @@ class LoadAnnotations3D(LoadAnnotations):
     def _load_bboxes(self, results: dict) -> None:
         """Private function to load bounding box annotations.
 
-        The only difference is it remove the proceess for
+        The only difference is it removes the process for
         `ignore_flag`
 
         Args:
@@ -1155,7 +1155,6 @@ class MonoDet3DInferencerLoader(BaseTransform):
       - img
       - box_type_3d
       - box_mode_3d
-
     """
 
     def __init__(self, **kwargs) -> None:

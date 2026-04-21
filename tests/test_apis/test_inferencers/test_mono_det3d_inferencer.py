@@ -1,13 +1,12 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os.path as osp
-import tempfile
-from unittest import TestCase
-
 import mmcv
 import mmengine
 import numpy as np
+import os.path as osp
+import tempfile
 from mmengine.utils import is_list_of
 from parameterized import parameterized
+from unittest import TestCase
 
 from mmdet3d.apis import MonoDet3DInferencer
 from mmdet3d.structures import Det3DDataSample
@@ -21,7 +20,7 @@ class TestMonoDet3DInferencer(TestCase):
         # init from cfg
         MonoDet3DInferencer(
             'configs/pgd/pgd_r101-caffe_fpn_head-gn_4xb3-4x_kitti-mono3d.py',
-            'https://download.openmmlab.com/mmdetection3d/v1.0.0_models/pgd/'
+            'https://mmassets.onedl.ai/mmdetection3d/v1.0.0_models/pgd/'
             'pgd_r101_caffe_fpn_gn-head_3x4_4x_kitti-mono3d/'
             'pgd_r101_caffe_fpn_gn-head_3x4_4x_kitti-mono3d_'
             '20211022_102608-8a97533b.pth')

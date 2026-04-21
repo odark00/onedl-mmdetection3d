@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List
-
 import torch
 from mmcv.cnn import ConvModule
 from mmcv.ops import three_interpolate, three_nn
 from mmengine.model import BaseModule
 from torch import Tensor
 from torch import nn as nn
+from typing import List
 
 from mmdet3d.utils import ConfigType, OptMultiConfig
 

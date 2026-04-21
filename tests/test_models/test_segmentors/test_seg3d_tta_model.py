@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from unittest import TestCase
-
 import torch
 from mmengine import ConfigDict, DefaultScope
+from unittest import TestCase
 
 from mmdet3d.models import Seg3DTTAModel
 from mmdet3d.registry import MODELS

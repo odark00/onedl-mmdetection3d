@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 # adapted from https://github.com/ScanNet/ScanNet/blob/master/BenchmarkScripts/util_3d.py # noqa
 import json
-
 import numpy as np
 
 

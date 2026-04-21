@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-from typing import Tuple
-
 import numpy as np
 import torch
 import trimesh
+from typing import Tuple
 
 from mmdet3d.structures import (BaseInstance3DBoxes, Box3DMode,
                                 CameraInstance3DBoxes, Coord3DMode,

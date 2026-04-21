@@ -12,10 +12,9 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
 import os
+import pytorch_sphinx_theme
 import subprocess
 import sys
-
-import pytorch_sphinx_theme
 
 sys.path.insert(0, os.path.abspath('../../'))
 
@@ -91,7 +90,7 @@ html_theme_options = {
     'menu': [
         {
             'name': 'GitHub',
-            'url': 'https://github.com/open-mmlab/mmdetection3d'
+            'url': 'https://github.com/VBTI-development/onedl-mmdetection3d'
         },
         {
             'name':
@@ -101,18 +100,19 @@ html_theme_options = {
                     'name':
                     'MMEngine',
                     'url':
-                    'https://github.com/open-mmlab/mmengine',
+                    'https://github.com/vbti-development/onedl-mmengine',
                     'description':
                     'Foundational library for training deep learning models'
                 },
                 {
                     'name': 'MMCV',
-                    'url': 'https://github.com/open-mmlab/mmcv',
+                    'url': 'https://github.com/vbti-development/onedl-mmcv',
                     'description': 'Foundational library for computer vision'
                 },
                 {
                     'name': 'MMDetection',
-                    'url': 'https://github.com/open-mmlab/mmdetection',
+                    'url':
+                    'https://github.com/vbti-development/onedl-mmdetection',
                     'description': 'Object detection toolbox and benchmark'
                 },
             ]

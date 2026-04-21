@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import mmengine
+import numpy as np
 import os
 from concurrent import futures as futures
 from os import path as osp
-
-import mmengine
-import numpy as np
 
 
 class ScanNetData(object):

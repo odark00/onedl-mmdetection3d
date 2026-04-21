@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 from abc import ABCMeta, abstractmethod
-from typing import Optional, Tuple
-
 from mmengine.config import ConfigDict
 from mmengine.model import BaseModule
 from torch import Tensor
+from typing import Optional, Tuple
 
 from mmdet3d.structures.det3d_data_sample import SampleList
 from mmdet3d.utils import InstanceList, OptMultiConfig

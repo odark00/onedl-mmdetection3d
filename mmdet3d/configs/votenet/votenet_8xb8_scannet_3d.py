@@ -2,10 +2,10 @@
 from mmengine import read_base
 
 with read_base():
-    from .._base_.datasets.scannet_3d import *
-    from .._base_.models.votenet import *
-    from .._base_.schedules.schedule_3x import *
-    from .._base_.default_runtime import *
+    from .._base_.datasets.scannet_3d import *  # noqa: F403
+    from .._base_.models.votenet import *  # noqa: F403
+    from .._base_.schedules.schedule_3x import *  # noqa: F403
+    from .._base_.default_runtime import *  # noqa: F403
 
 from mmengine.hooks.logger_hook import LoggerHook
 
@@ -13,7 +13,7 @@ from mmdet3d.models.task_modules.coders.partial_bin_based_bbox_coder import \
     PartialBinBasedBBoxCoder
 
 # model settings
-model.update(
+model.update(  # noqa: F405
     dict(
         bbox_head=dict(
             num_classes=18,
@@ -41,9 +41,10 @@ model.update(
                             [1.1511526, 1.0546296, 0.49706793],
                             [0.47535285, 0.49249494, 0.5802117]]))))
 
-default_hooks.update(dict(logger=dict(type=LoggerHook, interval=30)))
+default_hooks.update(  # noqa: F405
+    dict(logger=dict(type=LoggerHook, interval=30)))
 # Default setting for scaling LR automatically
 #   - `enable` means enable scaling LR automatically
 #       or not by default.
 #   - `base_batch_size` = (8 GPUs) x (8 samples per GPU).
-auto_scale_lr.update(dict(enable=False, base_batch_size=64))
+auto_scale_lr.update(dict(enable=False, base_batch_size=64))  # noqa: F405

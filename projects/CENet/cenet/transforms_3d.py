@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Sequence
-
 import numpy as np
 from mmcv.transforms import BaseTransform
+from typing import Sequence
 
 from mmdet3d.registry import TRANSFORMS
 

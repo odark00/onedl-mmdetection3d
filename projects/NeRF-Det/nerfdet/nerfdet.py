@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Tuple, Union
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from typing import List, Tuple, Union
 
 from mmdet3d.models.detectors import Base3DDetector
 from mmdet3d.registry import MODELS, TASK_UTILS

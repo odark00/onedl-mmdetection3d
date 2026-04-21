@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Optional, Tuple, Union
-
 import torch
 from mmcv.ops import points_in_boxes_all, three_interpolate, three_nn
 from mmdet.models.losses import sigmoid_focal_loss, smooth_l1_loss
 from mmengine.runner import amp
 from torch import Tensor
 from torch import nn as nn
+from typing import Dict, List, Optional, Tuple, Union
 
 from mmdet3d.models.layers import SparseBasicBlock, make_sparse_convmodule
 from mmdet3d.models.layers.spconv import IS_SPCONV2_AVAILABLE
@@ -170,7 +169,7 @@ class SparseEncoder(nn.Module):
         block_type: Optional[str] = 'conv_module',
         conv_cfg: Optional[dict] = dict(type='SubMConv3d')
     ) -> int:
-        """make encoder layers using sparse convs.
+        """Make encoder layers using sparse convs.
 
         Args:
             make_block (method): A bounded function to build blocks.
@@ -421,7 +420,7 @@ class SparseEncoderSASSD(SparseEncoder):
             tuple[torch.Tensor]: Point indices of boxes with the shape of
                 (T, M). Default background = 0.
                 And offsets from the box centers of points,
-                if it belows to the box, with the shape of (M, 3).
+                if it belongs to the box, with the shape of (M, 3).
                 Default background = 0.
         """
         boxes_num = len(bboxes_3d)
@@ -497,7 +496,7 @@ class SparseEncoderSASSD(SparseEncoder):
         """Make auxiliary points for loss computation.
 
         Args:
-            source_tensor (torch.Tensor): (M, C) features to be propigated.
+            source_tensor (torch.Tensor): (M, C) features to be propagated.
             target (torch.Tensor): (N, 4) bxyz positions of the
                 target features.
             offset (tuple[float], optional): Voxelization offset.
@@ -508,7 +507,7 @@ class SparseEncoderSASSD(SparseEncoder):
         Returns:
             torch.Tensor: (N, C) tensor of the features of the target features.
         """
-        # Tansfer tensor to points
+        # Transfer tensor to points
         source = source_tensor.indices.float()
         offset = torch.Tensor(offset).to(source.device)
         voxel_size = torch.Tensor(voxel_size).to(source.device)

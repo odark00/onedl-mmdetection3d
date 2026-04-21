@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Tuple
-
 import torch
 from torch import Tensor
 from torch import nn as nn
+from typing import List, Tuple
 
 from mmdet3d.registry import MODELS
 from mmdet3d.structures import points_cam2img

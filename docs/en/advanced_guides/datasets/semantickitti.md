@@ -65,7 +65,7 @@ mmdetection3d
     - info\['lidar_points'\]\['num_pts_feats'\]: The feature dimension of point.
   - info\['pts_semantic_mask_pth'\]: The path of 3D semantic segmentation annotation file.
 
-Please refer to [semantickitti_converter.py](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/tools/dataset_converters/semantickitti_converter.py) and [update_infos_to_v2.py ](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/tools/dataset_converters/update_infos_to_v2.py) for more details.
+Please refer to [semantickitti_converter.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/tools/dataset_converters/semantickitti_converter.py) and [update_infos_to_v2.py ](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/tools/dataset_converters/update_infos_to_v2.py) for more details.
 
 ## Train pipeline
 
@@ -118,7 +118,7 @@ bash tools/dist_test.sh configs/minkunet/minkunet_w32_8xb2-15e_semantickitti.py 
 
 ## Metrics
 
-Typically mean intersection over union (mIoU) is used for evaluation on Semantickitti. In detail, we first compute IoU for multiple classes and then average them to get mIoU, please refer to [seg_eval.py](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/mmdet3d/evaluation/functional/seg_eval.py).
+Typically mean intersection over union (mIoU) is used for evaluation on Semantickitti. In detail, we first compute IoU for multiple classes and then average them to get mIoU, please refer to [seg_eval.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/mmdet3d/evaluation/functional/seg_eval.py).
 
 An example of printed evaluation results is as follows:
 

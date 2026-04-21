@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import functools
-from inspect import getfullargspec
-from typing import Callable, Optional, Tuple, Type, Union
-
 import numpy as np
 import torch
+from inspect import getfullargspec
+from typing import Callable, Optional, Tuple, Type, Union
 
 TemplateArrayType = Union[np.ndarray, torch.Tensor, list, tuple, int, float]
 

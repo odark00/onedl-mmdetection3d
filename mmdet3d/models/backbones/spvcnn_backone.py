@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Sequence
-
 import torch
 from mmengine.registry import MODELS
 from torch import Tensor, nn
+from typing import Optional, Sequence
 
 from mmdet3d.models.layers.torchsparse import IS_TORCHSPARSE_AVAILABLE
 from .minkunet_backbone import MinkUNetBackbone

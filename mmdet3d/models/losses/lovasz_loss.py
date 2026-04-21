@@ -6,13 +6,12 @@ ch/lovasz_losses.py Lovasz-Softmax and Jaccard hinge loss in PyTorch Maxim
 Berman 2018 ESAT-PSI KU Leuven (MIT License)
 """
 
-from typing import List, Optional, Tuple, Union
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from mmdet.models import weight_reduce_loss
 from mmengine.utils import is_list_of
+from typing import List, Optional, Tuple, Union
 
 from mmdet3d.registry import MODELS
 

@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os.path as osp
-import tempfile
-from typing import Dict, Optional, Sequence
-
 import mmcv
 import numpy as np
+import os.path as osp
+import tempfile
 from mmengine.evaluator import BaseMetric
 from mmengine.logging import MMLogger
+from typing import Dict, Optional, Sequence
 
 from mmdet3d.evaluation import seg_eval
 from mmdet3d.registry import METRICS

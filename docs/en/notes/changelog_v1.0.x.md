@@ -132,8 +132,8 @@ A total of 9 developers contributed to this release.
 
 - Fix the incorrect registry name when building RoI extractors (#1460)
 - Fix the potential problems caused by the registry scope update when composing pipelines (#1466) and using CocoDataset (#1536)
-- Fix the missing selection with `order` in the [box3d_nms](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/core/post_processing/box3d_nms.py) introduced by [#1403](https://github.com/open-mmlab/mmdetection3d/pull/1403) (#1479)
-- Update the [PointPillars config](https://github.com/open-mmlab/mmdetection3d/blob/master/configs/pointpillars/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car.py) to make it consistent with the log (#1486)
+- Fix the missing selection with `order` in the [box3d_nms](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/core/post_processing/box3d_nms.py) introduced by [#1403](https://github.com/VBTI-development/onedl-mmdetection3d/pull/1403) (#1479)
+- Update the [PointPillars config](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/configs/pointpillars/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car.py) to make it consistent with the log (#1486)
 - Fix heading anchor in documentation (#1490)
 - Fix the compatibility of mmcv in the dockerfile (#1508)
 - Make overwrite_spconv packaged when building whl (#1516)
@@ -177,7 +177,7 @@ A total of 13 developers contributed to this release.
 
 #### Bug Fixes
 
-- Fix the show pipeline in the [browse_dataset.py](https://github.com/open-mmlab/mmdetection3d/blob/master/tools/misc/browse_dataset.py) (#1376)
+- Fix the show pipeline in the [browse_dataset.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/tools/misc/browse_dataset.py) (#1376)
 - Fix missing __init__ files after coordinate system refactoring (#1383)
 - Fix the incorrect yaw in the visualization caused by coordinate system refactoring (#1407)
 - Fix `NaiveSyncBatchNorm1d` and `NaiveSyncBatchNorm2d` to support non-distributed cases and more general inputs (#1435)
@@ -193,7 +193,7 @@ A total of 11 developers contributed to this release.
 #### Compatibility
 
 - We migrate all the mmdet3d ops to mmcv and do not need to compile them when installing mmdet3d.
-- To fix the imprecise timestamp and optimize its saving method, we reformat the point cloud data during Waymo data conversion. The data conversion time is also optimized significantly by supporting parallel processing. Please re-generate KITTI format Waymo data if necessary. See more details in the [compatibility documentation](https://github.com/open-mmlab/mmdetection3d/blob/master/docs/en/compatibility.md).
+- To fix the imprecise timestamp and optimize its saving method, we reformat the point cloud data during Waymo data conversion. The data conversion time is also optimized significantly by supporting parallel processing. Please re-generate KITTI format Waymo data if necessary. See more details in the [compatibility documentation](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/docs/en/compatibility.md).
 - We update some of the model checkpoints after the refactor of coordinate systems. Please stay tuned for the release of the remaining model checkpoints.
 
 |               | Fully Updated | Partially Updated | In Progress | No Influcence |
@@ -237,19 +237,19 @@ A total of 11 developers contributed to this release.
 
 #### Improvements
 
-- Update the table format and OpenMMLab project orders in [README.md](https://github.com/open-mmlab/mmdetection3d/blob/master/README.md) (#1272, #1283)
+- Update the table format and OpenMMLab project orders in [README.md](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/README.md) (#1272, #1283)
 - Migrate all the mmdet3d ops to mmcv (#1240, #1286, #1290, #1333)
 - Add `with_plane` flag in the KITTI data conversion (#1278)
 - Update instructions and links in the documentation (#1300, 1309, #1319)
 - Support parallel Waymo dataset converter and ground truth database generator (#1327)
-- Add quick installation commands to [getting_started.md](https://github.com/open-mmlab/mmdetection3d/blob/master/docs/en/getting_started.md) (#1366)
+- Add quick installation commands to [getting_started.md](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/docs/en/getting_started.md) (#1366)
 
 #### Bug Fixes
 
 - Update nuimages configs to use new nms config style (#1258)
 - Fix the usage of np.long for windows compatibility (#1270)
 - Fix the incorrect indexing in `BasePoints` (#1274)
-- Fix the incorrect indexing in the [pillar_scatter.forward_single](https://github.com/open-mmlab/mmdetection3d/blob/dev/mmdet3d/models/middle_encoders/pillar_scatter.py#L38) (#1280)
+- Fix the incorrect indexing in the [pillar_scatter.forward_single](https://github.com/VBTI-development/onedl-mmdetection3d/blob/dev/mmdet3d/models/middle_encoders/pillar_scatter.py#L38) (#1280)
 - Fix unit tests that use GPUs (#1301)
 - Fix incorrect feature dimensions in `DynamicPillarFeatureNet` caused by previous upgrading of `PillarFeatureNet` (#1302)
 - Remove the `CameraPoints` constraint in `PointSample` (#1314)
@@ -265,15 +265,15 @@ A total of 9 developers contributed to this release.
 
 #### Compatibility
 
-- We refactor our three coordinate systems to make their rotation directions and origins more consistent, and further remove unnecessary hacks in different datasets and models. Therefore, please re-generate data infos or convert the old version to the new one with our provided scripts. We will also provide updated checkpoints in the next version. Please refer to the [compatibility documentation](https://github.com/open-mmlab/mmdetection3d/blob/v1.0.0.dev0/docs/en/compatibility.md) for more details.
+- We refactor our three coordinate systems to make their rotation directions and origins more consistent, and further remove unnecessary hacks in different datasets and models. Therefore, please re-generate data infos or convert the old version to the new one with our provided scripts. We will also provide updated checkpoints in the next version. Please refer to the [compatibility documentation](https://github.com/VBTI-development/onedl-mmdetection3d/blob/v1.0.0.dev0/docs/en/compatibility.md) for more details.
 - Unify the camera keys for consistent transformation between coordinate systems on different datasets. The modification changes the key names to `lidar2img`, `depth2img`, `cam2img`, etc., for easier understanding. Customized codes using legacy keys may be influenced.
-- The next release will begin to move files of CUDA ops to [MMCV](https://github.com/open-mmlab/mmcv). It will influence the way to import related functions. We will not break the compatibility but will raise a warning first and please prepare to migrate it.
+- The next release will begin to move files of CUDA ops to [MMCV](https://github.com/vbti-development/onedl-mmcv). It will influence the way to import related functions. We will not break the compatibility but will raise a warning first and please prepare to migrate it.
 
 #### Highlights
 
-- Support new monocular 3D detectors: [PGD](https://github.com/open-mmlab/mmdetection3d/tree/v1.0.0.dev0/configs/pgd), [SMOKE](https://github.com/open-mmlab/mmdetection3d/tree/v1.0.0.dev0/configs/smoke), [MonoFlex](https://github.com/open-mmlab/mmdetection3d/tree/v1.0.0.dev0/configs/monoflex)
-- Support a new LiDAR-based detector: [PointRCNN](https://github.com/open-mmlab/mmdetection3d/tree/v1.0.0.dev0/configs/point_rcnn)
-- Support a new backbone: [DGCNN](https://github.com/open-mmlab/mmdetection3d/tree/v1.0.0.dev0/configs/dgcnn)
+- Support new monocular 3D detectors: [PGD](https://github.com/VBTI-development/onedl-mmdetection3d/tree/v1.0.0.dev0/configs/pgd), [SMOKE](https://github.com/VBTI-development/onedl-mmdetection3d/tree/v1.0.0.dev0/configs/smoke), [MonoFlex](https://github.com/VBTI-development/onedl-mmdetection3d/tree/v1.0.0.dev0/configs/monoflex)
+- Support a new LiDAR-based detector: [PointRCNN](https://github.com/VBTI-development/onedl-mmdetection3d/tree/v1.0.0.dev0/configs/point_rcnn)
+- Support a new backbone: [DGCNN](https://github.com/VBTI-development/onedl-mmdetection3d/tree/v1.0.0.dev0/configs/dgcnn)
 - Support 3D object detection on the S3DIS dataset
 - Support compilation on Windows
 - Full benchmark for PAConv on S3DIS
@@ -329,7 +329,7 @@ A total of 9 developers contributed to this release.
 - Fix and improve visualization tools (#956, #1066, #1073)
 - Fix PointPillars FLOPs calculation error (#1075)
 - Fix missing dimension information in the SUN RGB-D data generation (#1120)
-- Fix incorrect anchor range settings in the PointPillars [config](https://github.com/open-mmlab/mmdetection3d/blob/master/configs/_base_/models/hv_pointpillars_secfpn_kitti.py) for KITTI (#1163)
+- Fix incorrect anchor range settings in the PointPillars [config](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/configs/_base_/models/hv_pointpillars_secfpn_kitti.py) for KITTI (#1163)
 - Fix incorrect model information in the RegNet metafile (#1184)
 - Fix bugs in non-distributed multi-gpu training and testing (#1197)
 - Fix a potential assertion error when generating corners from an empty box (#1212)
@@ -395,15 +395,15 @@ A total of 4 developers contributed to this release.
 #### Improvements
 
 - Change the default show value to `False` in show_result function to avoid unnecessary errors (#1034)
-- Improve the visualization of detection results with colorized points in [single_gpu_test](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/apis/test.py#L11) (#1050)
+- Improve the visualization of detection results with colorized points in [single_gpu_test](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/apis/test.py#L11) (#1050)
 - Clean unnecessary custom_imports in entrypoints (#1068)
 
 #### Bug Fixes
 
 - Update mmcv version in the Dockerfile (#1036)
-- Fix the memory-leak problem when loading checkpoints in [init_model](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/apis/inference.py#L36) (#1045)
+- Fix the memory-leak problem when loading checkpoints in [init_model](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/apis/inference.py#L36) (#1045)
 - Fix incorrect velocity indexing when formatting boxes on nuScenes (#1049)
-- Explicitly set cuda device ID in [init_model](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/apis/inference.py#L36) to avoid memory allocation on unexpected devices (#1056)
+- Explicitly set cuda device ID in [init_model](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/apis/inference.py#L36) to avoid memory allocation on unexpected devices (#1056)
 - Fix PointPillars FLOPs calculation error (#1076)
 
 #### Contributors
@@ -453,7 +453,7 @@ A total of 4 developers contributed to this release.
 
 - Fix the sphinx version used in the documentation (#902)
 - Fix a dynamic scatter bug that discards the first voxel by mistake when all input points are valid (#915)
-- Fix the inconsistent variable names used in the [unit test](https://github.com/open-mmlab/mmdetection3d/blob/master/tests/test_models/test_voxel_encoder/test_voxel_generator.py) for voxel generator (#919)
+- Fix the inconsistent variable names used in the [unit test](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/tests/test_models/test_voxel_encoder/test_voxel_generator.py) for voxel generator (#919)
 - Upgrade to use `build_prior_generator` to replace the legacy `build_anchor_generator` (#941)
 - Fix a minor bug caused by a too small difference set in the FreeAnchor Head (#944)
 
@@ -468,7 +468,7 @@ A total of 8 developers contributed to this release.
 #### Compatibility
 
 - Unify the camera keys for consistent transformation between coordinate systems on different datasets. The modification change the key names to `lidar2img`, `depth2img`, `cam2img`, etc. for easier understanding. Customized codes using legacy keys may be influenced.
-- The next release will begin to move files of CUDA ops to [MMCV](https://github.com/open-mmlab/mmcv). It will influence the way to import related functions. We will not break the compatibility but will raise a warning first and please prepare to migrate it.
+- The next release will begin to move files of CUDA ops to [MMCV](https://github.com/vbti-development/onedl-mmcv). It will influence the way to import related functions. We will not break the compatibility but will raise a warning first and please prepare to migrate it.
 
 #### Highlights
 
@@ -519,7 +519,7 @@ A total of 11 developers contributed to this release.
 #### Highlights
 
 - Support to use [MIM](https://github.com/open-mmlab/mim) with pip installation
-- Support PAConv [models and benchmarks](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/paconv) on S3DIS
+- Support PAConv [models and benchmarks](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/paconv) on S3DIS
 - Enhance the documentation especially on dataset tutorials
 
 #### New Features
@@ -533,7 +533,7 @@ A total of 11 developers contributed to this release.
 
 - Refactor Group-Free-3D to make it inherit BaseModule from MMCV (#704)
 - Modify the initialization methods of FCOS3D to be consistent with the refactored approach (#705)
-- Benchmark the Group-Free-3D [models](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/groupfree3d) on ScanNet (#710)
+- Benchmark the Group-Free-3D [models](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/groupfree3d) on ScanNet (#710)
 - Add Chinese documentation for Getting Started (#725), FAQ (#730), Model Zoo (#735), Demo (#745), Quick Run (#746), Data Preparation (#787) and Configs (#788)
 - Add documentation for semantic segmentation on ScanNet and S3DIS (#743, #747, #806, #807)
 - Add a parameter `max_keep_ckpts` to limit the maximum number of saved Group-Free-3D checkpoints (#765)
@@ -546,10 +546,10 @@ A total of 11 developers contributed to this release.
 - Convert `rt_mat` to `torch.Tensor` in coordinate transformation for compatibility (#709)
 - Fix the `bev_range` initialization in `ObjectRangeFilter` according to the `gt_bboxes_3d` type (#717)
 - Fix Chinese documentation and incorrect doc format due to the incompatible Sphinx version (#718)
-- Fix a potential bug when setting `interval == 1` in [analyze_logs.py](https://github.com/open-mmlab/mmdetection3d/blob/master/tools/analysis_tools/analyze_logs.py) (#720)
+- Fix a potential bug when setting `interval == 1` in [analyze_logs.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/tools/analysis_tools/analyze_logs.py) (#720)
 - Update the structure of Chinese documentation (#722)
 - Fix FCOS3D FPN BC-Breaking caused by the code refactoring in MMDetection (#739)
-- Fix wrong `in_channels` when `with_distance=True` in the [Dynamic VFE Layers](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/models/voxel_encoders/voxel_encoder.py#L87) (#749)
+- Fix wrong `in_channels` when `with_distance=True` in the [Dynamic VFE Layers](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/models/voxel_encoders/voxel_encoder.py#L87) (#749)
 - Fix the dimension and yaw hack of FCOS3D on nuScenes (#744, #794, #795, #818)
 - Fix the missing default `bbox_mode` in the `show_multi_modality_result` (#825)
 
@@ -563,7 +563,7 @@ A total of 12 developers contributed to this release.
 
 #### Compatibility
 
-In order to fix the problem that the priority of EvalHook is too low, all hook priorities have been re-adjusted in 1.3.8, so MMDetection 2.14.0 needs to rely on the latest MMCV 1.3.8 version. For related information, please refer to [#1120](https://github.com/open-mmlab/mmcv/pull/1120), for related issues, please refer to [#5343](https://github.com/open-mmlab/mmdetection/issues/5343).
+In order to fix the problem that the priority of EvalHook is too low, all hook priorities have been re-adjusted in 1.3.8, so MMDetection 2.14.0 needs to rely on the latest MMCV 1.3.8 version. For related information, please refer to [#1120](https://github.com/vbti-development/onedl-mmcv/pull/1120), for related issues, please refer to [#5343](https://github.com/vbti-development/onedl-mmdetection/issues/5343).
 
 #### Highlights
 
@@ -582,7 +582,7 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 #### Improvements
 
 - Add unit tests for pipeline functions `LoadImageFromFileMono3D`, `ObjectNameFilter` and `ObjectRangeFilter` (#615)
-- Enhance [IndoorPatchPointSample](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/datasets/pipelines/transforms_3d.py) (#617)
+- Enhance [IndoorPatchPointSample](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/datasets/pipelines/transforms_3d.py) (#617)
 - Refactor model initialization methods based MMCV (#622)
 - Add Chinese docs (#629)
 - Add documentation for LiDAR-based 3D detection (#642)
@@ -595,9 +595,9 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 
 #### Bug Fixes
 
-- Fix the bug of [BackgroundPointsFilter](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/datasets/pipelines/transforms_3d.py) using the bottom center of ground truth (#609)
-- Fix [LoadMultiViewImageFromFiles](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/datasets/pipelines/loading.py) to unravel stacked multi-view images to list to be consistent with DefaultFormatBundle (#611)
-- Fix the potential bug in [analyze_logs](https://github.com/open-mmlab/mmdetection3d/blob/master/tools/analysis_tools/analyze_logs.py) when the training resumes from a checkpoint or is stopped before evaluation (#634)
+- Fix the bug of [BackgroundPointsFilter](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/datasets/pipelines/transforms_3d.py) using the bottom center of ground truth (#609)
+- Fix [LoadMultiViewImageFromFiles](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/datasets/pipelines/loading.py) to unravel stacked multi-view images to list to be consistent with DefaultFormatBundle (#611)
+- Fix the potential bug in [analyze_logs](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/tools/analysis_tools/analyze_logs.py) when the training resumes from a checkpoint or is stopped before evaluation (#634)
 - Fix test commands in docs and make some refinements (#635)
 - Fix wrong config paths in unit tests (#641)
 
@@ -626,9 +626,9 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 
 #### Bug Fixes
 
-- Fix a corrupted lidar data file in Lyft dataset in [data_preparation](https://github.com/open-mmlab/mmdetection3d/tree/master/docs/data_preparation.md) (#546)
+- Fix a corrupted lidar data file in Lyft dataset in [data_preparation](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/docs/data_preparation.md) (#546)
 - Fix evaluation bugs in nuScenes and Lyft dataset (#549)
-- Fix converting points between coordinates with specific transformation matrix in the [coord_3d_mode.py](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/core/bbox/structures/coord_3d_mode.py) (#556)
+- Fix converting points between coordinates with specific transformation matrix in the [coord_3d_mode.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/core/bbox/structures/coord_3d_mode.py) (#556)
 - Support PointPillars models on Lyft dataset (#578)
 - Fix the bug of demo with pre-trained VoteNet model on ScanNet (#600)
 
@@ -667,15 +667,15 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 
 #### Bug Fixes
 
-- Fix Pytorch 1.8 Compilation issue in the [scatter_points_cuda.cu](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/ops/voxel/src/scatter_points_cuda.cu) (#404)
-- Fix [dynamic_scatter](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/ops/voxel/src/scatter_points_cuda.cu) errors triggered by empty point input (#417)
+- Fix Pytorch 1.8 Compilation issue in the [scatter_points_cuda.cu](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/ops/voxel/src/scatter_points_cuda.cu) (#404)
+- Fix [dynamic_scatter](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/ops/voxel/src/scatter_points_cuda.cu) errors triggered by empty point input (#417)
 - Fix the bug of missing points caused by using break incorrectly in the voxelization (#423)
-- Fix the missing `coord_type` in the waymo dataset [config](https://github.com/open-mmlab/mmdetection3d/blob/master/configs/_base_/datasets/waymoD5-3d-3class.py) (#441)
-- Fix errors in four unittest functions of [configs](https://github.com/open-mmlab/mmdetection3d/blob/master/configs/ssn/hv_ssn_secfpn_sbn-all_2x16_2x_lyft-3d.py), [test_detectors.py](https://github.com/open-mmlab/mmdetection3d/blob/master/tests/test_models/test_detectors.py), [test_heads.py](https://github.com/open-mmlab/mmdetection3d/blob/master/tests/test_models/test_heads/test_heads.py) (#453)
+- Fix the missing `coord_type` in the waymo dataset [config](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/configs/_base_/datasets/waymoD5-3d-3class.py) (#441)
+- Fix errors in four unittest functions of [configs](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/configs/ssn/hv_ssn_secfpn_sbn-all_2x16_2x_lyft-3d.py), [test_detectors.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/tests/test_models/test_detectors.py), [test_heads.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/tests/test_models/test_heads/test_heads.py) (#453)
 - Fix 3DSSD training errors and simplify configs (#462)
 - Clamp 3D votes projections to image boundaries in ImVoteNet (#463)
-- Update out-of-date names of pipelines in the [config](https://github.com/open-mmlab/mmdetection3d/blob/master/configs/benchmark/hv_pointpillars_secfpn_3x8_100e_det3d_kitti-3d-car.py) of pointpillars benchmark (#474)
-- Fix the lack of a placeholder when unpacking RPN targets in the [h3d_bbox_head.py](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/models/roi_heads/bbox_heads/h3d_bbox_head.py) (#508)
+- Update out-of-date names of pipelines in the [config](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/configs/benchmark/hv_pointpillars_secfpn_3x8_100e_det3d_kitti-3d-car.py) of pointpillars benchmark (#474)
+- Fix the lack of a placeholder when unpacking RPN targets in the [h3d_bbox_head.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/models/roi_heads/bbox_heads/h3d_bbox_head.py) (#508)
 - Fix the incorrect value of `K` when creating pickle files for SUN RGB-D (#511)
 
 ### v0.12.0 (1/4/2021)
@@ -684,7 +684,7 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 
 - Support a new multi-modality method [ImVoteNet](https://arxiv.org/abs/2001.10692).
 - Support PyTorch 1.7 and 1.8
-- Refactor the structure of tools and [train.py](https://github.com/open-mmlab/mmdetection3d/blob/master/tools/train.py)/[test.py](https://github.com/open-mmlab/mmdetection3d/blob/master/tools/test.py)
+- Refactor the structure of tools and [train.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/tools/train.py)/[test.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/tools/test.py)
 
 #### New Features
 
@@ -696,7 +696,7 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 
 - Add FAQ for common problems in the documentation (#333)
 - Refactor the structure of tools (#339)
-- Refactor [train.py](https://github.com/open-mmlab/mmdetection3d/blob/master/tools/train.py) and [test.py](https://github.com/open-mmlab/mmdetection3d/blob/master/tools/test.py) (#343)
+- Refactor [train.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/tools/train.py) and [test.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/tools/test.py) (#343)
 - Support demo on nuScenes (#353)
 - Add 3DSSD checkpoints (#359)
 - Update the Bibtex of CenterPoint (#368)
@@ -712,11 +712,11 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 - Fix missing keys `coord_type` in database sampler config (#345)
 - Rename H3DNet configs (#349)
 - Fix CI by using ubuntu 18.04 in github workflow (#350)
-- Add assertions to avoid 4-dim points being input to [points_in_boxes](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/ops/roiaware_pool3d/points_in_boxes.py) (#357)
-- Fix the SECOND results on Waymo in the corresponding [README](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/second) (#363)
+- Add assertions to avoid 4-dim points being input to [points_in_boxes](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/ops/roiaware_pool3d/points_in_boxes.py) (#357)
+- Fix the SECOND results on Waymo in the corresponding [README](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/second) (#363)
 - Fix the incorrect adopted pipeline when adding val to workflow (#370)
 - Fix a potential bug when indices used in the backwarding in ThreeNN (#377)
-- Fix a compilation error triggered by [scatter_points_cuda.cu](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/ops/voxel/src/scatter_points_cuda.cu) in PyTorch 1.7 (#393)
+- Fix a compilation error triggered by [scatter_points_cuda.cu](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/ops/voxel/src/scatter_points_cuda.cu) in PyTorch 1.7 (#393)
 
 ### v0.11.0 (1/3/2021)
 
@@ -734,14 +734,14 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 
 - Refactor unit tests (#303)
 - Move the key `train_cfg` and `test_cfg` into the model configs (#307)
-- Update [README](https://github.com/open-mmlab/mmdetection3d/blob/master/README.md/) with [Chinese version](https://github.com/open-mmlab/mmdetection3d/blob/master/README_zh-CN.md/) and [instructions for getting started](https://github.com/open-mmlab/mmdetection3d/blob/master/docs/getting_started.md/). (#310, #316)
+- Update [README](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/README.md/) with [Chinese version](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/README_zh-CN.md/) and [instructions for getting started](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/docs/getting_started.md/). (#310, #316)
 - Support a faster and more memory-efficient implementation of DynamicScatter (#318, #326)
 
 #### Bug Fixes
 
 - Fix an unsupported bias setting in the unit test for centerpoint head (#304)
 - Fix errors due to typos in the centerpoint head (#308)
-- Fix a minor bug in [points_in_boxes.py](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/ops/roiaware_pool3d/points_in_boxes.py) when tensors are not in the same device. (#317)
+- Fix a minor bug in [points_in_boxes.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/ops/roiaware_pool3d/points_in_boxes.py) when tensors are not in the same device. (#317)
 - Fix warning of deprecated usages of nonzero during training with PyTorch 1.6 (#330)
 
 ### v0.10.0 (1/2/2021)
@@ -760,17 +760,17 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 
 - Add tag to README in configurations for specifying different uses (#262)
 - Update instructions for evaluation metrics in the documentation (#265)
-- Add nuImages entry in [README.md](https://github.com/open-mmlab/mmdetection3d/blob/master/README.md/) and gif demo (#266, #268)
+- Add nuImages entry in [README.md](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/README.md/) and gif demo (#266, #268)
 - Add unit test for voxelization (#275)
 
 #### Bug Fixes
 
-- Fixed the issue of unpacking size in [furthest_point_sample.py](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/ops/furthest_point_sample/furthest_point_sample.py) (#248)
+- Fixed the issue of unpacking size in [furthest_point_sample.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/ops/furthest_point_sample/furthest_point_sample.py) (#248)
 - Fix bugs for 3DSSD triggered by empty ground truths (#258)
 - Remove models without checkpoints in model zoo statistics of documentation (#259)
-- Fix some unclear installation instructions in [getting_started.md](https://github.com/open-mmlab/mmdetection3d/blob/master/docs/getting_started.md/) (#269)
+- Fix some unclear installation instructions in [getting_started.md](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/docs/getting_started.md/) (#269)
 - Fix relative paths/links in the documentation (#271)
-- Fix a minor bug in [scatter_points_cuda.cu](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/ops/voxel/src/scatter_points_cuda.cu) when num_features != 4 (#275)
+- Fix a minor bug in [scatter_points_cuda.cu](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/ops/voxel/src/scatter_points_cuda.cu) when num_features != 4 (#275)
 - Fix the bug about missing text files when testing on KITTI (#278)
 - Fix issues caused by inplace modification of tensors in `BaseInstance3DBoxes` (#283)
 - Fix log analysis for evaluation and adjust the documentation accordingly (#285)
@@ -801,7 +801,7 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 
 - Refactor points structure with more constructive and clearer implementation.
 - Support axis-aligned IoU loss for VoteNet with better performance.
-- Update and enhance [SECOND](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/second) benchmark on Waymo.
+- Update and enhance [SECOND](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/second) benchmark on Waymo.
 
 #### New Features
 
@@ -810,7 +810,7 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 
 #### Improvements
 
-- Enhance [SECOND](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/second) benchmark on Waymo with stronger baselines. (#205)
+- Enhance [SECOND](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/second) benchmark on Waymo with stronger baselines. (#205)
 - Add model zoo statistics and polish the documentation. (#201)
 
 ### v0.7.0 (1/11/2020)
@@ -824,15 +824,15 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 #### New Features
 
 - Modified primitive head which can support the setting on SUN-RGBD dataset (#136)
-- Support semantic segmentation and [HTC](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/nuimages) with models for reference on nuImages dataset (#155)
-- Support [SSN](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/ssn) on nuScenes and Lyft datasets (#147, #174, #166, #182)
+- Support semantic segmentation and [HTC](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/nuimages) with models for reference on nuImages dataset (#155)
+- Support [SSN](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/ssn) on nuScenes and Lyft datasets (#147, #174, #166, #182)
 - Support double flip for test time augmentation of CenterPoint with updated benchmark (#143)
 
 #### Improvements
 
-- Update [SECOND](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/second) benchmark with configurations for reference on Waymo (#166)
+- Update [SECOND](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/second) benchmark with configurations for reference on Waymo (#166)
 - Delete checkpoints on Waymo to comply its specific license agreement (#180)
-- Update models and instructions with [mixed precision training](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/fp16) on KITTI and nuScenes (#178)
+- Update models and instructions with [mixed precision training](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/fp16) on KITTI and nuScenes (#178)
 
 #### Bug Fixes
 
@@ -845,7 +845,7 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 
 - Support mixed precision training of voxel-based methods
 - Support docker with PyTorch 1.6.0
-- Update baseline configs and results ([CenterPoint](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/centerpoint) on nuScenes and [PointPillars](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/pointpillars) on Waymo with full dataset)
+- Update baseline configs and results ([CenterPoint](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/centerpoint) on nuScenes and [PointPillars](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/pointpillars) on Waymo with full dataset)
 - Switch model zoo to download.openmmlab.com
 
 #### New Features
@@ -859,11 +859,11 @@ In order to fix the problem that the priority of EvalHook is too low, all hook p
 - Reduce requirements for the case exclusive of Waymo (#121)
 - Switch model zoo to download.openmmlab.com (#126)
 - Update docs related to Waymo (#128)
-- Add version assertion in the [init file](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/__init__.py) (#129)
+- Add version assertion in the [init file](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/__init__.py) (#129)
 - Add evaluation interval setting for CenterPoint (#131)
 - Add unit test for CenterPoint (#133)
-- Update [PointPillars](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/pointpillars) baselines on Waymo with full dataset (#142)
-- Update [CenterPoint](https://github.com/open-mmlab/mmdetection3d/tree/master/configs/centerpoint) results with models and logs (#154)
+- Update [PointPillars](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/pointpillars) baselines on Waymo with full dataset (#142)
+- Update [CenterPoint](https://github.com/VBTI-development/onedl-mmdetection3d/tree/master/configs/centerpoint) results with models and logs (#154)
 
 #### Bug Fixes
 

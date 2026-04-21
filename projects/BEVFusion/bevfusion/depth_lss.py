@@ -1,8 +1,7 @@
 # modify from https://github.com/mit-han-lab/bevfusion
-from typing import Tuple
-
 import torch
 from torch import nn
+from typing import Tuple
 
 from mmdet3d.registry import MODELS
 from .ops import bev_pool

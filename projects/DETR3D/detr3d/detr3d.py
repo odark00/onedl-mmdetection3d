@@ -1,7 +1,6 @@
-from typing import Dict, List, Optional
-
 import torch
 from torch import Tensor
+from typing import Dict, List, Optional
 
 from mmdet3d.models.detectors.mvx_two_stage import MVXTwoStageDetector
 from mmdet3d.registry import MODELS
@@ -182,7 +181,7 @@ class DETR3D(MVXTwoStageDetector):
 
     # may need speed-up
     def add_lidar2img(self, batch_input_metas: List[Dict]) -> List[Dict]:
-        """add 'lidar2img' transformation matrix into batch_input_metas.
+        """Add 'lidar2img' transformation matrix into batch_input_metas.
 
         Args:
             batch_input_metas (list[dict]): Meta information of multiple inputs

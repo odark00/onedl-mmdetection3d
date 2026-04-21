@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import os.path as osp
-from typing import Callable, List, Union
-
 from mmengine.dataset import BaseDataset
+from typing import Callable, List, Union
 
 from mmdet3d.registry import DATASETS
 

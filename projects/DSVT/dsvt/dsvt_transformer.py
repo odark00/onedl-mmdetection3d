@@ -8,7 +8,8 @@ from .dsvt_input_layer import DSVTInputLayer
 
 @MODELS.register_module()
 class DSVTMiddleEncoder(nn.Module):
-    '''Dynamic Sparse Voxel Transformer Backbone.
+    """Dynamic Sparse Voxel Transformer Backbone.
+
     Args:
         INPUT_LAYER: Config of input layer, which converts the output of vfe
             to dsvt input.
@@ -31,8 +32,7 @@ class DSVTMiddleEncoder(nn.Module):
             One of: "attention", "maxpool", "linear".
         output_shape (tuple[int, int]): Shape of output bev feature.
         conv_out_channel (int): Number of output channels.
-
-    '''
+    """
 
     def __init__(
             self,

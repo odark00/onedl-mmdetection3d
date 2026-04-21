@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Optional, Tuple, Union
-
 import torch
 from torch import Tensor
 from torch import nn as nn
+from typing import List, Optional, Tuple, Union
 
 from mmdet3d.models.layers.paconv import PAConv, PAConvCUDA
 from mmdet3d.utils import ConfigType
@@ -191,7 +190,8 @@ class PAConvCUDASAModuleMSG(BasePointSAModule):
     PAConv networks.
 
     Replace the non CUDA version PAConv with CUDA implemented PAConv for
-    efficient computation. See the `paper <https://arxiv.org/abs/2103.14635>`_
+    efficient computation. See the
+    `paper <https://arxiv.org/abs/2103.14635>`_
     for more details.
     """
 
@@ -341,7 +341,8 @@ class PAConvCUDASAModule(PAConvCUDASAModuleMSG):
     PAConv networks.
 
     Replace the non CUDA version PAConv with CUDA implemented PAConv for
-    efficient computation. See the `paper <https://arxiv.org/abs/2103.14635>`_
+    efficient computation. See the
+    `paper <https://arxiv.org/abs/2103.14635>`_
     for more details.
     """
 

@@ -10,17 +10,16 @@ except ImportError:
                       '>1.4.5 to install the official devkit first.')
 
 import copy
-import os
-import os.path as osp
-from glob import glob
-from io import BytesIO
-from os.path import exists, join
-
 import mmengine
 import numpy as np
+import os
+import os.path as osp
 import tensorflow as tf
+from glob import glob
+from io import BytesIO
 from mmengine import print_log
 from nuscenes.utils.geometry_utils import view_points
+from os.path import exists, join
 from PIL import Image
 from waymo_open_dataset.utils import range_image_utils, transform_utils
 from waymo_open_dataset.utils.frame_utils import \
@@ -411,7 +410,7 @@ class Waymo2KITTI(object):
         r"""Generate waymo train/val/test infos.
 
         For more details about infos, please refer to:
-        https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/waymo.html
+        https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/waymo.html
         """  # noqa: E501
         frame_infos = dict()
 
@@ -521,7 +520,7 @@ class Waymo2KITTI(object):
         """Generate instances and cam_sync_instances infos.
 
         For more details about infos, please refer to:
-        https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/waymo.html
+        https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/waymo.html
         """  # noqa: E501
         id_to_bbox = dict()
         id_to_name = dict()
@@ -611,7 +610,7 @@ class Waymo2KITTI(object):
         """Generate cam_instances infos.
 
         For more details about infos, please refer to:
-        https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/waymo.html
+        https://onedl-mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/waymo.html
         """  # noqa: E501
         cam_instances = dict()
         for cam_type in self.camera_types:

@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import numpy as np
 from os import path as osp
 from typing import Callable, List, Union
-
-import numpy as np
 
 from mmdet3d.registry import DATASETS
 from mmdet3d.structures import LiDARInstance3DBoxes

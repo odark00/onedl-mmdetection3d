@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Union
-
 from mmengine.registry import Registry
 from torch import nn as nn
+from typing import Union
 
 SA_MODULES = Registry(
     name='point_sa_module',

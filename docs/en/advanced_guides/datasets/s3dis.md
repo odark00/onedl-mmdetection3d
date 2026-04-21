@@ -2,7 +2,7 @@
 
 ## Dataset preparation
 
-For the overall process, please refer to the [README](https://github.com/open-mmlab/mmdetection3d/blob/master/data/s3dis/README.md/) page for S3DIS.
+For the overall process, please refer to the [README](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/data/s3dis/README.md/) page for S3DIS.
 
 ### Export S3DIS data
 
@@ -209,7 +209,7 @@ train_pipeline = [
 
 ## Metrics
 
-Typically mean intersection over union (mIoU) is used for evaluation on S3DIS. In detail, we first compute IoU for multiple classes and then average them to get mIoU, please refer to [seg_eval.py](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/mmdet3d/evaluation/functional/seg_eval.py).
+Typically mean intersection over union (mIoU) is used for evaluation on S3DIS. In detail, we first compute IoU for multiple classes and then average them to get mIoU, please refer to [seg_eval.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/mmdet3d/evaluation/functional/seg_eval.py).
 
 As introduced in section `Export S3DIS data`, S3DIS trains on 5 areas and evaluates on the remaining 1 area. But there are also other area split schemes in different papers.
 To enable flexible combination of train-val splits, we use sub-dataset to represent one area, and concatenate them to form a larger training set. An example of training on area 1, 2, 3, 4, 6 and evaluating on area 5 is shown as below:

@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import mmengine
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 from tempfile import TemporaryDirectory
-
-import mmengine
 
 try:
     from model_archiver.model_packaging import package_model

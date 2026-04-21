@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List
-
 from torch import Tensor
+from typing import Dict, List
 
 from mmdet3d.models import EncoderDecoder3D
 from mmdet3d.registry import MODELS

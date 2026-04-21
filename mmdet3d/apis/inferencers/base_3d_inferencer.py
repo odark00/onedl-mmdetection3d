@@ -1,11 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import logging
-import os.path as osp
-from copy import deepcopy
-from typing import Dict, List, Optional, Sequence, Tuple, Union
-
 import numpy as np
+import os.path as osp
 import torch.nn as nn
+from copy import deepcopy
 from mmengine import dump, print_log
 from mmengine.infer.infer import BaseInferencer, ModelType
 from mmengine.model.utils import revert_sync_batchnorm
@@ -14,6 +12,7 @@ from mmengine.runner import load_checkpoint
 from mmengine.structures import InstanceData
 from mmengine.visualization import Visualizer
 from rich.progress import track
+from typing import Dict, List, Optional, Sequence, Tuple, Union
 
 from mmdet3d.registry import DATASETS, MODELS
 from mmdet3d.structures import Box3DMode, Det3DDataSample

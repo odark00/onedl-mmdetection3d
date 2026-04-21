@@ -1,6 +1,4 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Optional, Tuple
-
 import torch
 from mmcv.cnn import Scale
 from mmcv.ops import nms3d, nms3d_normal
@@ -10,6 +8,7 @@ from mmengine.config import ConfigDict
 from mmengine.model import BaseModule, bias_init_with_prob, normal_init
 from mmengine.structures import InstanceData
 from torch import Tensor, nn
+from typing import List, Optional, Tuple
 
 from mmdet3d.registry import MODELS, TASK_UTILS
 from mmdet3d.structures.bbox_3d.utils import rotation_3d_in_axis

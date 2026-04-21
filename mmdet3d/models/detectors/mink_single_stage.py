@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 # Adapted from https://github.com/SamsungLabs/fcaf3d/blob/master/mmdet3d/models/detectors/single_stage_sparse.py # noqa
-from typing import Dict, List, OrderedDict, Tuple, Union
-
 import torch
 from torch import Tensor
+from typing import Dict, List, OrderedDict, Tuple, Union
 
 try:
     import MinkowskiEngine as ME
@@ -119,8 +118,8 @@ class MinkSingleStage3DDetector(SingleStage3DDetector):
         # The names of some parameters in FCAF3D has been changed
         # since 2022.10.
         version = local_metadata.get('version', None)
-        if (version is None or
-                version < 2) and self.__class__ is MinkSingleStage3DDetector:
+        if (version is None or version
+                < 2) and self.__class__ is MinkSingleStage3DDetector:
             convert_dict = {'head.': 'bbox_head.'}
             state_dict_keys = list(state_dict.keys())
             for k in state_dict_keys:

@@ -1,7 +1,6 @@
-from typing import Dict, List, Optional
-
 import torch
 from torch import Tensor
+from typing import Dict, List, Optional
 
 from mmdet3d.models import Base3DDetector
 from mmdet3d.registry import MODELS

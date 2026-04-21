@@ -1,10 +1,9 @@
-from typing import List
-
 import torch
 from mmdet.models.task_modules.assigners import AssignResult  # check
 from mmdet.models.task_modules.assigners import BaseAssigner
 from mmengine.structures import InstanceData
 from torch import Tensor
+from typing import List
 
 from mmdet3d.registry import TASK_UTILS
 from .util import normalize_bbox
@@ -56,6 +55,7 @@ class HungarianAssigner3D(BaseAssigner):
                gt_bboxes_ignore=None,
                eps=1e-7) -> AssignResult:
         """Computes one-to-one matching based on the weighted costs.
+
         This method assign each query prediction to a ground truth or
         background. The `assigned_gt_inds` with -1 means don't care,
         0 means negative sample, and positive number is the index (1-based)

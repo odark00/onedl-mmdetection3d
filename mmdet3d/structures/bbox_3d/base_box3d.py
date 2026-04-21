@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import warnings
-from abc import abstractmethod
-from typing import Iterator, Optional, Sequence, Tuple, Union
-
 import numpy as np
 import torch
+import warnings
+from abc import abstractmethod
 from mmcv.ops import box_iou_rotated, points_in_boxes_all, points_in_boxes_part
 from torch import Tensor
+from typing import Iterator, Optional, Sequence, Tuple, Union
 
 from mmdet3d.structures.points import BasePoints
 from .utils import limit_period
@@ -510,7 +509,7 @@ class BaseInstance3DBoxes:
         """
         assert isinstance(boxes1, BaseInstance3DBoxes)
         assert isinstance(boxes2, BaseInstance3DBoxes)
-        assert type(boxes1) == type(boxes2), \
+        assert isinstance(boxes1, type(boxes2)), \
             '"boxes1" and "boxes2" should be in the same type, ' \
             f'but got {type(boxes1)} and {type(boxes2)}.'
 
@@ -546,7 +545,7 @@ class BaseInstance3DBoxes:
         """
         assert isinstance(boxes1, BaseInstance3DBoxes)
         assert isinstance(boxes2, BaseInstance3DBoxes)
-        assert type(boxes1) == type(boxes2), \
+        assert isinstance(boxes1, type(boxes2)), \
             '"boxes1" and "boxes2" should be in the same type, ' \
             f'but got {type(boxes1)} and {type(boxes2)}.'
 

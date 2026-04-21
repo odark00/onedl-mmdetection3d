@@ -1,3 +1,4 @@
+# Copyright (c) OpenMMLab. All rights reserved.
 import pytest
 import torch
 
@@ -8,13 +9,13 @@ def test_pointnet2_fp_neck():
     if not torch.cuda.is_available():
         pytest.skip()
 
-    xyzs = [16384, 4096, 1024, 256, 64]
+    xyzs = [2048, 512, 128, 32, 16]
     feat_channels = [1, 96, 256, 512, 1024]
     channel_num = 5
 
-    sa_xyz = [torch.rand(3, xyzs[i], 3) for i in range(channel_num)]
+    sa_xyz = [torch.rand(2, xyzs[i], 3) for i in range(channel_num)]
     sa_features = [
-        torch.rand(3, feat_channels[i], xyzs[i]) for i in range(channel_num)
+        torch.rand(2, feat_channels[i], xyzs[i]) for i in range(channel_num)
     ]
 
     neck_cfg = dict(
@@ -32,6 +33,6 @@ def test_pointnet2_fp_neck():
 
     feats_sa = {'sa_xyz': sa_xyz, 'sa_features': sa_features}
     outputs = neck(feats_sa)
-    assert outputs['fp_xyz'].cpu().numpy().shape == (3, 16384, 3)
-    assert outputs['fp_features'].detach().cpu().numpy().shape == (3, 128,
-                                                                   16384)
+    assert outputs['fp_xyz'].cpu().numpy().shape == (2, 2048, 3)
+    assert outputs['fp_features'].detach().cpu().numpy().shape == (2, 128,
+                                                                   2048)

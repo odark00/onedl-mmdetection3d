@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Tuple
-
 import torch
 from torch import Tensor
+from typing import List, Tuple
 
 from mmdet3d.structures import CameraInstance3DBoxes
 
@@ -78,8 +77,8 @@ def get_centers2d_target(centers2d: Tensor, centers: Tensor,
         [left_coors, right_coors, top_coors, bottom_coors], dim=1)
     intersects_x = intersects[:, :, 0]
     intersects_y = intersects[:, :, 1]
-    inds = (intersects_x >= 0) & (intersects_x <=
-                                  w - 1) & (intersects_y >= 0) & (
+    inds = (intersects_x >= 0) & (intersects_x
+                                  <= w - 1) & (intersects_y >= 0) & (
                                       intersects_y <= h - 1)
     valid_intersects = intersects[inds].reshape(N, 2, 2)
     dist = torch.norm(valid_intersects - centers2d.unsqueeze(1), dim=2)

@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Tuple
-
 import torch
 from mmcv.cnn import build_norm_layer
 from mmcv.ops import DynamicScatter
 from torch import Tensor, nn
+from typing import Optional, Tuple
 
 from mmdet3d.registry import MODELS
 from .utils import PFNLayer, get_paddings_indicator

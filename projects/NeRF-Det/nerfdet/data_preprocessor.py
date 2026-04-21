@@ -1,16 +1,15 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import math
-from numbers import Number
-from typing import Dict, List, Optional, Sequence, Tuple, Union
-
 import numpy as np
 import torch
 from mmdet.models import DetDataPreprocessor
 from mmdet.models.utils.misc import samplelist_boxtype2tensor
 from mmengine.model import stack_batch
 from mmengine.utils import is_seq_of
+from numbers import Number
 from torch import Tensor
 from torch.nn import functional as F
+from typing import Dict, List, Optional, Sequence, Tuple, Union
 
 from mmdet3d.models.data_preprocessors.utils import multiview_img_stack_batch
 from mmdet3d.models.data_preprocessors.voxelize import (

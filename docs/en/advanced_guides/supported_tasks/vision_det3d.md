@@ -60,7 +60,7 @@ We can also achieve better performance with finetuned FCOS3D by running:
 ```
 
 After training a baseline model with the previous script,
-please remember to modify the path [here](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/configs/fcos3d/fcos3d_r101-caffe-dcn_fpn_head-gn_8xb2-1x_nus-mono3d_finetune.py#L8) correspondingly.
+please remember to modify the path [here](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/configs/fcos3d/fcos3d_r101-caffe-dcn_fpn_head-gn_8xb2-1x_nus-mono3d_finetune.py#L8) correspondingly.
 
 ## Quantitative Evaluation
 
@@ -108,7 +108,7 @@ If you would like to only conduct inference or test the model performance on the
 you just need to specify the `jsonfile_prefix` for corresponding evaluator,
 e.g., add `test_evaluator = dict(type='NuscenesMetric', jsonfile_prefix=work_dirs/fcos3d/test_submission)` in the configuration then you can get the results file.
 
-Please guarantee the `data_prefix` and `ann_file` in [info for testing](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/configs/_base_/datasets/nus-mono3d.py#L93) in the config corresponds to the test set instead of validation set.
+Please guarantee the `data_prefix` and `ann_file` in [info for testing](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/configs/_base_/datasets/nus-mono3d.py#L93) in the config corresponds to the test set instead of validation set.
 
 After generating the results, you can basically compress the folder and upload to the evalAI evaluation server for nuScenes 3D detection challenge.
 

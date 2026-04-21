@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from collections import OrderedDict
-from pathlib import Path
-
 import mmcv
 import mmengine
 import numpy as np
+from collections import OrderedDict
 from nuscenes.utils.geometry_utils import view_points
+from pathlib import Path
 
 from mmdet3d.structures import points_cam2img
 from mmdet3d.structures.ops import box_np_ops
@@ -16,7 +15,7 @@ kitti_categories = ('Pedestrian', 'Cyclist', 'Car')
 
 
 def convert_to_kitti_info_version2(info):
-    """convert kitti info v1 to v2 if possible.
+    """Convert kitti info v1 to v2 if possible.
 
     Args:
         info (dict): Info of the input kitti data.

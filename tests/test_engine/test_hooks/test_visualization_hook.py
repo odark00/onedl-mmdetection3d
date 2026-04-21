@@ -1,13 +1,12 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import numpy as np
 import os.path as osp
 import shutil
 import time
-from unittest import TestCase
-from unittest.mock import Mock
-
-import numpy as np
 import torch
 from mmengine.structures import InstanceData
+from unittest import TestCase
+from unittest.mock import Mock
 
 from mmdet3d.engine.hooks import Det3DVisualizationHook
 from mmdet3d.structures import Det3DDataSample, LiDARInstance3DBoxes

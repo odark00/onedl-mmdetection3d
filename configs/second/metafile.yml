@@ -26,7 +26,7 @@ Models:
         Dataset: KITTI
         Metrics:
           mAP: 78.2
-    Weights: https://download.openmmlab.com/mmdetection3d/v1.1.0_models/second/second_hv_secfpn_8xb6-80e_kitti-3d-car/second_hv_secfpn_8xb6-80e_kitti-3d-car-75d9305e.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v1.1.0_models/second/second_hv_secfpn_8xb6-80e_kitti-3d-car/second_hv_secfpn_8xb6-80e_kitti-3d-car-75d9305e.pth
 
   - Name: second_hv_secfpn_8xb6-80e_kitti-3d-3class
     In Collection: SECOND
@@ -40,7 +40,7 @@ Models:
         Dataset: KITTI
         Metrics:
           mAP: 65.3
-    Weights: https://download.openmmlab.com/mmdetection3d/v1.1.0_models/second/second_hv_secfpn_8xb6-80e_kitti-3d-3class/second_hv_secfpn_8xb6-80e_kitti-3d-3class-b086d0a3.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v1.1.0_models/second/second_hv_secfpn_8xb6-80e_kitti-3d-3class/second_hv_secfpn_8xb6-80e_kitti-3d-3class-b086d0a3.pth
 
   - Name: second_hv_secfpn_sbn-all_16xb2-2x_waymoD5-3d-3class
     In Collection: SECOND
@@ -73,7 +73,7 @@ Models:
         Dataset: KITTI
         Metrics:
           mAP: 78.72
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.1.0_models/fp16/hv_second_secfpn_fp16_6x8_80e_kitti-3d-car/hv_second_secfpn_fp16_6x8_80e_kitti-3d-car_20200924_211301-1f5ad833.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.1.0_models/fp16/hv_second_secfpn_fp16_6x8_80e_kitti-3d-car/hv_second_secfpn_fp16_6x8_80e_kitti-3d-car_20200924_211301-1f5ad833.pth
     Code:
       Version: v0.7.0
 
@@ -92,6 +92,6 @@ Models:
         Dataset: KITTI
         Metrics:
           mAP: 67.4
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.1.0_models/fp16/hv_second_secfpn_fp16_6x8_80e_kitti-3d-3class/hv_second_secfpn_fp16_6x8_80e_kitti-3d-3class_20200925_110059-05f67bdf.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.1.0_models/fp16/hv_second_secfpn_fp16_6x8_80e_kitti-3d-3class/hv_second_secfpn_fp16_6x8_80e_kitti-3d-3class_20200925_110059-05f67bdf.pth
     Code:
       Version: v0.7.0

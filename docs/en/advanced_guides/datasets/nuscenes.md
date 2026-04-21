@@ -8,7 +8,7 @@ You can download nuScenes 3D detection `Full dataset (v1.0)` [HERE](https://www.
 
 If you want to implement 3D semantic segmentation task, you need to additionally download the `nuScenes-lidarseg` data annotation and place the extracted files in the nuScenes corresponding folder.
 
-**Note**: `v1.0trainval(test)/categroy.json` in nuScenes-lidarseg will replace the original `v1.0trainval(test)/categroy.json` of the Full dataset (v1.0), but will not affect the 3D object detection task.
+**Note**: `v1.0trainval(test)/category.json` in nuScenes-lidarseg will replace the original `v1.0trainval(test)/category.json` of the Full dataset (v1.0), but will not affect the 3D object detection task.
 
 Like the general way to prepare dataset, it is recommended to symlink the dataset root to `$MMDETECTION3D/data`.
 
@@ -110,8 +110,8 @@ Note:
 
 2. Here we only explain the data recorded in the training info files. The same applies to validation and testing set (the `.pkl` file of test set does not contains `instances` and `cam_instances`).
 
-The core function to get `nuscenes_infos_xxx.pkl` is  [\_fill_trainval_infos](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/tools/dataset_converters/nuscenes_converter.py#L146).
-Please refer to [nuscenes_converter.py](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/tools/dataset_converters/nuscenes_converter.py) for more details.
+The core function to get `nuscenes_infos_xxx.pkl` is  [\_fill_trainval_infos](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/tools/dataset_converters/nuscenes_converter.py#L146).
+Please refer to [nuscenes_converter.py](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/tools/dataset_converters/nuscenes_converter.py) for more details.
 
 ## Training pipeline
 
@@ -298,7 +298,7 @@ You should modify the `jsonfile_prefix` in the `test_evaluator` of corresponding
 ./tools/dist_test.sh configs/pointpillars/pointpillars_hv_fpn_sbn-all_8xb4-2x_nus-3d.py work_dirs/pp-nus/latest.pth 8 --cfg-options 'test_evaluator.jsonfile_prefix=work_dirs/pp-nus/results_eval'
 ```
 
-Note that the testing info should be changed to that for testing set instead of validation set [here](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/configs/_base_/datasets/nus-3d.py#L132).
+Note that the testing info should be changed to that for testing set instead of validation set [here](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/configs/_base_/datasets/nus-3d.py#L132).
 
 After generating the `work_dirs/pp-nus/results_eval.json`, you can compress it and submit it to nuScenes benchmark. Please refer to the [nuScenes official website](https://www.nuscenes.org/object-detection?externalData=all&mapData=all&modalities=Any) for more information.
 
@@ -308,6 +308,6 @@ We can also visualize the prediction results with our developed visualization to
 
 ### Transformation between `NuScenesBox` and our `CameraInstanceBoxes`.
 
-In general, the main difference of `NuScenesBox` and our `CameraInstanceBoxes` is mainly reflected in the yaw definition. `NuScenesBox` defines the rotation with a quaternion or three Euler angles while ours only defines one yaw angle due to the practical scenario. It requires us to add some additional rotations manually in the pre-processing and post-processing, such as [here](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/datasets/nuscenes_mono_dataset.py#L673).
+In general, the main difference of `NuScenesBox` and our `CameraInstanceBoxes` is mainly reflected in the yaw definition. `NuScenesBox` defines the rotation with a quaternion or three Euler angles while ours only defines one yaw angle due to the practical scenario. It requires us to add some additional rotations manually in the pre-processing and post-processing, such as [here](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/datasets/nuscenes_mono_dataset.py#L673).
 
-In addition, please note that the definition of corners and locations are detached in the `NuScenesBox`. For example, in monocular 3D detection, the definition of the box location is in its camera coordinate (see its official [illustration](https://www.nuscenes.org/nuscenes#data-collection) for car setup), which is consistent with [ours](https://github.com/open-mmlab/mmdetection3d/blob/master/mmdet3d/core/bbox/structures/cam_box3d.py). In contrast, its corners are defined with the [convention](https://github.com/nutonomy/nuscenes-devkit/blob/02e9200218977193a1058dd7234f935834378319/python-sdk/nuscenes/utils/data_classes.py#L527) "x points forward, y to the left, z up". It results in different philosophy of dimension and rotation definitions from our `CameraInstanceBoxes`. An example to remove similar hacks is PR [#744](https://github.com/open-mmlab/mmdetection3d/pull/744). The same problem also exists in the LiDAR system. To deal with them, we typically add some transformation in the pre-processing and post-processing to guarantee the box will be in our coordinate system during the entire training and inference procedure.
+In addition, please note that the definition of corners and locations are detached in the `NuScenesBox`. For example, in monocular 3D detection, the definition of the box location is in its camera coordinate (see its official [illustration](https://www.nuscenes.org/nuscenes#data-collection) for car setup), which is consistent with [ours](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/mmdet3d/core/bbox/structures/cam_box3d.py). In contrast, its corners are defined with the [convention](https://github.com/nutonomy/nuscenes-devkit/blob/02e9200218977193a1058dd7234f935834378319/python-sdk/nuscenes/utils/data_classes.py#L527) "x points forward, y to the left, z up". It results in different philosophy of dimension and rotation definitions from our `CameraInstanceBoxes`. An example to remove similar hacks is PR [#744](https://github.com/VBTI-development/onedl-mmdetection3d/pull/744). The same problem also exists in the LiDAR system. To deal with them, we typically add some transformation in the pre-processing and post-processing to guarantee the box will be in our coordinate system during the entire training and inference procedure.

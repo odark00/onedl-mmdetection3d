@@ -2,7 +2,7 @@
 
 ## Dataset preparation
 
-For the overall process, please refer to the [README](https://github.com/open-mmlab/mmdetection3d/blob/master/data/sunrgbd/README.md) page for SUN RGB-D.
+For the overall process, please refer to the [README](https://github.com/VBTI-development/onedl-mmdetection3d/blob/master/data/sunrgbd/README.md) page for SUN RGB-D.
 
 ### Download SUN RGB-D data and toolbox
 
@@ -241,10 +241,10 @@ Data augmentation for images:
 - `Resize`: resize the input image, `keep_ratio=True` means the ratio of the image is kept unchanged.
 - `RandomFlip`: randomly flip the input image.
 
-The image augmentation functions are implemented in [MMDetection](https://github.com/open-mmlab/mmdetection/tree/dev-3.x/mmdet/datasets/transforms).
+The image augmentation functions are implemented in [MMDetection](https://github.com/vbti-development/onedl-mmdetection/tree/dev-3.x/mmdet/datasets/transforms).
 
 ## Metrics
 
-Same as ScanNet, typically mean Average Precision (mAP) is used for evaluation on SUN RGB-D, e.g. `mAP@0.25` and `mAP@0.5`. In detail, a generic function to compute precision and recall for 3D object detection for multiple classes is called. Please refer to [indoor_eval](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/mmdet3d/evaluation/functional/indoor_eval.py) for more details.
+Same as ScanNet, typically mean Average Precision (mAP) is used for evaluation on SUN RGB-D, e.g. `mAP@0.25` and `mAP@0.5`. In detail, a generic function to compute precision and recall for 3D object detection for multiple classes is called. Please refer to [indoor_eval](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/mmdet3d/evaluation/functional/indoor_eval.py) for more details.
 
-Since SUN RGB-D consists of image data, detection on image data is also feasible. For instance, in ImVoteNet, we first train an image detector, and we also use mAP for evaluation, e.g. `mAP@0.5`. We use the `eval_map` function from [MMDetection](https://github.com/open-mmlab/mmdetection) to calculate mAP.
+Since SUN RGB-D consists of image data, detection on image data is also feasible. For instance, in ImVoteNet, we first train an image detector, and we also use mAP for evaluation, e.g. `mAP@0.5`. We use the `eval_map` function from [MMDetection](https://github.com/vbti-development/onedl-mmdetection) to calculate mAP.

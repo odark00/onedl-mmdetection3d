@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import itertools
-from typing import List, OrderedDict
-
 from mmengine.registry import MODELS
 from torch.nn.parameter import Parameter
+from typing import List, OrderedDict
 
 
 def register_spconv2() -> bool:

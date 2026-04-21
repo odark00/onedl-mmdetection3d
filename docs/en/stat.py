@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 import functools as func
 import glob
+import numpy as np
 import re
 from os import path as osp
 
-import numpy as np
-
-url_prefix = 'https://github.com/open-mmlab/mmdetection3d/blob/main'
+url_prefix = 'https://github.com/VBTI-development/onedl-mmdetection3d/blob/main'  # noqa: E501
 
 files = sorted(glob.glob('../../configs/*/README.md'))
 

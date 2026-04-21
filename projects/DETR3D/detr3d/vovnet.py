@@ -1,9 +1,8 @@
-import warnings
-from collections import OrderedDict
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import warnings
+from collections import OrderedDict
 from mmengine.model import BaseModule
 from torch.nn.modules.batchnorm import _BatchNorm
 

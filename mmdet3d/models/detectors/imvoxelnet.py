@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Tuple, Union
-
 import torch
 from mmengine.structures import InstanceData
+from typing import List, Tuple, Union
 
 from mmdet3d.models.detectors import Base3DDetector
 from mmdet3d.models.layers.fusion_layers.point_fusion import point_sample
@@ -257,8 +256,8 @@ class ImVoxelNet(Base3DDetector):
         """
 
         assert (data_instances_2d is not None) or \
-               (data_instances_3d is not None),\
-               'please pass at least one type of data_samples'
+            (data_instances_3d is not None), \
+            'please pass at least one type of data_samples'
 
         if data_instances_2d is None:
             data_instances_2d = [

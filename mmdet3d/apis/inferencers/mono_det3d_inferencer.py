@@ -1,15 +1,14 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os.path as osp
-from typing import Dict, List, Optional, Sequence, Union
-
 import mmcv
 import mmengine
 import numpy as np
+import os.path as osp
 from mmengine.dataset import Compose
 from mmengine.fileio import (get_file_backend, isdir, join_path,
                              list_dir_or_file)
 from mmengine.infer.infer import ModelType
 from mmengine.structures import InstanceData
+from typing import Dict, List, Optional, Sequence, Union
 
 from mmdet3d.registry import INFERENCERS
 from mmdet3d.utils import ConfigType

@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from unittest import TestCase
-
 import mmengine
 import numpy as np
 import torch
 from mmengine.structures import InstanceData
+from unittest import TestCase
 
 from mmdet3d.models.dense_heads import PGDHead
 from mmdet3d.structures import CameraInstance3DBoxes

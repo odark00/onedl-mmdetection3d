@@ -1,7 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-from typing import Dict, List, Optional, Tuple
-
 import numpy as np
 import torch
 from mmcv.cnn import ConvModule
@@ -15,6 +13,7 @@ from mmengine.structures import InstanceData
 from torch import Tensor
 from torch import nn as nn
 from torch.nn import functional as F
+from typing import Dict, List, Optional, Tuple
 
 from mmdet3d.models.layers import aligned_3d_nms
 from mmdet3d.registry import MODELS, TASK_UTILS
@@ -26,7 +25,7 @@ EPS = 1e-6
 
 
 class PointsObjClsModule(BaseModule):
-    """object candidate point prediction from seed point features.
+    """Object candidate point prediction from seed point features.
 
     Args:
         in_channel (int): number of channels of seed point features.
@@ -125,8 +124,8 @@ class GroupFree3DHead(BaseModule):
         train_cfg (dict, optional): Config for training.
         test_cfg (dict, optional): Config for testing.
         num_proposal (int): The number of initial sampling candidates.
-        pred_layer_cfg (dict, optional): Config of classfication and regression
-            prediction layers.
+        pred_layer_cfg (dict, optional): Config of classification and
+            regression prediction layers.
         size_cls_agnostic (bool): Whether the predicted size is class-agnostic.
         gt_per_seed (int): the number of candidate instance each point belongs
             to.
@@ -987,7 +986,7 @@ class GroupFree3DHead(BaseModule):
 
         Returns:
             list[:obj:`InstanceData`]: List of processed predictions. Each
-            InstanceData cantains 3d Bounding boxes and corresponding
+            InstanceData contains 3d Bounding boxes and corresponding
             scores and labels.
         """
         # support multi-stage predictions

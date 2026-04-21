@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from os import path as osp
-from typing import Callable, List, Optional, Sequence, Union
-
 import numpy as np
 from mmengine.dataset import BaseDataset
 from mmengine.fileio import get_local_path
+from os import path as osp
+from typing import Callable, List, Optional, Sequence, Union
 
 from mmdet3d.registry import DATASETS
 
@@ -162,9 +161,10 @@ class Seg3DDataset(BaseDataset):
                 cls_id: self.ignore_index
                 for cls_id in self.METAINFO['seg_all_class_ids']
             }
-            label_mapping.update(
-                {cls_id: i
-                 for i, cls_id in enumerate(valid_class_ids)})
+            label_mapping.update({
+                cls_id: i
+                for i, cls_id in enumerate(valid_class_ids)
+            })
             label2cat = {i: cat_name for i, cat_name in enumerate(new_classes)}
         else:
             label_mapping = {

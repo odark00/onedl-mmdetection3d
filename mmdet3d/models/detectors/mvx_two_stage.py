@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-from typing import Dict, List, Optional, Sequence
-
 import torch
 from mmengine.structures import InstanceData
 from torch import Tensor
+from typing import Dict, List, Optional, Sequence
 
 from mmdet3d.registry import MODELS
 from mmdet3d.structures import Det3DDataSample
@@ -210,7 +209,7 @@ class MVXTwoStageDetector(Base3DDetector):
                                                 voxel_dict['num_points'],
                                                 voxel_dict['coors'], img_feats,
                                                 batch_input_metas)
-        batch_size = voxel_dict['coors'][-1, 0] + 1
+        batch_size = voxel_dict['coors'][-1, 0].item() + 1
         x = self.pts_middle_encoder(voxel_features, voxel_dict['coors'],
                                     batch_size)
         x = self.pts_backbone(x)

@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os
-from logging import warning
-from os import path as osp
-
 import mmcv
 import mmengine
 import numpy as np
+import os
+from logging import warning
 from lyft_dataset_sdk.lyftdataset import LyftDataset as Lyft
+from os import path as osp
 from pyquaternion import Quaternion
 
 from mmdet3d.datasets.convert_utils import LyftNameMapping

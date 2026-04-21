@@ -1,6 +1,4 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Optional, Tuple
-
 import numpy as np
 import torch
 import torch.nn as nn
@@ -10,6 +8,7 @@ from mmdet.models.utils import multi_apply
 from mmengine.model import BaseModule, normal_init
 from mmengine.structures import InstanceData
 from torch import Tensor
+from typing import Dict, List, Optional, Tuple
 
 from mmdet3d.models.layers import nms_bev, nms_normal_bev
 from mmdet3d.models.layers.pointnet_modules import build_sa_module
@@ -27,7 +26,7 @@ class PointRCNNBboxHead(BaseModule):
         num_classes (int): The number of classes to prediction.
         in_channels (int)： Input channels of point features.
         mlp_channels (list[int]): the number of mlp channels
-        pred_layer_cfg (dict, optional): Config of classfication and
+        pred_layer_cfg (dict, optional): Config of classification and
             regression prediction layers. Defaults to None.
         num_points (tuple): The number of points which each SA
             module samples. Defaults to (128, 32, -1).

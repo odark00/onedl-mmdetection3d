@@ -21,7 +21,7 @@ Models:
         Dataset: S3DIS Area1
         Metrics:
           mIoU: 68.33
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area1/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210731_000734-39658f14.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area1/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210731_000734-39658f14.pth
 
   - Name: dgcnn_4xb32-cosine-100e_s3dis-seg_test-area2.py
     In Collection: DGCNN
@@ -34,7 +34,7 @@ Models:
         Dataset: S3DIS Area2
         Metrics:
           mIoU: 40.68
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area2/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210731_144648-aea9ecb6.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area2/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210731_144648-aea9ecb6.pth
 
   - Name: dgcnn_4xb32-cosine-100e_s3dis-seg_test-area3.py
     In Collection: DGCNN
@@ -47,7 +47,7 @@ Models:
         Dataset: S3DIS Area3
         Metrics:
           mIoU: 69.38
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area3/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210801_154629-2ff50ee0.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area3/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210801_154629-2ff50ee0.pth
 
   - Name: dgcnn_4xb32-cosine-100e_s3dis-seg_test-area4.py
     In Collection: DGCNN
@@ -60,7 +60,7 @@ Models:
         Dataset: S3DIS Area4
         Metrics:
           mIoU: 50.07
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area4/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210802_073551-dffab9cd.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area4/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210802_073551-dffab9cd.pth
 
   - Name: dgcnn_4xb32-cosine-100e_s3dis-seg_test-area5.py
     In Collection: DGCNN
@@ -73,7 +73,7 @@ Models:
         Dataset: S3DIS Area5
         Metrics:
           mIoU: 50.59
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area5/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210730_235824-f277e0c5.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area5/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210730_235824-f277e0c5.pth
 
   - Name: dgcnn_4xb32-cosine-100e_s3dis-seg_test-area6.py
     In Collection: DGCNN
@@ -86,4 +86,4 @@ Models:
         Dataset: S3DIS Area6
         Metrics:
           mIoU: 77.94
-    Weights: https://download.openmmlab.com/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area6/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210802_154317-e3511b32.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v0.17.0_models/dgcnn/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class/area6/dgcnn_32x4_cosine_100e_s3dis_seg-3d-13class_20210802_154317-e3511b32.pth

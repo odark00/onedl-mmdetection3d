@@ -8,11 +8,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 # ------------------------------------------------------------------------
 
-import warnings
-
 import torch
 import torch.nn as nn
 import torch.utils.checkpoint as cp
+import warnings
 from mmcv.cnn import build_norm_layer
 from mmcv.cnn.bricks.transformer import (BaseTransformerLayer,
                                          TransformerLayerSequence)
@@ -515,6 +514,7 @@ class PETRTransformerDecoder(TransformerLayerSequence):
 
     def forward(self, query, *args, **kwargs):
         """Forward function for `TransformerDecoder`.
+
         Args:
             query (Tensor): Input query with shape
                 `(num_query, bs, embed_dims)`.

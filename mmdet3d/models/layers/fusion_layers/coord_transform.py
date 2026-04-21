@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from functools import partial
-from typing import Tuple
-
 import torch
+from functools import partial
 from torch import Tensor
+from typing import Tuple
 
 from mmdet3d.structures.points import get_points_type
 

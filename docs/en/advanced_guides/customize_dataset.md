@@ -362,7 +362,7 @@ Theoretically, `voxel_size` is linked to the setting of `point_cloud_range`. Set
 
 If the `point_cloud_range` and `voxel_size` are set to be `[0, -40, -3, 70.4, 40, 1]` and `[0.05, 0.05, 0.1]` respectively, then the shape of intermediate feature map should be `[(1-(-3))/0.1+1, (40-(-40))/0.05, (70.4-0)/0.05]=[41, 1600, 1408]`. When changing `point_cloud_range`, remember to change the shape of intermediate feature map in `middle_encoder` according to the `voxel_size`.
 
-Regarding the setting of `anchor_range`, it is generally adjusted according to dataset. Note that `z` value needs to be adjusted accordingly to the position of the point cloud, please refer to this [issue](https://github.com/open-mmlab/mmdetection3d/issues/986).
+Regarding the setting of `anchor_range`, it is generally adjusted according to dataset. Note that `z` value needs to be adjusted accordingly to the position of the point cloud, please refer to this [issue](https://github.com/VBTI-development/onedl-mmdetection3d/issues/986).
 
 Regarding the setting of `anchor_size`, it is usually necessary to count the average length, width and height of objects in the entire training dataset as `anchor_size` to obtain the best results.
 

@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import unittest
-
 import numpy as np
 import torch
+import unittest
 from mmengine.structures import BaseDataElement
 
 from mmdet3d.evaluation.metrics import SegMetric

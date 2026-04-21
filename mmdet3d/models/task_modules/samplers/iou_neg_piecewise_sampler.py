@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import math
-from typing import Optional, Union
-
 import torch
 from mmdet.models.task_modules import AssignResult
 from numpy import ndarray
 from torch import Tensor
+from typing import Optional, Union
 
 from mmdet3d.registry import TASK_UTILS
 from . import RandomSampler, SamplingResult

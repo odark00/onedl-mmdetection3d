@@ -1,18 +1,25 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import tempfile
-from os import path as osp
-from typing import Dict, List, Optional, Sequence, Tuple, Union
-
 import mmengine
 import numpy as np
 import pyquaternion
+import tempfile
 import torch
 from mmengine import Config, load
 from mmengine.evaluator import BaseMetric
 from mmengine.logging import MMLogger
-from nuscenes.eval.detection.config import config_factory
-from nuscenes.eval.detection.data_classes import DetectionConfig
-from nuscenes.utils.data_classes import Box as NuScenesBox
+from os import path as osp
+from typing import Dict, List, Optional, Sequence, Tuple, Union
+
+try:
+    from nuscenes.eval.detection.config import config_factory
+    from nuscenes.eval.detection.data_classes import DetectionConfig
+    from nuscenes.utils.data_classes import Box as NuScenesBox
+    HAS_NUSCENES = True
+except ImportError:
+    HAS_NUSCENES = False
+    NuScenesBox = None  # placeholder for type hints
+    DetectionConfig = None  # placeholder for type hints
+    config_factory = None  # placeholder
 
 from mmdet3d.models.layers import box3d_multiclass_nms
 from mmdet3d.registry import METRICS
@@ -97,6 +104,12 @@ class NuScenesMetric(BaseMetric):
                  eval_version: str = 'detection_cvpr_2019',
                  collect_device: str = 'cpu',
                  backend_args: Optional[dict] = None) -> None:
+        if not HAS_NUSCENES:
+            raise ImportError(
+                'nuscenes-devkit is required to use NuScenesMetric but is '
+                'not installed or is incompatible with the current '
+                'environment. Please install it separately: '
+                'pip install nuscenes-devkit')
         self.default_prefix = 'NuScenes metric'
         super(NuScenesMetric, self).__init__(
             collect_device=collect_device, prefix=prefix)

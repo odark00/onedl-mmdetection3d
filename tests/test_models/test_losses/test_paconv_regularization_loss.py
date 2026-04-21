@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import random
-
 import numpy as np
 import pytest
+import random
 import torch
 from torch import nn as nn
 

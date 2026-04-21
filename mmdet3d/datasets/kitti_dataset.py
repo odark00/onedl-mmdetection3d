@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Callable, List, Union
-
 import numpy as np
+from typing import Callable, List, Union
 
 from mmdet3d.registry import DATASETS
 from mmdet3d.structures import CameraInstance3DBoxes

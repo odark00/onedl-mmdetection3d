@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os.path as osp
-
 import numpy as np
+import os.path as osp
 import pytest
 from mmcv.transforms.base import BaseTransform
 from mmengine.structures import InstanceData
@@ -45,7 +44,7 @@ class CustomDataset(NuScenesDataset):
 
 class TestCBGSDataset:
 
-    def setup(self):
+    def setup_method(self):
         dataset = NuScenesDataset
         self.dataset = dataset(
             data_root=osp.join(osp.dirname(__file__), '../data/nuscenes'),

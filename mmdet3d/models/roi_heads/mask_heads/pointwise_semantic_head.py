@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, Optional, Tuple
-
 import torch
 from mmdet.models.utils import multi_apply
 from mmengine.model import BaseModule
 from torch import Tensor
 from torch import nn as nn
 from torch.nn import functional as F
+from typing import Dict, Optional, Tuple
 
 from mmdet3d.registry import MODELS
 from mmdet3d.structures.bbox_3d import BaseInstance3DBoxes, rotation_3d_in_axis
@@ -84,7 +83,7 @@ class PointwiseSemanticHead(BaseModule):
     def get_targets_single(self, voxel_centers: Tensor,
                            gt_bboxes_3d: BaseInstance3DBoxes,
                            gt_labels_3d: Tensor) -> Tuple[Tensor]:
-        """generate segmentation and part prediction targets for a single
+        """Generate segmentation and part prediction targets for a single
         sample.
 
         Args:
@@ -134,7 +133,7 @@ class PointwiseSemanticHead(BaseModule):
 
     def get_targets(self, voxel_dict: dict,
                     batch_gt_instances_3d: InstanceList) -> dict:
-        """generate segmentation and part prediction targets.
+        """Generate segmentation and part prediction targets.
 
         Args:
             voxel_dict (dict): Contains information of voxels.

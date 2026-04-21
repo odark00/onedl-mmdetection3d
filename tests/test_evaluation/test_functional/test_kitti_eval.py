@@ -82,7 +82,7 @@ def test_do_eval():
                              [[0.5, 0.5, 0.7], [0.25, 0.25, 0.5],
                               [0.25, 0.25, 0.5]]])
     eval_types = ['bbox', 'bev', '3d', 'aos']
-    mAP11_bbox, mAP11_bev, mAP11_3d, mAP11_aos, mAP40_bbox,\
+    mAP11_bbox, mAP11_bev, mAP11_3d, mAP11_aos, mAP40_bbox, \
         mAP40_bev, mAP40_3d, mAP40_aos = do_eval([gt_anno], [dt_anno],
                                                  current_classes, min_overlaps,
                                                  eval_types)

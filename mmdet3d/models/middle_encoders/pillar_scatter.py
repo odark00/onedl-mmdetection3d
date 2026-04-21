@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List
-
 import torch
 from torch import Tensor, nn
+from typing import List
 
 from mmdet3d.registry import MODELS
 

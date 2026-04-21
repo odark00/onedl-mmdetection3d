@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from collections.abc import Sized
-from typing import Union
-
 import numpy as np
 import torch
+from collections.abc import Sized
 from mmengine.structures import BaseDataElement
+from typing import Union
 
 IndexType = Union[str, slice, int, list, torch.LongTensor,
                   torch.cuda.LongTensor, torch.BoolTensor,
@@ -46,7 +45,7 @@ class PointData(BaseDataElement):
     """
 
     def __setattr__(self, name: str, value: Sized) -> None:
-        """setattr is only used to set data.
+        """Setattr is only used to set data.
 
         The value must have the attribute of `__len__` and have the same length
         of `PointData`.

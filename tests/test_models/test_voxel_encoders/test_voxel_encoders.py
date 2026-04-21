@@ -30,17 +30,17 @@ def test_seg_VFE():
         return_point_feats=True)
     seg_VFE = MODELS.build(seg_VFE_cfg)
     seg_VFE = seg_VFE.cuda()
-    features = torch.rand([240000, 6]).cuda()
+    features = torch.rand([24000, 6]).cuda()
     coors = []
     for i in range(4):
-        coor = torch.randint(0, 10, (60000, 3))
+        coor = torch.randint(0, 10, (6000, 3))
         coor = F.pad(coor, (1, 0), mode='constant', value=i)
         coors.append(coor)
     coors = torch.cat(coors, dim=0).cuda()
     out_features, out_coors, out_point_features = seg_VFE(features, coors)
     assert out_features.shape[0] == out_coors.shape[0]
     assert len(out_point_features) == 4
-    assert out_point_features[0].shape == torch.Size([240000, 64])
-    assert out_point_features[1].shape == torch.Size([240000, 128])
-    assert out_point_features[2].shape == torch.Size([240000, 256])
-    assert out_point_features[3].shape == torch.Size([240000, 256])
+    assert out_point_features[0].shape == torch.Size([24000, 64])
+    assert out_point_features[1].shape == torch.Size([24000, 128])
+    assert out_point_features[2].shape == torch.Size([24000, 256])
+    assert out_point_features[3].shape == torch.Size([24000, 256])

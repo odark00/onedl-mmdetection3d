@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, Optional, Sequence
-
 from mmengine.evaluator import BaseMetric
 from mmengine.logging import MMLogger
+from typing import Dict, Optional, Sequence
 
 from mmdet3d.evaluation import instance_seg_eval
 from mmdet3d.registry import METRICS

@@ -1,6 +1,6 @@
-import unittest
-
+# Copyright (c) OpenMMLab. All rights reserved.
 import torch
+import unittest
 from mmengine import DefaultScope
 
 from mmdet3d.registry import MODELS
@@ -18,6 +18,9 @@ class TestPVRCNN(unittest.TestCase):
         setup_seed(0)
         pvrcnn_cfg = get_detector_cfg(
             'pv_rcnn/pv_rcnn_8xb2-80e_kitti-3d-3class.py')
+        pvrcnn_cfg.points_encoder.num_keypoints = 256
+        pvrcnn_cfg.roi_head.bbox_roi_extractor.grid_size = 3
+        pvrcnn_cfg.roi_head.bbox_head.grid_size = 3
         model = MODELS.build(pvrcnn_cfg)
         num_gt_instance = 2
         packed_inputs = create_detector_inputs(num_gt_instance=num_gt_instance)
@@ -51,6 +54,8 @@ class TestPVRCNN(unittest.TestCase):
             self.assertIn('labels_3d', results[0].pred_instances_3d)
 
             # save the memory
+            del results
+            torch.cuda.empty_cache()
             with torch.no_grad():
                 losses = model.forward(**data, mode='loss')
                 torch.cuda.empty_cache()

@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional
-
 from mmcv.cnn.bricks.transformer import MultiheadAttention
 from mmengine.registry import MODELS
 from torch import Tensor
 from torch import nn as nn
+from typing import Optional
 
 from mmdet3d.utils import ConfigType, OptMultiConfig
 

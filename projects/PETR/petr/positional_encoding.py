@@ -5,7 +5,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 # ------------------------------------------------------------------------
 import math
-
 import torch
 import torch.nn as nn
 from mmengine.model import BaseModule
@@ -60,6 +59,7 @@ class SinePositionalEncoding3D(BaseModule):
 
     def forward(self, mask):
         """Forward function for `SinePositionalEncoding`.
+
         Args:
             mask (Tensor): ByteTensor mask. Non-zero values representing
                 ignored positions, while zero values means valid positions
@@ -142,6 +142,7 @@ class LearnedPositionalEncoding3D(BaseModule):
 
     def forward(self, mask):
         """Forward function for `LearnedPositionalEncoding`.
+
         Args:
             mask (Tensor): ByteTensor mask. Non-zero values representing
                 ignored positions, while zero values means valid positions

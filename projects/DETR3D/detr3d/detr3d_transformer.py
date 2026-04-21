@@ -1,9 +1,8 @@
-import warnings
-
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import warnings
 from mmcv.cnn.bricks.transformer import (TransformerLayerSequence,
                                          build_transformer_layer_sequence)
 from mmcv.ops.multi_scale_deform_attn import MultiScaleDeformableAttention
@@ -147,6 +146,7 @@ class Detr3DTransformerDecoder(TransformerLayerSequence):
                 reg_branches=None,
                 **kwargs):
         """Forward function for `Detr3DTransformerDecoder`.
+
         Args:
             query (Tensor): Input query with shape
                 `(num_query, bs, embed_dims)`.

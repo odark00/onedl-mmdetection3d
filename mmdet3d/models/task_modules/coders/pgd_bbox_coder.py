@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Tuple
-
 import numpy as np
 import torch
 from torch import Tensor
 from torch.nn import functional as F
+from typing import Tuple
 
 from mmdet3d.registry import TASK_UTILS
 from .fcos3d_bbox_coder import FCOS3DBBoxCoder

@@ -1,6 +1,4 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Optional, Tuple
-
 import torch
 from mmcv.cnn import ConvModule
 from mmcv.ops import furthest_point_sample
@@ -9,6 +7,7 @@ from mmengine.model import BaseModule
 from mmengine.structures import InstanceData
 from torch import nn as nn
 from torch.nn import functional as F
+from typing import Dict, List, Optional, Tuple
 
 from mmdet3d.models.layers import VoteModule, build_sa_module
 from mmdet3d.registry import MODELS
@@ -876,10 +875,10 @@ class PrimitiveHead(BaseModule):
             Tuple: Primitive center and the prediction indices.
         """
         ind_normal = F.softmax(pred_flag, dim=1)
-        pred_indices = (ind_normal[:, 1, :] >
-                        self.surface_thresh).detach().float()
-        selected = (ind_normal[:, 1, :] <=
-                    self.surface_thresh).detach().float()
+        pred_indices = (ind_normal[:, 1, :]
+                        > self.surface_thresh).detach().float()
+        selected = (ind_normal[:, 1, :]
+                    <= self.surface_thresh).detach().float()
         offset = torch.ones_like(center) * self.upper_thresh
         center = center + offset * selected.unsqueeze(-1)
         return center, pred_indices

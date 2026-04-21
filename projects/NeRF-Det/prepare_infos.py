@@ -7,11 +7,10 @@ Example:
         --out-dir ./data/scannet
 """
 import argparse
+import mmengine
 import time
 from os import path as osp
 from pathlib import Path
-
-import mmengine
 
 from ...tools.dataset_converters import indoor_converter as indoor
 from ...tools.dataset_converters.update_infos_to_v2 import (

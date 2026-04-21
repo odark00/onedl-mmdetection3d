@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Tuple
-
 import numpy as np
 from mmengine.logging import MMLogger, print_log
+from typing import Dict, List, Tuple
 
 PQReturnsType = Tuple[np.double, np.double, np.ndarray, np.ndarray, np.ndarray]
 
@@ -309,8 +308,8 @@ class EvalPanoptic:
             matched_gt = np.array([False] * unique_gt.shape[0])
 
             # generate intersection using offset
-            valid_combos = np.logical_and(pred_inst_in_cl > 0,
-                                          gt_inst_in_cl > 0)
+            valid_combos = np.logical_and(pred_inst_in_cl > 0, gt_inst_in_cl
+                                          > 0)
             id_offset_combo = pred_inst_in_cl[
                 valid_combos] + self.id_offset * gt_inst_in_cl[valid_combos]
             unique_combo, counts_combo = np.unique(

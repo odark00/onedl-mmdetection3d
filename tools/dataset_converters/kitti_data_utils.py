@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import mmengine
+import numpy as np
 from collections import OrderedDict
 from concurrent import futures as futures
 from os import path as osp
 from pathlib import Path
-
-import mmengine
-import numpy as np
 from PIL import Image
 from skimage import io
 
@@ -296,8 +295,8 @@ def get_kitti_image_info(path,
 
 
 class WaymoInfoGatherer:
-    """
-    Parallel version of waymo dataset information gathering.
+    """Parallel version of waymo dataset information gathering.
+
     Waymo annotation format version like KITTI:
     {
         [optional]points: [N, 3+] point cloud

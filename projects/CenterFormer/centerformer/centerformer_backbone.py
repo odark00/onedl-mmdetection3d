@@ -1,7 +1,5 @@
 # modify from https://github.com/TuSimple/centerformer/blob/master/det3d/models/necks/rpn_transformer.py # noqa
 
-from typing import List, Tuple
-
 import numpy as np
 import torch
 from mmcv.cnn import build_norm_layer
@@ -9,6 +7,7 @@ from mmdet.models.utils import multi_apply
 from mmengine.logging import print_log
 from mmengine.structures import InstanceData
 from torch import Tensor, nn
+from typing import List, Tuple
 
 from mmdet3d.models.utils import draw_heatmap_gaussian, gaussian_radius
 from mmdet3d.registry import MODELS
@@ -731,8 +730,8 @@ class DeformableDecoderRPN(BaseDecoderRPN):
                     new_idx = k
                     x, y = center_int[0], center_int[1]
 
-                    assert (y * feature_map_size[0] + x <
-                            feature_map_size[0] * feature_map_size[1])
+                    assert (y * feature_map_size[0] + x
+                            < feature_map_size[0] * feature_map_size[1])
 
                     ind[new_idx] = y * feature_map_size[0] + x
                     mask[new_idx] = 1

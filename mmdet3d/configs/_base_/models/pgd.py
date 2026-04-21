@@ -1,12 +1,12 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 if '_base_':
-    from .fcos3d import *
+    from .fcos3d import *  # noqa: F403
 
 from mmdet3d.models.dense_heads.pgd_head import PGDHead
 from mmdet3d.models.task_modules.coders.pgd_bbox_coder import PGDBBoxCoder
 
 # model settings
-model.merge(
+model.merge(  # noqa: F405
     dict(
         bbox_head=dict(
             _delete_=True,

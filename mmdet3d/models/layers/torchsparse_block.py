@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Sequence, Union
-
 from mmcv.cnn import build_activation_layer, build_norm_layer
 from mmengine.model import BaseModule
 from torch import nn
+from typing import Sequence, Union
 
 from mmdet3d.utils import ConfigType, OptConfigType
 from .torchsparse import IS_TORCHSPARSE_AVAILABLE

@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Tuple
-
 import torch
 from torch import Tensor
+from typing import Tuple
 
 
 def calc_euclidian_dist(xyz1: Tensor, xyz2: Tensor) -> Tensor:

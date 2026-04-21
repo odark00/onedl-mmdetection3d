@@ -12,7 +12,7 @@ class Projector():
         self.device = device
 
     def inbound(self, pixel_locations, h, w):
-        """check if the pixel locations are in valid range."""
+        """Check if the pixel locations are in valid range."""
         return (pixel_locations[..., 0] <= w - 1.) & \
                (pixel_locations[..., 0] >= 0) & \
                (pixel_locations[..., 1] <= h - 1.) &\
@@ -26,7 +26,7 @@ class Projector():
         return normalized_pixel_locations
 
     def compute_projections(self, xyz, train_cameras):
-        """project 3D points into cameras."""
+        """Project 3D points into cameras."""
 
         original_shape = xyz.shape[:2]
         xyz = xyz.reshape(-1, 3)
@@ -116,8 +116,8 @@ class Projector():
                 n_images, n_ray, n_sample, _ = sample_location.shape
                 sample_x = sample_location[..., 0].view(n_images, -1)
                 sample_y = sample_location[..., 1].view(n_images, -1)
-                valid = (sample_x >= 0) & (sample_y >=
-                                           0) & (sample_x < f_w) & (
+                valid = (sample_x >= 0) & (sample_y
+                                           >= 0) & (sample_x < f_w) & (
                                                sample_y < f_h)
                 valid = valid * mask_in_front.view(n_images, -1)
                 feat_sampled = torch.zeros(

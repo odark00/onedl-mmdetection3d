@@ -254,7 +254,7 @@ def indoor_eval(gt_annos,
         labels_3d = gt_anno['gt_labels_3d']
 
         for i in range(len(labels_3d)):
-            label = labels_3d[i]
+            label = int(labels_3d[i])
             bbox = gt_boxes[i]
             if label not in gt:
                 gt[label] = {}
@@ -278,7 +278,8 @@ def indoor_eval(gt_annos,
         ret_dict[f'mAP_{iou_thresh:.2f}'] = float(
             np.mean(list(ap[i].values())))
 
-        table_columns.append(list(map(float, list(ap[i].values()))))
+        table_columns.append(
+            [float(np.asarray(v).flat[0]) for v in ap[i].values()])
         table_columns[-1] += [ret_dict[f'mAP_{iou_thresh:.2f}']]
         table_columns[-1] = [f'{x:.4f}' for x in table_columns[-1]]
 

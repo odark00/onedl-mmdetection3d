@@ -1,13 +1,12 @@
-from collections import OrderedDict
-from copy import deepcopy
-from typing import Dict, List, Optional, Tuple
-
 import numpy as np
 import torch
 import torch.distributed as dist
+from collections import OrderedDict
+from copy import deepcopy
 from mmengine.utils import is_list_of
 from torch import Tensor
 from torch.nn import functional as F
+from typing import Dict, List, Optional, Tuple
 
 from mmdet3d.models import Base3DDetector
 from mmdet3d.registry import MODELS

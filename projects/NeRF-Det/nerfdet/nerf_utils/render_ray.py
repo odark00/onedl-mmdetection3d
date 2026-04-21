@@ -2,11 +2,10 @@
 # Attention: This file is mainly modified based on the file with the same
 # name in the original project. For more details, please refer to the
 # origin project.
-from collections import OrderedDict
-
 import numpy as np
 import torch
 import torch.nn.functional as F
+from collections import OrderedDict
 
 rng = np.random.RandomState(234)
 

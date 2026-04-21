@@ -1,6 +1,4 @@
 import math
-from typing import Dict, List, Tuple
-
 import torch
 import torch.nn as nn
 from mmcv.ops import boxes_iou3d
@@ -9,6 +7,7 @@ from mmengine.model import kaiming_init
 from mmengine.structures import InstanceData
 from torch import Tensor
 from torch.nn.init import constant_
+from typing import Dict, List, Tuple
 
 from mmdet3d.models import CenterHead
 from mmdet3d.models.layers import circle_nms, nms_bev
@@ -368,8 +367,8 @@ class DSVTCenterHead(CenterHead):
                     new_idx = k
                     x, y = center_int[0], center_int[1]
 
-                    assert (y * feature_map_size[0] + x <
-                            feature_map_size[0] * feature_map_size[1])
+                    assert (y * feature_map_size[0] + x
+                            < feature_map_size[0] * feature_map_size[1])
 
                     ind[new_idx] = y * feature_map_size[0] + x
                     mask[new_idx] = 1
@@ -479,7 +478,7 @@ class DSVTCenterHead(CenterHead):
             pts_feats (Tuple[torch.Tensor]): Point features..
             batch_data_samples (List[:obj:`Det3DDataSample`]): The Data
                 Samples. It usually includes meta information of data.
-            rescale (bool): Whether rescale the resutls to
+            rescale (bool): Whether to rescale the results to
                 the original scale.
 
         Returns:

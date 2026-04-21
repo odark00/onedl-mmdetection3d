@@ -1,6 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
-
 import torch
 from mmengine import Config, DictAction
 from mmengine.registry import init_default_scope

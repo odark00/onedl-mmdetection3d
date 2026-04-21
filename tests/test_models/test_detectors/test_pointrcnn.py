@@ -1,6 +1,6 @@
-import unittest
-
+# Copyright (c) OpenMMLab. All rights reserved.
 import torch
+import unittest
 from mmengine import DefaultScope
 
 from mmdet3d.registry import MODELS
@@ -21,7 +21,7 @@ class TestPointRCNN(unittest.TestCase):
         model = MODELS.build(pointrcnn_cfg)
         num_gt_instance = 2
         packed_inputs = create_detector_inputs(
-            num_points=10101, num_gt_instance=num_gt_instance)
+            num_points=512, num_gt_instance=num_gt_instance)
 
         if torch.cuda.is_available():
             model = model.cuda()
@@ -36,6 +36,8 @@ class TestPointRCNN(unittest.TestCase):
             self.assertIn('labels_3d', results[0].pred_instances_3d)
 
             # save the memory
+            del results
+            torch.cuda.empty_cache()
             with torch.no_grad():
                 losses = model.forward(**data, mode='loss')
                 torch.cuda.empty_cache()

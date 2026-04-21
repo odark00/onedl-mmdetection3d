@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-import os
-from typing import List, Optional
-
 import mmengine
 import numpy as np
+import os
 from mmengine.fileio import get_local_path
+from typing import List, Optional
 
 from mmdet3d.datasets.transforms import data_augment_utils
 from mmdet3d.registry import TRANSFORMS

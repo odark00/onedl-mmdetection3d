@@ -1,6 +1,4 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Tuple
-
 import numpy as np
 import torch
 from mmcv.cnn import ConvModule
@@ -8,6 +6,7 @@ from mmdet.models.utils import multi_apply
 from mmengine.model import normal_init
 from mmengine.structures import InstanceData
 from torch import Tensor
+from typing import Dict, List, Tuple
 
 from mmdet3d.models import make_sparse_convmodule
 from mmdet3d.models.layers.spconv import IS_SPCONV2_AVAILABLE

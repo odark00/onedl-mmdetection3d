@@ -1,10 +1,9 @@
-from typing import Dict, List, Optional
-
 import numpy as np
 import torch
 import torch.nn as nn
 from mmdet.models.losses.utils import weighted_loss
 from torch import Tensor
+from typing import Dict, List, Optional
 
 from mmdet3d.models.task_modules import CenterPointBBoxCoder
 from mmdet3d.registry import MODELS, TASK_UTILS
@@ -269,10 +268,10 @@ class DSVTBBoxCoder(CenterPointBBoxCoder):
         if self.post_center_range is not None:
             self.post_center_range = torch.as_tensor(
                 self.post_center_range, device=heat.device)
-            mask = (final_box_preds[..., :3] >=
-                    self.post_center_range[:3]).all(2)
-            mask &= (final_box_preds[..., :3] <=
-                     self.post_center_range[3:]).all(2)
+            mask = (final_box_preds[..., :3]
+                    >= self.post_center_range[:3]).all(2)
+            mask &= (final_box_preds[..., :3]
+                     <= self.post_center_range[3:]).all(2)
 
             predictions_dicts = []
             for i in range(batch):

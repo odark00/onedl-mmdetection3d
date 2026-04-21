@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Any, List, Optional, Tuple, Union
-
 import torch
 from mmcv.utils import ext_loader
 from torch import nn
 from torch.autograd import Function
 from torch.nn import functional as F
 from torch.nn.modules.utils import _pair
+from typing import Any, List, Optional, Tuple, Union
 
 ext_module = ext_loader.load_ext('_ext', [
     'dynamic_voxelize_forward', 'hard_voxelize_forward',
@@ -193,7 +192,7 @@ class _DynamicScatter(Function):
                 coors: torch.Tensor,
                 reduce_type: str = 'max',
                 return_map: str = False) -> Tuple[torch.Tensor, torch.Tensor]:
-        """convert kitti points(N, >=3) to voxels.
+        """Convert kitti points(N, >=3) to voxels.
 
         Args:
             feats (torch.Tensor): [N, C]. Points features to be reduced

@@ -1,15 +1,14 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import warnings
-from typing import Dict, List, Optional, Tuple
-
 import numpy as np
 import torch
+import warnings
 from mmcv.cnn import ConvModule
 from mmdet.models.utils import multi_apply
 from mmengine.model import BaseModule
 from mmengine.structures import InstanceData
 from torch import Tensor
 from torch import nn as nn
+from typing import Dict, List, Optional, Tuple
 
 from mmdet3d.models.layers import box3d_multiclass_nms
 from mmdet3d.registry import MODELS

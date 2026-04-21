@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 
-from typing import Dict, List, Optional
-
 from mmengine.logging import MMLogger
+from typing import Dict, List, Optional
 
 from mmdet3d.evaluation import panoptic_seg_eval
 from mmdet3d.registry import METRICS

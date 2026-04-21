@@ -51,6 +51,7 @@ class TransFusionBBoxCoder(BaseBBoxCoder):
 
     def decode(self, heatmap, rot, dim, center, height, vel, filter=False):
         """Decode bboxes.
+
         Args:
             heat (torch.Tensor): Heatmap with the shape of
                 [B, num_cls, num_proposals].
@@ -119,10 +120,10 @@ class TransFusionBBoxCoder(BaseBBoxCoder):
         if self.post_center_range is not None:
             self.post_center_range = torch.tensor(
                 self.post_center_range, device=heatmap.device)
-            mask = (final_box_preds[..., :3] >=
-                    self.post_center_range[:3]).all(2)
-            mask &= (final_box_preds[..., :3] <=
-                     self.post_center_range[3:]).all(2)
+            mask = (final_box_preds[..., :3]
+                    >= self.post_center_range[:3]).all(2)
+            mask &= (final_box_preds[..., :3]
+                     <= self.post_center_range[3:]).all(2)
 
             predictions_dicts = []
             for i in range(heatmap.shape[0]):

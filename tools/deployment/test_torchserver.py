@@ -1,7 +1,7 @@
-from argparse import ArgumentParser
-
+# Copyright (c) OpenMMLab. All rights reserved.
 import numpy as np
 import requests
+from argparse import ArgumentParser
 
 from mmdet3d.apis import inference_detector, init_model
 

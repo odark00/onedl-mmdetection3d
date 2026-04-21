@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-import warnings
-from typing import List, Set, Union
-
 import numpy as np
+import warnings
 from mmengine.dataset import BaseDataset, force_full_init
+from typing import List, Set, Union
 
 from mmdet3d.registry import DATASETS
 

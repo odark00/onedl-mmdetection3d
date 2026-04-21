@@ -1,0 +1,153 @@
+[project]
+name = "onedl-mmdetection3d"
+version = "1.5.0"
+description = "OneDL Lab's 3D Object Detection Toolbox"
+readme = "README.md"
+authors = [
+    { name = "VBTI Software Team", email = "oss@vbti.nl" },
+    { name = "OneDL MMDetection3D Contributors" },
+]
+license = "LicenseRef-Apache-2.0"
+keywords = [
+    "computer vision",
+    "3D object detection",
+    "lidar",
+    "point cloud",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.12"
+dependencies = [
+    "networkx>=2.5",
+    "numba",
+    "numpy",
+    # "nuscenes-devkit", # until they support numpy 2
+    "plyfile",
+    "scikit-image",
+    "trimesh",
+]
+
+[project.urls]
+Homepage = "https://github.com/vbti-development/onedl-mmdetection3d"
+Repository = "https://github.com/vbti-development/onedl-mmdetection3d"
+Documentation = "https://onedl-mmdetection3d.readthedocs.io/"
+
+[build-system]
+requires = [
+    "setuptools>=80",
+    "wheel",
+    "cython",
+    "numpy",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["mmdet3d", "mmdet3d.*"]
+where = ["."]
+exclude = ["configs", "tools", "demo"]
+
+[dependency-groups]
+tests = [
+    "codecov",
+    "coverage",
+    "cython",
+    "kwarray",
+    "parameterized",
+    "pytest",
+    "ubelt",
+    "xdoctest>=0.10.0",
+]
+docs = [
+    "docutils==0.18.1",
+    "markdown>=3.4.0",
+    "myst-parser",
+    "pytorch_sphinx_theme @ git+https://github.com/VBTI-development/onedl_sphinx_theme.git",
+    "sphinx",
+    "sphinx-copybutton",
+    "sphinx_markdown_tables",
+    "sphinx_rtd_theme",
+    "urllib3",
+]
+readthedocs = [
+    "onedl-mmcv",
+    "onedl-mmengine",
+    "onedl-mmdetection",
+    "torch",
+    "torchvision",
+]
+
+[project.optional-dependencies]
+optional = [
+    "scikit-learn",
+    "scipy",
+    "faster_coco_eval",
+    "open3d",
+]
+
+mminstall = [
+    "onedl-mmcv",
+    "onedl-mmdetection>=v3.4.0-rc1",
+    "onedl-mmengine"
+]
+torch = ["torch", "torchvision"]
+
+[tool.isort]
+line_length = 79
+multi_line_output = 0
+known_standard_library = ["setuptools"]
+known_first_party = ["mmdet3d"]
+known_third_party = [
+    "cv2",
+    "imageio",
+    "indoor3d_util",
+    "load_scannet_data",
+    "lyft_dataset_sdk",
+    "m2r",
+    "matplotlib",
+    "mmcv",
+    "mmdet",
+    "mmengine",
+    "nuimages",
+    "numba",
+    "numpy",
+    "nuscenes",
+    "pandas",
+    "plyfile",
+    "pycocotools",
+    "pyquaternion",
+    "pytest",
+    "pytorch_sphinx_theme",
+    "recommonmark",
+    "requests",
+    "scannet_utils",
+    "scipy",
+    "seaborn",
+    "shapely",
+    "skimage",
+    "sphinx",
+    "tensorflow",
+    "terminaltables",
+    "torch",
+    "trimesh",
+    "ts",
+    "waymo_open_dataset",
+]
+no_lines_before = ["STDLIB", "LOCALFOLDER"]
+default_section = "THIRDPARTY"  # codespell:ignore
+
+[tool.yapf]
+based_on_style = "pep8"
+blank_line_before_nested_class_or_def = true
+split_before_expression_after_opening_paren = true
+
+[tool.codespell]
+skip = "*.ipynb,*.tsv"
+quiet-level = 3
+ignore-words-list = "ans,refridgerator,crate,hist,formating,dout,wan,nd,fo,avod,AVOD,warmup,DONOT,abd"

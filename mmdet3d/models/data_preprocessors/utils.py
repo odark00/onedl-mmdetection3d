@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Union
-
 import torch
 import torch.nn.functional as F
 from torch import Tensor
+from typing import List, Union
 
 
 def multiview_img_stack_batch(tensor_list: List[Tensor],

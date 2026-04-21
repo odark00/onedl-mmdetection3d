@@ -1,4 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+# flake8: noqa: F405
 from mmengine import read_base
 
 with read_base():

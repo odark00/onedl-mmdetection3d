@@ -1,14 +1,13 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import os
-import os.path as osp
-import tempfile
-from unittest import TestCase
-
 import mmengine
 import numpy as np
+import os
+import os.path as osp
 import pytest
+import tempfile
 import torch
 from mmengine.utils import is_list_of
+from unittest import TestCase
 
 from mmdet3d.apis import LidarSeg3DInferencer
 from mmdet3d.structures import Det3DDataSample
@@ -26,7 +25,7 @@ class TestLiDARSeg3DInferencer(TestCase):
         # init from cfg
         LidarSeg3DInferencer(
             'configs/pointnet2/pointnet2_ssg_2xb16-cosine-50e_s3dis-seg.py',
-            'https://download.openmmlab.com/mmdetection3d/v0.1.0_models/pointnet2/pointnet2_ssg_16x2_cosine_50e_s3dis_seg-3d-13class/pointnet2_ssg_16x2_cosine_50e_s3dis_seg-3d-13class_20210514_144205-995d0119.pth'  # noqa
+            'https://mmassets.onedl.ai/mmdetection3d/v0.1.0_models/pointnet2/pointnet2_ssg_16x2_cosine_50e_s3dis_seg-3d-13class/pointnet2_ssg_16x2_cosine_50e_s3dis_seg-3d-13class_20210514_144205-995d0119.pth'  # noqa
         )
 
     def assert_predictions_equal(self, preds1, preds2):

@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import unittest
-
 import numpy as np
+import unittest
 
 from mmdet3d.datasets import SemanticKittiDataset
 from mmdet3d.utils import register_all_modules

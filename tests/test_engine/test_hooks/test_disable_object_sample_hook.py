@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+from mmengine.dataset import BaseDataset
 from unittest import TestCase
 from unittest.mock import Mock
-
-from mmengine.dataset import BaseDataset
 
 from mmdet3d.datasets.transforms import ObjectSample
 from mmdet3d.engine.hooks import DisableObjectSampleHook

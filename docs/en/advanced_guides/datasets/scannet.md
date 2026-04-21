@@ -4,7 +4,7 @@ MMDetection3D supports LiDAR-based detection and segmentation on ScanNet dataset
 
 ## Dataset preparation
 
-For the overall process, please refer to the [README](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/data/scannet/README.md) page for ScanNet.
+For the overall process, please refer to the [README](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/data/scannet/README.md) page for ScanNet.
 
 ### Export ScanNet point cloud data
 
@@ -223,7 +223,7 @@ scannet
 ├── scannet_infos_test.pkl
 ```
 
-- `points/xxxxx.bin`: The `axis-unaligned` point cloud data after downsample. Since ScanNet 3D detection task takes axis-aligned point clouds as input, while ScanNet 3D semantic segmentation task takes unaligned points, we choose to store unaligned points and their axis-align transform matrix. Note: the points would be axis-aligned in pre-processing pipeline [`GlobalAlignment`](https://github.com/open-mmlab/mmdetection3d/blob/9f0b01caf6aefed861ef4c3eb197c09362d26b32/mmdet3d/datasets/pipelines/transforms_3d.py#L423) of 3D detection task.
+- `points/xxxxx.bin`: The `axis-unaligned` point cloud data after downsample. Since ScanNet 3D detection task takes axis-aligned point clouds as input, while ScanNet 3D semantic segmentation task takes unaligned points, we choose to store unaligned points and their axis-align transform matrix. Note: the points would be axis-aligned in pre-processing pipeline [`GlobalAlignment`](https://github.com/VBTI-development/onedl-mmdetection3d/blob/9f0b01caf6aefed861ef4c3eb197c09362d26b32/mmdet3d/datasets/pipelines/transforms_3d.py#L423) of 3D detection task.
 - `instance_mask/xxxxx.bin`: The instance label for each point, value range: \[0, NUM_INSTANCES\], 0: unannotated.
 - `semantic_mask/xxxxx.bin`: The semantic label for each point, value range: \[1, 40\], i.e. `nyu40id` standard. Note: the `nyu40id` ID will be mapped to train ID in train pipeline `PointSegClassMapping`.
 - `seg_info`: The generated infos to support semantic segmentation model training.
@@ -328,16 +328,16 @@ train_pipeline = [
 
 ## Metrics
 
-- **Object Detection**: Typically mean Average Precision (mAP) is used for evaluation on ScanNet, e.g. `mAP@0.25` and `mAP@0.5`. In detail, a generic function to compute precision and recall for 3D object detection for multiple classes is called. Please refer to [indoor_eval](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/mmdet3d/evaluation/functional/indoor_eval.py) for more details.
+- **Object Detection**: Typically mean Average Precision (mAP) is used for evaluation on ScanNet, e.g. `mAP@0.25` and `mAP@0.5`. In detail, a generic function to compute precision and recall for 3D object detection for multiple classes is called. Please refer to [indoor_eval](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/mmdet3d/evaluation/functional/indoor_eval.py) for more details.
 
   **Note**: As introduced in section `Export ScanNet data`, all ground truth 3D bounding box are axis-aligned, i.e. the yaw is zero. So the yaw target of network predicted 3D bounding box is also zero and axis-aligned 3D Non-Maximum Suppression (NMS), which is regardless of rotation, is adopted during post-processing .
 
-- **Semantic Segmentation**: Typically mean Intersection over Union (mIoU) is used for evaluation on ScanNet. In detail, we first compute IoU for multiple classes and then average them to get mIoU, please refer to [seg_eval](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/mmdet3d/evaluation/functional/seg_eval.py).
+- **Semantic Segmentation**: Typically mean Intersection over Union (mIoU) is used for evaluation on ScanNet. In detail, we first compute IoU for multiple classes and then average them to get mIoU, please refer to [seg_eval](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/mmdet3d/evaluation/functional/seg_eval.py).
 
 ## Testing and Making a Submission
 
 By default, our codebase evaluates semantic segmentation results on the validation set.
-If you would like to test the model performance on the online benchmark, add `--format-only` flag in the evaluation script and change `ann_file=data_root + 'scannet_infos_val.pkl'` to `ann_file=data_root + 'scannet_infos_test.pkl'` in the ScanNet dataset's [config](https://github.com/open-mmlab/mmdetection3d/blob/main/configs/_base_/datasets/scannet-seg.py#L126). Remember to specify the `txt_prefix` as the directory to save the testing results.
+If you would like to test the model performance on the online benchmark, add `--format-only` flag in the evaluation script and change `ann_file=data_root + 'scannet_infos_val.pkl'` to `ann_file=data_root + 'scannet_infos_test.pkl'` in the ScanNet dataset's [config](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/configs/_base_/datasets/scannet-seg.py#L126). Remember to specify the `txt_prefix` as the directory to save the testing results.
 
 Taking PointNet++ (SSG) on ScanNet for example, the following command can be used to do inference on test set:
 

@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Optional, Sequence
-
 from torch import Tensor
+from typing import Dict, List, Optional, Sequence
 
 from mmdet3d.registry import MODELS
 from .mvx_two_stage import MVXTwoStageDetector
@@ -48,7 +47,7 @@ class DynamicMVXFasterRCNN(MVXTwoStageDetector):
         voxel_features, feature_coors = self.pts_voxel_encoder(
             voxel_dict['voxels'], voxel_dict['coors'], points, img_feats,
             batch_input_metas)
-        batch_size = voxel_dict['coors'][-1, 0] + 1
+        batch_size = voxel_dict['coors'][-1, 0].item() + 1
         x = self.pts_middle_encoder(voxel_features, feature_coors, batch_size)
         x = self.pts_backbone(x)
         if self.with_pts_neck:

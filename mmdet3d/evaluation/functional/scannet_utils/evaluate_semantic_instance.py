@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 # adapted from https://github.com/ScanNet/ScanNet/blob/master/BenchmarkScripts/3d_evaluation/evaluate_semantic_instance.py # noqa
-from copy import deepcopy
-
 import numpy as np
+from copy import deepcopy
 
 from . import util_3d
 
@@ -246,7 +245,7 @@ def assign_instances_for_scan(pred_info, gt_ids, options, valid_class_ids,
         pred2gt[label] = []
     num_pred_instances = 0
     # mask of void labels in the ground truth
-    bool_void = np.logical_not(np.in1d(gt_ids // 1000, valid_class_ids))
+    bool_void = np.logical_not(np.isin(gt_ids // 1000, valid_class_ids))
     # go through all prediction masks
     for pred_mask_file in pred_info:
         label_id = int(pred_info[pred_mask_file]['label_id'])

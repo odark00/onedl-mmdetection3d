@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Optional
-
 import torch
 from mmdet.models.losses.utils import weight_reduce_loss
 from torch import Tensor
 from torch import nn as nn
+from typing import List, Optional
 
 from mmdet3d.registry import MODELS
 from ..layers import PAConv, PAConvCUDA

@@ -27,7 +27,7 @@ Models:
         Metrics:
           mAP: 40.91
           NDS: 54.44
-    Weights: https://download.openmmlab.com/mmdetection3d/v1.0.0_models/ssn/hv_ssn_secfpn_sbn-all_2x16_2x_nus-3d/hv_ssn_secfpn_sbn-all_2x16_2x_nus-3d_20210830_101351-51915986.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v1.0.0_models/ssn/hv_ssn_secfpn_sbn-all_2x16_2x_nus-3d/hv_ssn_secfpn_sbn-all_2x16_2x_nus-3d_20210830_101351-51915986.pth
 
   - Name: hv_ssn_regnet-400mf_secfpn_sbn-all_16xb2-2x_nus-3d
     In Collection: SSN
@@ -41,7 +41,7 @@ Models:
         Metrics:
           mAP: 46.65
           NDS: 58.24
-    Weights: https://download.openmmlab.com/mmdetection3d/v1.0.0_models/ssn/hv_ssn_regnet-400mf_secfpn_sbn-all_2x16_2x_nus-3d/hv_ssn_regnet-400mf_secfpn_sbn-all_2x16_2x_nus-3d_20210829_210615-361e5e04.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v1.0.0_models/ssn/hv_ssn_regnet-400mf_secfpn_sbn-all_2x16_2x_nus-3d/hv_ssn_regnet-400mf_secfpn_sbn-all_2x16_2x_nus-3d_20210829_210615-361e5e04.pth
 
   - Name: hv_ssn_secfpn_sbn-all_16xb2-2x_lyft-3d
     In Collection: SSN
@@ -55,7 +55,7 @@ Models:
         Metrics:
           Private Score: 17.5
           Public Score: 17.5
-    Weights: https://download.openmmlab.com/mmdetection3d/v1.0.0_models/ssn/hv_ssn_secfpn_sbn-all_2x16_2x_lyft-3d/hv_ssn_secfpn_sbn-all_2x16_2x_lyft-3d_20210822_134731-46841b41.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v1.0.0_models/ssn/hv_ssn_secfpn_sbn-all_2x16_2x_lyft-3d/hv_ssn_secfpn_sbn-all_2x16_2x_lyft-3d_20210822_134731-46841b41.pth
 
   - Name: hv_ssn_regnet-400mf_secfpn_sbn-all_16xb1-2x_lyft-3d
     In Collection: SSN
@@ -69,4 +69,4 @@ Models:
         Metrics:
           Private Score: 17.9
           Public Score: 18.0
-    Weights: https://download.openmmlab.com/mmdetection3d/v1.0.0_models/ssn/hv_ssn_regnet-400mf_secfpn_sbn-all_1x16_2x_lyft-3d/hv_ssn_regnet-400mf_secfpn_sbn-all_1x16_2x_lyft-3d_20210829_122825-d93475a1.pth
+    Weights: https://mmassets.onedl.ai/mmdetection3d/v1.0.0_models/ssn/hv_ssn_regnet-400mf_secfpn_sbn-all_1x16_2x_lyft-3d/hv_ssn_regnet-400mf_secfpn_sbn-all_1x16_2x_lyft-3d_20210829_122825-d93475a1.pth

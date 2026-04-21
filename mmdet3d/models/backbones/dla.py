@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import warnings
-from typing import List, Optional, Sequence, Tuple
-
 import torch
+import warnings
 from mmcv.cnn import build_conv_layer, build_norm_layer
 from mmengine.model import BaseModule
 from torch import Tensor, nn
+from typing import List, Optional, Sequence, Tuple
 
 from mmdet3d.registry import MODELS
 from mmdet3d.utils import ConfigType, OptConfigType, OptMultiConfig

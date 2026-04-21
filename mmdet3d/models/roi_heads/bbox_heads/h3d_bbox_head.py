@@ -1,6 +1,4 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List, Optional, Tuple
-
 import torch
 from mmcv.cnn import ConvModule
 from mmdet.models.utils import multi_apply
@@ -9,6 +7,7 @@ from mmengine.structures import InstanceData
 from torch import Tensor
 from torch import nn as nn
 from torch.nn import functional as F
+from typing import Dict, List, Optional, Tuple
 
 from mmdet3d.models import aligned_3d_nms
 from mmdet3d.models.layers.pointnet_modules import build_sa_module
@@ -513,7 +512,7 @@ class H3DBboxHead(BaseModule):
 
         Returns:
             list[:obj:`InstanceData`]: Return list of processed
-            predictions. Each InstanceData cantains
+            predictions. Each InstanceData contains
             3d Bounding boxes and corresponding scores and labels.
         """
 
@@ -927,32 +926,33 @@ class H3DBboxHead(BaseModule):
             torch.sum((pred_obj_line_center - line_sel)**2, dim=-1) + 1e-6)
 
         # Objectness score just with centers
-        proposal_objectness_label[
-            euclidean_dist1 < self.train_cfg['near_threshold']] = 1
-        proposal_objectness_mask[
-            euclidean_dist1 < self.train_cfg['near_threshold']] = 1
-        proposal_objectness_mask[
-            euclidean_dist1 > self.train_cfg['far_threshold']] = 1
+        proposal_objectness_label[euclidean_dist1 <
+                                  self.train_cfg['near_threshold']] = 1
+        proposal_objectness_mask[euclidean_dist1 <
+                                 self.train_cfg['near_threshold']] = 1
+        proposal_objectness_mask[euclidean_dist1 >
+                                 self.train_cfg['far_threshold']] = 1
 
         objectness_label_surface[
-            (euclidean_dist_obj_surface <
-             self.train_cfg['label_surface_threshold']) *
-            (euclidean_dist_surface <
-             self.train_cfg['mask_surface_threshold'])] = 1
+            (euclidean_dist_obj_surface
+             < self.train_cfg['label_surface_threshold']) *
+            (euclidean_dist_surface
+             < self.train_cfg['mask_surface_threshold'])] = 1
         objectness_label_surface_sem[
-            (euclidean_dist_obj_surface <
-             self.train_cfg['label_surface_threshold']) *
+            (euclidean_dist_obj_surface
+             < self.train_cfg['label_surface_threshold']) *
             (euclidean_dist_surface < self.train_cfg['mask_surface_threshold'])
             * (surface_sel_sem == surface_sel_sem_gt)] = 1
 
-        objectness_label_line[
-            (euclidean_dist_obj_line < self.train_cfg['label_line_threshold'])
-            *
-            (euclidean_dist_line < self.train_cfg['mask_line_threshold'])] = 1
-        objectness_label_line_sem[
-            (euclidean_dist_obj_line < self.train_cfg['label_line_threshold'])
-            * (euclidean_dist_line < self.train_cfg['mask_line_threshold']) *
-            (line_sel_sem == line_sel_sem_gt)] = 1
+        objectness_label_line[(euclidean_dist_obj_line
+                               < self.train_cfg['label_line_threshold']) *
+                              (euclidean_dist_line
+                               < self.train_cfg['mask_line_threshold'])] = 1
+        objectness_label_line_sem[(euclidean_dist_obj_line
+                                   < self.train_cfg['label_line_threshold']) *
+                                  (euclidean_dist_line
+                                   < self.train_cfg['mask_line_threshold']) *
+                                  (line_sel_sem == line_sel_sem_gt)] = 1
 
         objectness_label_surface_obj = proposal_objectness_label.repeat(6)
         objectness_mask_surface_obj = proposal_objectness_mask.repeat(6)
@@ -978,8 +978,8 @@ class H3DBboxHead(BaseModule):
         objectness_label_line_sem *= objectness_label_line_obj
 
         cues_match_mask = (torch.sum(
-            cues_objectness_label.view(18, num_proposals), dim=0) >=
-                           1).float()
+            cues_objectness_label.view(18, num_proposals), dim=0)
+                           >= 1).float()
 
         obj_surface_line_center = torch.cat(
             (obj_surface_center, obj_line_center), 1).squeeze(0)

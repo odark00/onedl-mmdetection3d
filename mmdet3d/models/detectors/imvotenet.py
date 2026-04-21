@@ -1,10 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-from typing import Dict, List, Optional, Sequence, Tuple, Union
-
 import torch
 from mmengine.structures import InstanceData
 from torch import Tensor
+from typing import Dict, List, Optional, Sequence, Tuple, Union
 
 from mmdet3d.registry import MODELS
 from mmdet3d.structures import Det3DDataSample

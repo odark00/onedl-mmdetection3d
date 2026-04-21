@@ -2,8 +2,8 @@
 from mmengine import read_base
 
 with read_base():
-    from .._base_.schedules.cosine import *
-    from .._base_.default_runtime import *
+    from .._base_.schedules.cosine import *  # noqa: F403
+    from .._base_.default_runtime import *  # noqa: F403
 
 from mmcv.transforms.loading import LoadImageFromFile
 from mmcv.transforms.processing import RandomResize, Resize
@@ -295,7 +295,7 @@ test_dataloader = dict(
         box_type_3d='LiDAR',
         backend_args=backend_args))
 
-optim_wrapper.update(
+optim_wrapper.update(  # noqa: F405
     dict(
         optimizer=dict(weight_decay=0.01),
         clip_grad=dict(max_norm=35, norm_type=2),
@@ -309,4 +309,4 @@ visualizer = dict(
     type=Det3DLocalVisualizer, vis_backends=vis_backends, name='visualizer')
 
 # You may need to download the model first is the network is unstable
-load_from = 'https://download.openmmlab.com/mmdetection3d/pretrain_models/mvx_faster_rcnn_detectron2-caffe_20e_coco-pretrain_gt-sample_kitti-3-class_moderate-79.3_20200207-a4a6a3c7.pth'  # noqa
+load_from = 'https://mmassets.onedl.ai/mmdetection3d/pretrain_models/mvx_faster_rcnn_detectron2-caffe_20e_coco-pretrain_gt-sample_kitti-3-class_moderate-79.3_20200207-a4a6a3c7.pth'  # noqa

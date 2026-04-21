@@ -1,16 +1,15 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-import random
-import warnings
-from typing import List, Optional, Sequence, Tuple, Union
-
 import cv2
 import mmcv
 import numpy as np
+import random
 import torch
+import warnings
 from mmcv.transforms import BaseTransform, Compose, RandomResize, Resize
 from mmdet.datasets.transforms import (PhotoMetricDistortion, RandomCrop,
                                        RandomFlip)
 from mmengine import is_list_of, is_tuple_of
+from typing import List, Optional, Sequence, Tuple, Union
 
 from mmdet3d.models.task_modules import VoxelGenerator
 from mmdet3d.registry import TRANSFORMS
@@ -107,7 +106,7 @@ class RandomFlip3D(RandomFlip):
         flip_ratio_bev_vertical (float): The flipping probability
             in vertical direction. Defaults to 0.0.
         flip_box3d (bool): Whether to flip bounding box. In most of the case,
-            the box should be fliped. In cam-based bev detection, this is set
+            the box should be flipped. In cam-based bev detection, this is set
             to False, since the flip of 2D images does not influence the 3D
             box. Defaults to True.
     """
@@ -1309,8 +1308,8 @@ class IndoorPatchPointSample(BaseTransform):
             cur_sem_mask = sem_mask[cur_choice]
             point_idxs = np.where(cur_choice)[0]
             mask = np.sum(
-                (cur_coords >= (cur_min - self.eps)) * (cur_coords <=
-                                                        (cur_max + self.eps)),
+                (cur_coords >= (cur_min - self.eps)) *
+                (cur_coords <= (cur_max + self.eps)),
                 axis=1) == 3
 
             # two criteria for patch sampling, adopted from PointNet++
@@ -1703,10 +1702,10 @@ class AffineResize(BaseTransform):
         if 'centers_2d' in results:
             centers2d = self._affine_transform(results['centers_2d'],
                                                trans_affine)
-            valid_index = (centers2d[:, 0] >
-                           0) & (centers2d[:, 0] <
-                                 self.img_scale[0]) & (centers2d[:, 1] > 0) & (
-                                     centers2d[:, 1] < self.img_scale[1])
+            valid_index = (centers2d[:, 0]
+                           > 0) & (centers2d[:, 0] < self.img_scale[0]) & (
+                               centers2d[:, 1] > 0) & (
+                                   centers2d[:, 1] < self.img_scale[1])
             results['centers_2d'] = centers2d[valid_index]
 
             if 'gt_bboxes' in results:

@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, List
-
 import numpy as np
 import torch
 from torch import Tensor
+from typing import Dict, List
 
 from mmdet3d.registry import TASK_UTILS
 from mmdet3d.structures.bbox_3d import BaseInstance3DBoxes

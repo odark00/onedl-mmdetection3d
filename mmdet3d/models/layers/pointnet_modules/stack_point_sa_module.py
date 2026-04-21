@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Optional, Tuple
-
 import torch
 import torch.nn as nn
 from mmcv.cnn import ConvModule
 from mmcv.ops import ball_query, grouping_operation
 from mmengine.model import BaseModule
 from torch import Tensor
+from typing import List, Optional, Tuple
 
 from mmdet3d.registry import MODELS
 

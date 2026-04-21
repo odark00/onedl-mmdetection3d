@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, Optional
-
 import torch
+from typing import Dict, Optional
 
 from mmdet3d.registry import MODELS
 from .two_stage import TwoStage3DDetector

@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import base64
-import os
-
 import numpy as np
+import os
 import torch
 from ts.torch_handler.base_handler import BaseHandler
 

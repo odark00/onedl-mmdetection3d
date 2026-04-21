@@ -1,11 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 
+import cv2
 import datetime
 import os
 import platform
 import warnings
-
-import cv2
 from mmengine import DefaultScope
 from torch import multiprocessing as mp
 

@@ -1,9 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Tuple, Union
-
 from mmcv.cnn import build_conv_layer, build_norm_layer
 from mmdet.models.backbones.resnet import BasicBlock, Bottleneck
 from torch import nn
+from typing import Optional, Tuple, Union
 
 from mmdet3d.utils import OptConfigType
 from .spconv import IS_SPCONV2_AVAILABLE

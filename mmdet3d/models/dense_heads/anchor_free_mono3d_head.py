@@ -1,13 +1,12 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from abc import abstractmethod
-from typing import Any, List, Sequence, Tuple, Union
-
 import torch
+from abc import abstractmethod
 from mmcv.cnn import ConvModule
 from mmdet.models.utils import multi_apply
 from mmengine.model import bias_init_with_prob, normal_init
 from torch import Tensor
 from torch import nn as nn
+from typing import Any, List, Sequence, Tuple, Union
 
 from mmdet3d.registry import MODELS
 from mmdet3d.utils import ConfigType, InstanceList, OptConfigType

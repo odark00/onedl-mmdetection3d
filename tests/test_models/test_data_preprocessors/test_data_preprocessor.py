@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from unittest import TestCase
-
 import pytest
 import torch
+from unittest import TestCase
 
 from mmdet3d.models.data_preprocessors import Det3DDataPreprocessor
 from mmdet3d.structures import Det3DDataSample, PointData

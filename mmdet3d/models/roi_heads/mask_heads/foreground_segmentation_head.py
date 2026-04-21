@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Dict, Optional, Tuple
-
 import torch
 from mmcv.cnn.bricks import build_norm_layer
 from mmdet.models.utils import multi_apply
 from mmengine.model import BaseModule
 from mmengine.structures import InstanceData
 from torch import nn as nn
+from typing import Dict, Optional, Tuple
 
 from mmdet3d.registry import MODELS
 from mmdet3d.utils import InstanceList
@@ -88,7 +87,7 @@ class ForegroundSegmentationHead(BaseModule):
     def _get_targets_single(self, point_xyz: torch.Tensor,
                             gt_bboxes_3d: InstanceData,
                             gt_labels_3d: torch.Tensor) -> torch.Tensor:
-        """generate segmentation targets for a single sample.
+        """Generate segmentation targets for a single sample.
 
         Args:
             point_xyz (torch.Tensor): Coordinate of points.

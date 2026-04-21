@@ -1,8 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import Optional, Sequence, Union
-
 import numpy as np
 from torch import Tensor
+from typing import Optional, Sequence, Union
 
 from .base_points import BasePoints
 

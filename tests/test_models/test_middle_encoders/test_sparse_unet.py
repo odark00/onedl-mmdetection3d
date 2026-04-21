@@ -15,7 +15,7 @@ def test_SparseUNet():
     if not torch.cuda.is_available():
         pytest.skip('test requires GPU and torch+cuda')
     from mmdet3d.models.middle_encoders.sparse_unet import SparseUNet
-    self = SparseUNet(in_channels=4, sparse_shape=[41, 1600, 1408]).cuda()
+    self = SparseUNet(in_channels=4, sparse_shape=[41, 200, 176]).cuda()
 
     # test encoder layers
     assert len(self.encoder_layers) == 4
@@ -44,8 +44,8 @@ def test_SparseUNet():
          [23.482342, 6.5036807, 0.5806964, 0.35]],
         dtype=torch.float32).cuda()  # n, point_features
     coordinates = torch.tensor(
-        [[0, 12, 819, 131], [0, 16, 750, 136], [1, 16, 705, 232],
-         [1, 35, 930, 469]],
+        [[0, 12, 81, 131], [0, 16, 75, 136], [1, 16, 70, 132], [1, 35, 93, 46]
+         ],
         dtype=torch.int32).cuda()  # n, 4(batch, ind_x, ind_y, ind_z)
 
     unet_ret_dict = self.forward(voxel_features, coordinates, 2)
@@ -53,4 +53,4 @@ def test_SparseUNet():
     spatial_features = unet_ret_dict['spatial_features']
 
     assert seg_features.shape == torch.Size([4, 16])
-    assert spatial_features.shape == torch.Size([2, 256, 200, 176])
+    assert spatial_features.shape == torch.Size([2, 256, 25, 22])

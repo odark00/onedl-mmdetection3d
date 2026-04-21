@@ -1,12 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from typing import List, Optional, Union
-
 import torch
 from mmcv.cnn import ConvModule
 from mmcv.ops.group_points import GroupAll, QueryAndGroup, grouping_operation
 from torch import Tensor
 from torch import nn as nn
 from torch.nn import functional as F
+from typing import List, Optional, Union
 
 from mmdet3d.utils import ConfigType
 

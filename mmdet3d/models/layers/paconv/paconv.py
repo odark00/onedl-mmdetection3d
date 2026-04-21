@@ -1,7 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import copy
-from typing import List, Tuple, Union
-
 import torch
 from mmcv.cnn import ConvModule, build_activation_layer, build_norm_layer
 from mmcv.ops import assign_score_withk as assign_score_cuda
@@ -9,6 +7,7 @@ from mmengine.model import constant_init
 from torch import Tensor
 from torch import nn as nn
 from torch.nn import functional as F
+from typing import List, Tuple, Union
 
 from mmdet3d.utils import ConfigType
 from .utils import assign_kernel_withoutk, assign_score, calc_euclidian_dist

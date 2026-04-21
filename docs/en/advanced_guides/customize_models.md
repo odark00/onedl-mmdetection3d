@@ -483,7 +483,7 @@ class PartAggregationROIHead(Base3DRoIHead):
         return losses
 ```
 
-Here we omit more details related to other functions. Please see the [code](https://github.com/open-mmlab/mmdetection3d/blob/dev-1.x/mmdet3d/models/roi_heads/part_aggregation_roi_head.py) for more details.
+Here we omit more details related to other functions. Please see the [code](https://github.com/VBTI-development/onedl-mmdetection3d/blob/main/mmdet3d/models/roi_heads/part_aggregation_roi_head.py) for more details.
 
 Last, the users need to add the module in
 `mmdet3d/models/roi_heads/bbox_heads/__init__.py` and `mmdet3d/models/roi_heads/__init__.py` thus the corresponding registry could find and load them.

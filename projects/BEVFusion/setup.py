@@ -1,6 +1,6 @@
-import os
 from setuptools import setup
 
+import os
 import torch
 from torch.utils.cpp_extension import (BuildExtension, CppExtension,
                                        CUDAExtension)
